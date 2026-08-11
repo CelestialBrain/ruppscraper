@@ -18,11 +18,13 @@ env/
 
 # Database
 *.db
+!ruppscraper.db
 *.sqlite
 *.sqlite3
 
 # Output
 output/
+!output/professors_crs.json
 *.json
 !package.json
 
