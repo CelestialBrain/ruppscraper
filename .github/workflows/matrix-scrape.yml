@@ -1,0 +1,180 @@
+name: Matrix Scraper Pipeline
+
+on:
+  schedule:
+    # Run twice daily at 00:00 and 12:00 UTC
+    - cron: '0 0,12 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ruppscraper-matrix-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  # -------------------------------------------------------------------------
+  # Stage 1: Sharded parallel scraping across 10 parallel runner VMs
+  # -------------------------------------------------------------------------
+  shard-scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard:
+          - "sort:new"
+          - "sort:top"
+          - "sort:hot"
+          - "sort:rising"
+          - "query:Math"
+          - "query:Eng"
+          - "query:Fil"
+          - "query:Bio"
+          - "query:Chem"
+          - "query:Econ"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Shard Scrape (${{ matrix.shard }})
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+        run: |
+          SHARD="${{ matrix.shard }}"
+          SAFE_NAME=$(echo "$SHARD" | tr ':' '_')
+          mkdir -p artifacts
+
+          if [[ "$SHARD" == sort:* ]]; then
+            SORT_TYPE="${SHARD#sort:}"
+            python -m scraper scrape --sort "$SORT_TYPE" --limit 200 --comments 50
+          fi
+
+          # Export shard DB or export output
+          python -m scraper export --format full -o "artifacts/shard_${SAFE_NAME}.json"
+
+      - name: Upload Shard Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ strategy.job-index }}
+          path: artifacts/shard_*.json
+          retention-days: 1
+
+  # -------------------------------------------------------------------------
+  # Stage 2: Merge shard results, match CRS database, export & commit
+  # -------------------------------------------------------------------------
+  merge-and-commit:
+    needs: shard-scrape
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download all shard artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: shard-*
+          merge-multiple: true
+
+      - name: Ingest shard JSONs into main database
+        run: |
+          python3 -c "
+          import json, glob, sqlite3
+          from scraper.database import get_connection, init_db, upsert_post, upsert_comment, upsert_professor
+          from scraper.models import Post, Comment, Professor
+
+          conn = get_connection()
+          init_db(conn)
+
+          files = glob.glob('artifacts/shard_*.json')
+          print(f'Merging {len(files)} shard files...')
+
+          for fpath in files:
+              with open(fpath, 'r') as f:
+                  data = json.load(f)
+              for item in data:
+                  post_data = item['post']
+                  prof_data = item.get('professor')
+                  prof_id = None
+
+                  if prof_data and prof_data.get('last_name'):
+                      last = prof_data['last_name']
+                      first = prof_data['first_name']
+                      campus = item.get('campus', 'UPD')
+                      prof_id = f'{campus.lower()}__{last.lower()}__{first.lower()}'
+                      upsert_professor(conn, Professor(id=prof_id, last_name=last, first_name=first, campus=campus))
+
+                  post = Post(
+                      reddit_id=post_data['reddit_id'],
+                      title=post_data['title'],
+                      campus=item.get('campus'),
+                      course=item.get('course'),
+                      professor_id=prof_id,
+                      url=post_data['url'],
+                      score=post_data['score'],
+                      num_comments=post_data['num_comments'],
+                      created_utc=0.0,
+                      author=post_data.get('author'),
+                      selftext=post_data.get('body', ''),
+                  )
+                  upsert_post(conn, post)
+
+                  for c in item.get('comments', []):
+                      comment = Comment(
+                          reddit_id=c['reddit_id'],
+                          post_reddit_id=post_data['reddit_id'],
+                          parent_id='',
+                          author=c.get('author'),
+                          body=c['body'],
+                          score=c['score'],
+                          created_utc=0.0,
+                          depth=c['depth'],
+                      )
+                      upsert_comment(conn, comment)
+
+          conn.commit()
+          conn.close()
+          print('Merge complete.')
+          "
+
+      - name: Match against CRS & Export Final JSON
+        run: |
+          python -m scraper export --format professors --crs -o output/professors_crs.json
+          python -m scraper stats
+
+      - name: Commit updated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/professors_crs.json ruppscraper.db
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: matrix update prof reviews & CRS matches [$(date -u +%Y-%m-%d)]"
+            git pull --rebase origin main || true
+            git push
+          fi

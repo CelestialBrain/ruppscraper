@@ -1,0 +1,45 @@
+name: RateUPProfs Scraper Pipeline
+
+on:
+  schedule:
+    # Run twice daily at 00:00 and 12:00 UTC
+    - cron: '0 0,12 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  scrape-and-export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ruppscraper
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Scraper
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+        run: |
+          python -m scraper scrape --sort new --resume
+
+      - name: Export Enriched JSON
+        run: |
+          python -m scraper export --format professors --crs -o output/professors_crs.json
+
+      - name: Commit updated output
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/professors_crs.json ruppscraper.db
+          git diff --quiet && git diff --staged --quiet || git commit -m "auto: update scraped prof reviews & CRS matches"
+          git push

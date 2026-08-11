@@ -1,0 +1,7 @@
+# Core dependencies
+requests>=2.32.0
+beautifulsoup4>=4.12.0
+rich>=13.0,<14.0
+
+# Testing
+pytest>=8.0,<9.0
