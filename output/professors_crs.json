@@ -1,0 +1,600 @@
+[
+  {
+    "professor": "Alejon, Glenn Russel",
+    "campus": "UPD",
+    "courses": [
+      "FIL 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "FIL 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkskvb",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ardivilla, Jose Santos",
+    "campus": "UPD",
+    "courses": [
+      "FA 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "FA 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkhi48",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Borlaza, Catherine Regina",
+    "campus": "UPD",
+    "courses": [
+      "CL 122"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CL 122",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkhqpx",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bryan Hernandez, Math 122",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vle1jf",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Buhain, Carmelo Jose",
+    "campus": "UPD",
+    "courses": [
+      "EDUC 100"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "EDUC 100",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vlg563",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Espina, Jess Immanuel",
+    "campus": "UPD",
+    "courses": [
+      "KAS 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "KAS 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkjs4p",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Fernando, Dakila",
+    "campus": "UPD",
+    "courses": [
+      "FA 30"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "FA 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vl2u8p",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Gonzales, Laya",
+    "campus": "UPD",
+    "courses": [
+      "arts 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "arts 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vlbdp4",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Lizarraga, Noraida",
+    "campus": "UPD",
+    "courses": [
+      "Span 10"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Span 10",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkphfa",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Lloren-Alcantara, Pamela",
+    "campus": "UPD",
+    "courses": [
+      "BA 99.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "BA 99.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vl68ib",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Morales, Deidre",
+    "campus": "UPD",
+    "courses": [
+      "Pan Pil 17"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Pan Pil 17",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vl3kze",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Neri, Marrick",
+    "campus": "UPD",
+    "courses": [
+      "Math 22"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Math 22",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vlegjj",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Palermo, Joseph",
+    "campus": "UPD",
+    "courses": [
+      "Env Sci 1 THY"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Env Sci 1 THY",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vl7xaf",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Parena, Sherwin",
+    "campus": "UPD",
+    "courses": [
+      "Math 21"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Math 21",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkkngi",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Saqueton, Grace",
+    "campus": "UPD",
+    "courses": [
+      "ENG 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "ENG 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkibgc",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  }
+]
