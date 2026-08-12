@@ -103,6 +103,22 @@ _TITLE_NO_BRACKET_RE = re.compile(
     re.VERBOSE | re.IGNORECASE,
 )
 
+# Quaternary: [CAMPUS] Course - FirstName LastName  (no comma; informal titles)
+_TITLE_NO_COMMA_RE = re.compile(
+    r"""
+    \[
+    (?P<campus>[A-Za-z]+)
+    \]
+    \s*
+    (?P<course>.+?)
+    \s*-\s*
+    (?P<full_name>[^()\[\],]+?)
+    \s*
+    (?:\(.*\))?
+    \s*$
+    """,
+    re.VERBOSE | re.IGNORECASE,
+)
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -130,13 +146,14 @@ def parse_title(title: str) -> ParsedTitle | None:
         course = _clean_whitespace(match.group("course"))
         last_name = _title_case_name(match.group("last_name").strip())
         first_name = _title_case_name(match.group("first_name").strip())
-        return ParsedTitle(
-            campus=campus,
-            course=course,
-            last_name=last_name,
-            first_name=first_name,
-            raw_title=title,
-        )
+        if course and last_name and first_name:
+            return ParsedTitle(
+                campus=campus,
+                course=course,
+                last_name=last_name,
+                first_name=first_name,
+                raw_title=title,
+            )
 
     # Try swapped order: [CAMPUS] LastName, FirstName - Course
     match = _TITLE_SWAPPED_RE.match(primary_title)
@@ -146,13 +163,14 @@ def parse_title(title: str) -> ParsedTitle | None:
         course = _clean_whitespace(match.group("course"))
         last_name = _title_case_name(match.group("last_name").strip())
         first_name = _title_case_name(match.group("first_name").strip())
-        return ParsedTitle(
-            campus=campus,
-            course=course,
-            last_name=last_name,
-            first_name=first_name,
-            raw_title=title,
-        )
+        if course and last_name and first_name:
+            return ParsedTitle(
+                campus=campus,
+                course=course,
+                last_name=last_name,
+                first_name=first_name,
+                raw_title=title,
+            )
 
     # Try unbracketed order: Course - LastName, FirstName (defaults to UPD)
     match = _TITLE_NO_BRACKET_RE.match(primary_title)
@@ -169,7 +187,100 @@ def parse_title(title: str) -> ParsedTitle | None:
             raw_title=title,
         )
 
+    # Try informal: [CAMPUS] Course - FirstName LastName (no comma)
+    match = _TITLE_NO_COMMA_RE.match(primary_title)
+    if match:
+        full_name = _clean_whitespace(match.group("full_name"))
+        # Reject if it still looks like "LAST, FIRST" residue or empty
+        name_parts = full_name.split()
+        if len(name_parts) >= 2:
+            campus_raw = match.group("campus").strip()
+            campus = CAMPUS_LOOKUP.get(campus_raw.upper(), campus_raw.upper())
+            course = _clean_whitespace(match.group("course"))
+            # Last token = surname; preceding tokens = given names
+            last_name = _title_case_name(name_parts[-1])
+            first_name = _title_case_name(" ".join(name_parts[:-1]))
+            # Drop honorific-only given names noise later if needed
+            if course and last_name and first_name:
+                return ParsedTitle(
+                    campus=campus,
+                    course=course,
+                    last_name=last_name,
+                    first_name=first_name,
+                    raw_title=title,
+                )
+
+    # Try missing dash: [CAMPUS] Course LASTNAME, FIRSTNAME
+    no_dash = _parse_no_dash(primary_title)
+    if no_dash is not None:
+        return ParsedTitle(
+            campus=no_dash[0],
+            course=no_dash[1],
+            last_name=no_dash[2],
+            first_name=no_dash[3],
+            raw_title=title,
+        )
+
     return None
+
+
+def _parse_no_dash(title: str) -> tuple[str, str, str, str] | None:
+    """Parse '[CAMPUS] Course LASTNAME, FIRSTNAME' (no dash separator)."""
+    match = re.match(
+        r"""
+        \[
+        (?P<campus>[A-Za-z]+)
+        \]
+        \s+
+        (?P<body>.+)
+        $
+        """,
+        title.strip(),
+        re.VERBOSE | re.IGNORECASE,
+    )
+    if not match:
+        return None
+
+    body = _clean_whitespace(match.group("body"))
+    # Dash forms are handled by earlier regexes; skip if a dash separator remains.
+    if "," not in body or re.search(r"\s-\s", body):
+        return None
+
+    before, after = body.rsplit(",", 1)
+    before = before.strip()
+    first_name_raw = after.strip()
+    if not before or not first_name_raw:
+        return None
+
+    tokens = before.split()
+    if len(tokens) < 2:
+        return None
+
+    # Prefer splitting after the last token that contains a digit
+    # (e.g. "SOC SCI 2 PAGUIRIGAN", "Fil 40 Dela Cruz", "PA 141 Diñgal").
+    split_idx: int | None = None
+    for i, tok in enumerate(tokens):
+        if re.search(r"\d", tok):
+            split_idx = i
+
+    if split_idx is not None and split_idx < len(tokens) - 1:
+        course_raw = " ".join(tokens[: split_idx + 1])
+        last_name_raw = " ".join(tokens[split_idx + 1 :])
+    else:
+        # Fallback: last token = surname (weak for compound surnames).
+        last_name_raw = tokens[-1]
+        course_raw = " ".join(tokens[:-1])
+        if not course_raw:
+            return None
+
+    campus_raw = match.group("campus").strip()
+    campus = CAMPUS_LOOKUP.get(campus_raw.upper(), campus_raw.upper())
+    return (
+        campus,
+        _clean_whitespace(course_raw),
+        _title_case_name(last_name_raw),
+        _title_case_name(first_name_raw),
+    )
 
 
 # ---------------------------------------------------------------------------
