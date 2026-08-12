@@ -1,5 +1,45 @@
 [
   {
+    "professor": "Jandoc, Karl Robert",
+    "campus": "REVIEW",
+    "courses": [
+      "Econ 100.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 100.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1l8qn4h",
+        "score": 24,
+        "comment_count": 1,
+        "posted_at": "2025-06-11T11:51:47+00:00"
+      }
+    ]
+  },
+  {
     "professor": "1, Kailan First F2f Class Niyo?",
     "campus": "UPD",
     "courses": [
@@ -252,6 +292,46 @@
     ]
   },
   {
+    "professor": "100.1, Jandoc",
+    "campus": "UPD",
+    "courses": [
+      "econ"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "econ",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1kvv7xa",
+        "score": 0,
+        "comment_count": 1,
+        "posted_at": "2025-05-26T14:06:17+00:00"
+      }
+    ]
+  },
+  {
     "professor": "2 - Castaneda, Roann Kristian",
     "campus": "UPD",
     "courses": [
@@ -452,6 +532,46 @@
     ]
   },
   {
+    "professor": "4 - Domingo, Ejay",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13 WFW"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13 WFW",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qhs9px",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-20T05:18:11+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Abara, Junio, Roque, Arceo, And Aricheta",
     "campus": "UPD",
     "courses": [
@@ -532,6 +652,48 @@
     ]
   },
   {
+    "professor": "Agub, Danicah",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "understanding"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u1cbex",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-06-09T17:47:53+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Agustin, Mary Janneke",
     "campus": "UPD",
     "courses": [
@@ -568,6 +730,86 @@
         "score": 2,
         "comment_count": 2,
         "posted_at": "2026-08-10T12:15:25+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Alamani, Hernandez, Lozano",
+    "campus": "UPD",
+    "courses": [
+      "STS 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "STS 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mi3zes",
+        "score": 4,
+        "comment_count": 1,
+        "posted_at": "2025-08-05T08:53:37+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Alburo, Florian",
+    "campus": "UPD",
+    "courses": [
+      "Econ 198"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 198",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1hn4qfu",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2024-12-27T02:30:30+00:00"
       }
     ]
   },
@@ -809,6 +1051,54 @@
     ]
   },
   {
+    "professor": "Amor, Evangeline",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 31",
+      "Chem 1"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 31",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1i5ha56",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-01-20T03:42:51+00:00"
+      },
+      {
+        "course": "Chem 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1evd6km",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2024-08-18T16:20:02+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Ancheta, Maria Anjelica",
     "campus": "UPD",
     "courses": [
@@ -845,6 +1135,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-09T03:58:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ang, Francis Eduard",
+    "campus": "UPD",
+    "courses": [
+      "Eng 12"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 12",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tzzn35",
+        "score": 3,
+        "comment_count": 4,
+        "posted_at": "2026-06-08T06:15:18+00:00"
       }
     ]
   },
@@ -972,6 +1302,46 @@
         "score": 4,
         "comment_count": 0,
         "posted_at": "2026-01-01T10:30:43+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Arco, Susan",
+    "campus": "UPD",
+    "courses": [
+      "Chem 31"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 31",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1espyov",
+        "score": 5,
+        "comment_count": 2,
+        "posted_at": "2024-08-15T08:27:31+00:00"
       }
     ]
   },
@@ -1126,6 +1496,46 @@
     ]
   },
   {
+    "professor": "Atienza, Ma. Michaela Luisa",
+    "campus": "UPD",
+    "courses": [
+      "Eng 23"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 23",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qd9xgk",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-01-15T04:33:08+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Atrigenio, Michael",
     "campus": "UPD",
     "courses": [
@@ -1255,6 +1665,46 @@
     ]
   },
   {
+    "professor": "Balaoing, Edylinda Annette",
+    "campus": "UPD",
+    "courses": [
+      "econ 141"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "econ 141",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ekli6r",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2024-08-05T11:34:40+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Barrientos, Marcos Alfredo",
     "campus": "UPD",
     "courses": [
@@ -1335,6 +1785,46 @@
     ]
   },
   {
+    "professor": "Bartolome, Ysabelle",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1txis2h",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2026-06-05T11:55:11+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Basiao, Zubaida",
     "campus": "UPD",
     "courses": [
@@ -1386,6 +1876,272 @@
         "score": 2,
         "comment_count": 4,
         "posted_at": "2022-01-20T11:07:35+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bautista, Angelica",
+    "campus": "UPD",
+    "courses": [
+      "ENG 1",
+      "Eng 1"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 3,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "heavy",
+        "readings",
+        "reqs",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "ENG 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ux2vk0",
+        "score": 3,
+        "comment_count": 2,
+        "posted_at": "2026-07-15T11:14:52+00:00"
+      },
+      {
+        "course": "Eng 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qncuqd",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-26T10:50:02+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bautista, Maria Socorro",
+    "campus": "UPD",
+    "courses": [
+      "Econ 100.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 100.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ne1snu",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2025-09-11T06:46:07+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bautista, Rogie",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ev7cxv",
+        "score": 3,
+        "comment_count": 9,
+        "posted_at": "2024-08-18T11:48:50+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bautista, Sir Victor",
+    "campus": "UPD",
+    "courses": [
+      "Eng 12"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 12",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u0xp7k",
+        "score": 0,
+        "comment_count": 2,
+        "posted_at": "2026-06-09T07:05:13+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bautista, Victor",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 2,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "approachable",
+        "draining",
+        "readings",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uqkoj9",
+        "score": 1,
+        "comment_count": 2,
+        "posted_at": "2026-07-08T06:34:41+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qdcbb3",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-15T06:37:53+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bautista, Victor Felipe",
+    "campus": "UPD",
+    "courses": [
+      "Eng 12"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 12",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qcolob",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-01-14T14:25:44+00:00"
       }
     ]
   },
@@ -1510,6 +2266,86 @@
     ]
   },
   {
+    "professor": "Bernardo, Ivan",
+    "campus": "UPD",
+    "courses": [
+      "ECON 190.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "ECON 190.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qd9dw9",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-15T04:06:56+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bernardo, Ivan Cenon",
+    "campus": "UPD",
+    "courses": [
+      "Econ 190.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 190.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1exmbhb",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2024-08-21T10:40:25+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Betty, Rowena",
     "campus": "UPD",
     "courses": [
@@ -1546,6 +2382,240 @@
         "score": 0,
         "comment_count": 0,
         "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bichara, Alexandra",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "1.0",
+        "best prof",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uf8t30",
+        "score": 20,
+        "comment_count": 3,
+        "posted_at": "2026-06-25T12:37:16+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bichara, Alexandra Francesca",
+    "campus": "UPD",
+    "courses": [
+      "Eng 12",
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 12",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vbz80e",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-31T18:31:50+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tpyh1n",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-05-28T09:27:47+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Biliran, Patriz",
+    "campus": "UPD",
+    "courses": [
+      "Eng 11 X3"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 11 X3",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u5ier6",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-06-14T11:13:58+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Biliran, Patriz Juliene",
+    "campus": "UPD",
+    "courses": [
+      "Eng 11",
+      "Eng 13"
+    ],
+    "total_discussions": 3,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v0fuer",
+        "score": 7,
+        "comment_count": 0,
+        "posted_at": "2026-07-19T03:39:40+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1touhgv",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-05-27T04:12:11+00:00"
+      },
+      {
+        "course": "Eng 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1sdrxuz",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-04-06T07:20:44+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Borlaza, Catherine",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qeejjv",
+        "score": 6,
+        "comment_count": 1,
+        "posted_at": "2026-01-16T12:22:19+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qecwcx",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-01-16T10:51:27+00:00"
       }
     ]
   },
@@ -1587,10 +2657,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -1607,7 +2677,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -1845,6 +2917,46 @@
     ]
   },
   {
+    "professor": "Cabanban, Ann Jillian",
+    "campus": "UPD",
+    "courses": [
+      "ARTS 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "ARTS 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qdmzdz",
+        "score": 1,
+        "comment_count": 2,
+        "posted_at": "2026-01-15T15:45:30+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Cabazor, Athena",
     "campus": "UPD",
     "courses": [
@@ -2052,6 +3164,50 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
+      "workload": "light",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 2,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "chill",
+        "heavy",
+        "light"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkf25b",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-08-10T08:30:32+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Castriciones, Emily",
+    "campus": "UPD",
+    "courses": [
+      "Chem 26"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
       "workload": null,
       "grading": null,
       "workload_mentions": {
@@ -2076,11 +3232,53 @@
     },
     "discussions": [
       {
-        "course": "Chem 16.1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkf25b",
+        "course": "Chem 26",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qjw9bv",
         "score": 2,
-        "comment_count": 1,
-        "posted_at": "2026-08-10T08:30:32+00:00"
+        "comment_count": 0,
+        "posted_at": "2026-01-22T14:40:35+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Castriciones, Emily And Hernandez, Christine",
+    "campus": "UPD",
+    "courses": [
+      "Chem 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "light",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "manageable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1pi3w3g",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-12-09T10:15:36+00:00"
       }
     ]
   },
@@ -2164,6 +3362,89 @@
         "score": 6,
         "comment_count": 7,
         "posted_at": "2026-06-17T07:54:56+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Chan, Justin",
+    "campus": "UPD",
+    "courses": [
+      "Econ 162 (Managerial Economics)"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 162 (Managerial Economics)",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v47upv",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-07-23T08:30:10+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Chan, Justin Ranier",
+    "campus": "UPD",
+    "courses": [
+      "Econ 104"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "1.0",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Econ 104",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qcj3xf",
+        "score": 3,
+        "comment_count": 9,
+        "posted_at": "2026-01-14T09:39:03+00:00"
       }
     ]
   },
@@ -2343,14 +3624,55 @@
     ]
   },
   {
+    "professor": "Classmates!, Finding",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 16 and 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 16 and 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u82zp5",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-17T07:06:29+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Classmates!, Looking For",
     "campus": "UPD",
     "courses": [
+      "Econ 11 WFD",
       "Math 10 WFV",
       "Math 22 X7",
       "Socio 101 WFX"
     ],
-    "total_discussions": 3,
+    "total_discussions": 4,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -2395,6 +3717,13 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-01-20T15:37:10+00:00"
+      },
+      {
+        "course": "Econ 11 WFD",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mod908",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-08-12T16:21:32+00:00"
       }
     ]
   },
@@ -2407,7 +3736,7 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "fair",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
@@ -2415,7 +3744,7 @@
       },
       "grading_mentions": {
         "generous": 0,
-        "fair": 0,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -2424,9 +3753,12 @@
       },
       "pedagogy_mentions": {
         "engaging": 0,
-        "clear": 0
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "fair",
+        "knowledgeable"
+      ]
     },
     "discussions": [
       {
@@ -2615,6 +3947,48 @@
     ]
   },
   {
+    "professor": "Cruz, Amaris Libby Dara",
+    "campus": "UPD",
+    "courses": [
+      "FLCD 124"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "kind"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "FLCD 124",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qf6269",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-01-17T06:39:11+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Cruz, Anjelo",
     "campus": "UPD",
     "courses": [
@@ -2655,6 +4029,86 @@
         "score": 2,
         "comment_count": 17,
         "posted_at": "2026-08-10T13:39:30+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Cruz, Ma Ysabella",
+    "campus": "UPD",
+    "courses": [
+      "ENG 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "ENG 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qlblql",
+        "score": 15,
+        "comment_count": 0,
+        "posted_at": "2026-01-24T03:09:20+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Dalisay, Jennica",
+    "campus": "UPD",
+    "courses": [
+      "Econ 11 TF"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 11 TF",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1i5n6c7",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2025-01-20T10:20:48+00:00"
       }
     ]
   },
@@ -2739,6 +4193,52 @@
     ]
   },
   {
+    "professor": "Delarmente, Benjo",
+    "campus": "UPD",
+    "courses": [
+      "Econ 102"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "moderate",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "approachable",
+        "chill",
+        "heavy",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Econ 102",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1m58g22",
+        "score": 2,
+        "comment_count": 2,
+        "posted_at": "2025-07-21T03:33:26+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Delfin, Jay",
     "campus": "UPD",
     "courses": [
@@ -2777,6 +4277,46 @@
         "score": 1,
         "comment_count": 4,
         "posted_at": "2026-01-22T12:36:37+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Demo 1 - Paguiran, Arkiyoloji 1",
+    "campus": "UPD",
+    "courses": [
+      "Manipon, Math 10 - Caalim"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Manipon, Math 10 - Caalim",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qcdetm",
+        "score": 1,
+        "comment_count": 2,
+        "posted_at": "2026-01-14T04:10:55+00:00"
       }
     ]
   },
@@ -2821,6 +4361,46 @@
     ]
   },
   {
+    "professor": "Diaz, Glenn",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uknxea",
+        "score": 5,
+        "comment_count": 0,
+        "posted_at": "2026-07-01T14:53:41+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Dimabayao, Jerome",
     "campus": "UPD",
     "courses": [
@@ -2857,6 +4437,46 @@
         "score": 1,
         "comment_count": 2,
         "posted_at": "2026-01-19T11:18:05+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Dimayacyac-Esleta, Baby",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1fcn061",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2024-09-09T11:22:30+00:00"
       }
     ]
   },
@@ -2941,6 +4561,58 @@
     ]
   },
   {
+    "professor": "Domingo, Ejay",
+    "campus": "UPD",
+    "courses": [
+      "Eng 102",
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": "moderate",
+      "grading": "fair",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 1,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "chill",
+        "fair",
+        "reqs"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Eng 102",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v42ode",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-07-23T03:51:40+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qod92c",
+        "score": 3,
+        "comment_count": 4,
+        "posted_at": "2026-01-27T13:03:17+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Domingo, Francis Rico",
     "campus": "UPD",
     "courses": [
@@ -2977,6 +4649,96 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-10T21:40:17+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Domingo, Gabriel Angelo",
+    "campus": "UPD",
+    "courses": [
+      "ECON 101",
+      "Econ 101"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "ECON 101",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ma4n0z",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2025-07-26T21:19:36+00:00"
+      },
+      {
+        "course": "Econ 101",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1exdtd3",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2024-08-21T02:07:35+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Domingo, Gabriel Econ 102- Estudillo, Jonna And Kraft, Aleli",
+    "campus": "UPD",
+    "courses": [
+      "Econ 101"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 101",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ei9kbk",
+        "score": 2,
+        "comment_count": 3,
+        "posted_at": "2024-08-02T13:05:13+00:00"
       }
     ]
   },
@@ -3057,6 +4819,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2025-08-08T05:02:49+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Dungca, George Evan",
+    "campus": "UPD",
+    "courses": [
+      "Eng 11"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u4hsts",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2026-06-13T04:59:03+00:00"
       }
     ]
   },
@@ -3177,6 +4979,46 @@
         "score": 18,
         "comment_count": 3,
         "posted_at": "2026-06-17T02:51:04+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Esguerra, Emmanuel",
+    "campus": "UPD",
+    "courses": [
+      "Econ 181"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 181",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v3e13y",
+        "score": 6,
+        "comment_count": 0,
+        "posted_at": "2026-07-22T11:58:35+00:00"
       }
     ]
   },
@@ -3339,12 +5181,93 @@
     ]
   },
   {
+    "professor": "Espino, Maria Pythas",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1lickww",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "2025-06-23T09:55:40+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Espino, Maria Pythias",
+    "campus": "UPD",
+    "courses": [
+      "Chem 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qfd5w8",
+        "score": 5,
+        "comment_count": 0,
+        "posted_at": "2026-01-17T13:26:04+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Esquivias, Michelle Anne",
     "campus": "UPD",
     "courses": [
-      "ENG 13"
+      "ENG 13",
+      "Eng 1"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -3375,6 +5298,13 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-08T00:11:24+00:00"
+      },
+      {
+        "course": "Eng 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vcbrn7",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-01T03:13:03+00:00"
       }
     ]
   },
@@ -3499,6 +5429,64 @@
     ]
   },
   {
+    "professor": "Falgui, Raymond",
+    "campus": "UPD",
+    "courses": [
+      "ENG 13",
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 2,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 3,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 3,
+        "clear": 1
+      },
+      "keywords": [
+        "clear",
+        "engaging",
+        "high grades",
+        "kind",
+        "readings",
+        "reqs",
+        "understanding",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uwzf9t",
+        "score": 4,
+        "comment_count": 15,
+        "posted_at": "2026-07-15T08:04:10+00:00"
+      },
+      {
+        "course": "ENG 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u211ri",
+        "score": 25,
+        "comment_count": 0,
+        "posted_at": "2026-06-10T12:39:40+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Farinas, Lance Matthew",
     "campus": "UPD",
     "courses": [
@@ -3615,6 +5603,174 @@
         "score": 3,
         "comment_count": 0,
         "posted_at": "2026-08-07T15:18:51+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Florentino, Axcel",
+    "campus": "UPD",
+    "courses": [
+      "PE 2 MJ"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "PE 2 MJ",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1hwbi24",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-01-08T04:33:56+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Florentino, Glova Or",
+    "campus": "UPD",
+    "courses": [
+      "Econ 131"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 131",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1m1in71",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-07-16T17:20:54+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Florentino, Jhiedon",
+    "campus": "UPD",
+    "courses": [
+      "Econ 131"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 131",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ei0jmz",
+        "score": 4,
+        "comment_count": 4,
+        "posted_at": "2024-08-02T03:56:51+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Garcia, Jose Neil",
+    "campus": "UPD",
+    "courses": [
+      "ENG 13",
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "ENG 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1sro752",
+        "score": 9,
+        "comment_count": 2,
+        "posted_at": "2026-04-21T13:47:50+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qi85md",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-20T17:54:28+00:00"
       }
     ]
   },
@@ -3819,6 +5975,46 @@
     ]
   },
   {
+    "professor": "Gregorio, Cynthia Grace",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1i3c257",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-01-17T08:41:30+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Guiang, Francisco Jayme Paolo",
     "campus": "UPD",
     "courses": [
@@ -3939,6 +6135,46 @@
     ]
   },
   {
+    "professor": "Hernandez, Christine",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1lcqf4v",
+        "score": 3,
+        "comment_count": 6,
+        "posted_at": "2025-06-16T11:32:36+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Hernandez, Math 122",
     "campus": "UPD",
     "courses": [
@@ -3986,10 +6222,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -4003,10 +6239,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "kind",
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -4055,6 +6294,136 @@
         "score": 3,
         "comment_count": 5,
         "posted_at": "2026-08-10T08:10:55+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Inocentes, Carl Rogel",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1us94gc",
+        "score": 2,
+        "comment_count": 2,
+        "posted_at": "2026-07-10T01:10:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Jalalon, John Voltaire",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "light",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "chill"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ofs3h8",
+        "score": 15,
+        "comment_count": 6,
+        "posted_at": "2025-10-25T13:52:46+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Jandoc, Karl Robert",
+    "campus": "UPD",
+    "courses": [
+      "Econ 11",
+      "Econ 11 MIJ"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 11 MIJ",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1i4uut9",
+        "score": 3,
+        "comment_count": 8,
+        "posted_at": "2025-01-19T09:31:09+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1i3gmm0",
+        "score": 3,
+        "comment_count": 10,
+        "posted_at": "2025-01-17T13:43:44+00:00"
       }
     ]
   },
@@ -4225,6 +6594,166 @@
     ]
   },
   {
+    "professor": "Jose, Neil Garcia",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1spot1v",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-04-19T09:59:55+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Juan, Miguel",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u1cufh",
+        "score": 4,
+        "comment_count": 0,
+        "posted_at": "2026-06-09T18:06:22+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Juan, Miguel Angel",
+    "campus": "UPD",
+    "courses": [
+      "Chem 31.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 31.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u80gim",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-06-17T04:45:54+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Jumalon, Rio Jewel Marie",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qp8zv7",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2026-01-28T11:36:54+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Junio, Allan",
     "campus": "UPD",
     "courses": [
@@ -4264,6 +6793,46 @@
         "score": 2,
         "comment_count": 1,
         "posted_at": "2026-07-23T03:39:34+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Junio, Yas",
+    "campus": "UPD",
+    "courses": [
+      "Chem 31"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 31",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qh1ddg",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-01-19T11:08:11+00:00"
       }
     ]
   },
@@ -4308,6 +6877,46 @@
     ]
   },
   {
+    "professor": "Kas 1 - Mayugba, Jeric / Eng 13",
+    "campus": "UPD",
+    "courses": [
+      "Dungca, George Evan / Speech 30 - Paras, Gabrielle Carissa Marie"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Dungca, George Evan / Speech 30 - Paras, Gabrielle Carissa Marie",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v72hc6",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-07-26T12:25:12+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Koh, Bhea",
     "campus": "UPD",
     "courses": [
@@ -4344,6 +6953,71 @@
         "score": 2,
         "comment_count": 0,
         "posted_at": "2026-01-02T08:57:12+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Kraft, Aleli",
+    "campus": "UPD",
+    "courses": [
+      "Econ 100.2",
+      "Econ 102",
+      "Econ 11"
+    ],
+    "total_discussions": 4,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "reqs"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Econ 102",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v43fai",
+        "score": 3,
+        "comment_count": 4,
+        "posted_at": "2026-07-23T04:28:12+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tl370e",
+        "score": 8,
+        "comment_count": 1,
+        "posted_at": "2026-05-23T02:09:04+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qhqmnq",
+        "score": 1,
+        "comment_count": 2,
+        "posted_at": "2026-01-20T03:59:08+00:00"
+      },
+      {
+        "course": "Econ 100.2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1pr2umj",
+        "score": 14,
+        "comment_count": 1,
+        "posted_at": "2025-12-20T02:11:27+00:00"
       }
     ]
   },
@@ -4387,6 +7061,181 @@
         "score": 2,
         "comment_count": 1,
         "posted_at": "2026-07-14T07:56:42+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Labrador, Margarita",
+    "campus": "UPD",
+    "courses": [
+      "ENG 11",
+      "ENG 11 X5"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "reqs"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "ENG 11 X5",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u9ugw9",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "2026-06-19T06:38:27+00:00"
+      },
+      {
+        "course": "ENG 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tzv0zz",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-08T02:16:11+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ladaga, Bea Margarita Or Pajaron, Jose Mariecon",
+    "campus": "UPD",
+    "courses": [
+      "STAT 101"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "light",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 1,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "fair",
+        "fairly high",
+        "generous",
+        "light"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "STAT 101",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q7sy1p",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-01-09T00:17:34+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ladines, Anne",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1evbh6k",
+        "score": 2,
+        "comment_count": 4,
+        "posted_at": "2024-08-18T15:07:44+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ladines, Kristine Anne",
+    "campus": "UPD",
+    "courses": [
+      "Chem"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1euzno1",
+        "score": 3,
+        "comment_count": 3,
+        "posted_at": "2024-08-18T03:23:10+00:00"
       }
     ]
   },
@@ -4511,12 +7360,60 @@
     ]
   },
   {
+    "professor": "Ledesma, Augusto Xavier",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1turf5i",
+        "score": 0,
+        "comment_count": 2,
+        "posted_at": "2026-06-02T13:44:52+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qddzp3",
+        "score": 1,
+        "comment_count": 9,
+        "posted_at": "2026-01-15T08:18:03+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Lee, Gabriela Alejandra",
     "campus": "UPD",
     "courses": [
-      "ENG13"
+      "ENG13",
+      "Eng 13"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -4547,6 +7444,13 @@
         "score": 2,
         "comment_count": 0,
         "posted_at": "2026-08-09T20:32:26+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uqg35v",
+        "score": 3,
+        "comment_count": 3,
+        "posted_at": "2026-07-08T02:39:58+00:00"
       }
     ]
   },
@@ -4903,6 +7807,46 @@
     ]
   },
   {
+    "professor": "Los Banos, Gerardo",
+    "campus": "UPD",
+    "courses": [
+      "CW 100"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CW 100",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qhxaki",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-20T10:10:40+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Lozano, Javier",
     "campus": "UPD",
     "courses": [
@@ -4986,6 +7930,98 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-10T06:07:43+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Luciano, Carla Mae",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16",
+      "Chem XX"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem XX",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u88x8t",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-17T12:33:23+00:00"
+      },
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mn85z1",
+        "score": 4,
+        "comment_count": 0,
+        "posted_at": "2025-08-11T09:16:17+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Lumba-Tajonera, Sarah",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "readings",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ukc626",
+        "score": 9,
+        "comment_count": 1,
+        "posted_at": "2026-07-01T05:01:56+00:00"
       }
     ]
   },
@@ -5146,6 +8182,93 @@
         "score": 6,
         "comment_count": 0,
         "posted_at": "2026-08-07T22:54:27+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Manalastas, Nicko Enrique",
+    "campus": "UPD",
+    "courses": [
+      "ENG 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "ENG 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qhu9ue",
+        "score": 10,
+        "comment_count": 11,
+        "posted_at": "2026-01-20T07:07:37+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Manalo, Paolo Marko",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uqja7b",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-08T05:17:26+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uk7v3u",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-07-01T01:29:55+00:00"
       }
     ]
   },
@@ -5350,6 +8473,51 @@
     ]
   },
   {
+    "professor": "Matundan, Jhane Paula",
+    "campus": "UPD",
+    "courses": [
+      "Chem 26.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 2,
+        "clear": 0
+      },
+      "keywords": [
+        "approachable",
+        "kind",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 26.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qhc1uf",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-01-19T18:19:13+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Maza, Rodolfo",
     "campus": "UPD",
     "courses": [
@@ -5400,6 +8568,46 @@
         "score": 1,
         "comment_count": 1,
         "posted_at": "2026-01-21T07:24:20+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Mejia, Helen Mae",
+    "campus": "UPD",
+    "courses": [
+      "Chem 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1m2pg2u",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2025-07-18T01:33:15+00:00"
       }
     ]
   },
@@ -5564,6 +8772,348 @@
     ]
   },
   {
+    "professor": "Miller, Laiya Aneka",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": "fair",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 1,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "fair"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mn6ejz",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2025-08-11T07:19:52+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Miroy, Greta",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 26 LEC"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 26 LEC",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1etfzhx",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2024-08-16T04:36:05+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Monissa, Paderes",
+    "campus": "UPD",
+    "courses": [
+      "Chem 31"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 31",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1n75oot",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-09-03T04:45:13+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Monsod, S.",
+    "campus": "UPD",
+    "courses": [
+      "Econ 11"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1nj4x0p",
+        "score": 1,
+        "comment_count": 2,
+        "posted_at": "2025-09-17T05:44:27+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Monsod, Solita",
+    "campus": "UPD",
+    "courses": [
+      "ECON 100.1",
+      "Econ 100.1"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "easy uno",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "ECON 100.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q8cwv2",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2026-01-09T16:30:29+00:00"
+      },
+      {
+        "course": "Econ 100.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ps13uf",
+        "score": 6,
+        "comment_count": 1,
+        "posted_at": "2025-12-21T07:49:43+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Monsod, Toby",
+    "campus": "UPD",
+    "courses": [
+      "ECON 11",
+      "Econ 11"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "understanding"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vclxas",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-01T12:19:14+00:00"
+      },
+      {
+        "course": "ECON 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1prtidf",
+        "score": 8,
+        "comment_count": 6,
+        "posted_at": "2025-12-21T00:51:35+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Monsod, Toby Melissa",
+    "campus": "UPD",
+    "courses": [
+      "Econ 11",
+      "econ 11"
+    ],
+    "total_discussions": 6,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "readings",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q6ba41",
+        "score": 6,
+        "comment_count": 1,
+        "posted_at": "2026-01-07T09:49:31+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1pfcb5e",
+        "score": 7,
+        "comment_count": 4,
+        "posted_at": "2025-12-06T01:08:20+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1miz60i",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2025-08-06T08:32:27+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1m1458o",
+        "score": 4,
+        "comment_count": 0,
+        "posted_at": "2025-07-16T05:14:52+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1lz9n9d",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2025-07-14T01:28:50+00:00"
+      },
+      {
+        "course": "Econ 11",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1lx2t7o",
+        "score": 4,
+        "comment_count": 0,
+        "posted_at": "2025-07-11T09:52:02+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Morales, Deidre",
     "campus": "UPD",
     "courses": [
@@ -5602,6 +9152,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T01:26:27+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Morco, Ryan",
+    "campus": "UPD",
+    "courses": [
+      "Chem 26"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 26",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qjt034",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-01-22T12:16:28+00:00"
       }
     ]
   },
@@ -5724,6 +9314,46 @@
         "score": 1,
         "comment_count": 1,
         "posted_at": "2026-08-10T16:29:24+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Nazareno, Jade",
+    "campus": "UPD",
+    "courses": [
+      "Chem"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1lw6iq6",
+        "score": 1,
+        "comment_count": 6,
+        "posted_at": "2025-07-10T07:22:42+00:00"
       }
     ]
   },
@@ -5928,6 +9558,48 @@
     ]
   },
   {
+    "professor": "Oracion, Helen Grace",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "approachable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mnbkmx",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-08-11T12:26:30+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Oropeza, Alip",
     "campus": "UPD",
     "courses": [
@@ -6010,10 +9682,8 @@
   {
     "professor": "Paguiran, Arkiyoloji 1 - Manipon, Math 10 - Caalim",
     "campus": "UPD",
-    "courses": [
-      "Demo 1"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -6037,15 +9707,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Demo 1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qcdetm",
-        "score": 1,
-        "comment_count": 2,
-        "posted_at": "2026-01-14T04:10:55+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Paguirigan, Mark Ryan",
@@ -6171,6 +9833,95 @@
         "score": 1,
         "comment_count": 2,
         "posted_at": "2026-01-19T14:03:16+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Parulan, Jacob",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "approachable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1urlvcl",
+        "score": 3,
+        "comment_count": 2,
+        "posted_at": "2026-07-09T10:03:07+00:00"
+      },
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1urlsuj",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-07-09T09:59:41+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Pascua, Shemaiah",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 26"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 26",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v86rwt",
+        "score": 9,
+        "comment_count": 2,
+        "posted_at": "2026-07-27T17:19:00+00:00"
       }
     ]
   },
@@ -6357,6 +10108,46 @@
     ]
   },
   {
+    "professor": "Peralis, Marie Dale",
+    "campus": "UPD",
+    "courses": [
+      "Chem 31.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 31.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qh1f0o",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-19T11:10:44+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Philippine Games - Bernales, Gabrielle Mikaela",
     "campus": "UPD",
     "courses": [
@@ -6393,6 +10184,46 @@
         "score": 1,
         "comment_count": 1,
         "posted_at": "2026-08-10T10:17:23+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Philo 1 - Villegas, Patrick Joshua / Fil 40",
+    "campus": "UPD",
+    "courses": [
+      "Geronimo, Jonathan / Math 10 - Caalim, Jonathan"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Geronimo, Jonathan / Math 10 - Caalim, Jonathan",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v71mb5",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-26T11:44:51+00:00"
       }
     ]
   },
@@ -6650,6 +10481,46 @@
     ]
   },
   {
+    "professor": "Punongbayan, Jan Carlo",
+    "campus": "UPD",
+    "courses": [
+      "Econ 100.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 100.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1egf76g",
+        "score": 9,
+        "comment_count": 7,
+        "posted_at": "2024-07-31T05:22:19+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Puzon, Juliana Janet",
     "campus": "UPD",
     "courses": [
@@ -6879,6 +10750,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-09T16:46:24+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Quirante, Jerwin",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qha45d",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-19T17:12:23+00:00"
       }
     ]
   },
@@ -7208,6 +11119,46 @@
     ]
   },
   {
+    "professor": "Reyes, Dania",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qn6501",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-01-26T04:32:11+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Reyes, Danilo",
     "campus": "UPD",
     "courses": [
@@ -7248,6 +11199,53 @@
     ]
   },
   {
+    "professor": "Reyes, Danilo Francisco",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 2,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 1,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 2,
+        "clear": 0
+      },
+      "keywords": [
+        "heavy",
+        "kind",
+        "readings",
+        "transparent",
+        "understanding",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uxrxcm",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-07-16T03:57:50+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Reyes, Ma. Theresa",
     "campus": "UPD",
     "courses": [
@@ -7284,6 +11282,88 @@
         "score": 2,
         "comment_count": 0,
         "posted_at": "2026-08-07T18:47:29+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Reyes, Miguel Paolo",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "reqs"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uqiffh",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2026-07-08T04:33:35+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Reynaldo, Kristine",
+    "campus": "UPD",
+    "courses": [
+      "ENG 22"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "ENG 22",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tk7xp6",
+        "score": 22,
+        "comment_count": 3,
+        "posted_at": "2026-05-22T04:14:01+00:00"
       }
     ]
   },
@@ -7448,6 +11528,46 @@
     ]
   },
   {
+    "professor": "S., Delos Angeles And Econ 191- Monsod",
+    "campus": "UPD",
+    "courses": [
+      "Econ 172"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 172",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1huqv7g",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2025-01-06T04:33:05+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Saddi, Daryl Allen",
     "campus": "UPD",
     "courses": [
@@ -7488,6 +11608,46 @@
     ]
   },
   {
+    "professor": "Sanchez, Rendell",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tzv7nl",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-06-08T02:25:26+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Santiago, Jemmalyn",
     "campus": "UPD",
     "courses": [
@@ -7524,6 +11684,46 @@
         "score": 9,
         "comment_count": 1,
         "posted_at": "2026-07-30T07:11:27+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Santiago, Mark Steven",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v4x6tw",
+        "score": 8,
+        "comment_count": 0,
+        "posted_at": "2026-07-24T01:31:07+00:00"
       }
     ]
   },
@@ -7857,6 +12057,133 @@
     ]
   },
   {
+    "professor": "See, Sean",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1eu6cwo",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2024-08-17T01:55:01+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "See, Sean Benson",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q3u9t6",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-01-04T16:30:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Shaw, Thomas Leonard",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u33oj2",
+        "score": 5,
+        "comment_count": 0,
+        "posted_at": "2026-06-11T16:19:54+00:00"
+      },
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tz2n0n",
+        "score": 24,
+        "comment_count": 1,
+        "posted_at": "2026-06-07T04:48:36+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Shi, Hazel Joy",
     "campus": "UPD",
     "courses": [
@@ -7977,10 +12304,10 @@
     ]
   },
   {
-    "professor": "Suarez, Larissa Mae",
+    "professor": "Sotelo, Tiffany",
     "campus": "UPD",
     "courses": [
-      "ENG 13"
+      "Chem 1"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -8007,6 +12334,54 @@
       "keywords": []
     },
     "discussions": [
+      {
+        "course": "Chem 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1eu7kb9",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2024-08-17T02:56:44+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Suarez, Larissa Mae",
+    "campus": "UPD",
+    "courses": [
+      "CW 100",
+      "ENG 13"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CW 100",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vgx7qg",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2026-08-06T07:21:09+00:00"
+      },
       {
         "course": "ENG 13",
         "url": "https://reddit.com/r/RateUPProfs/comments/1usk6dp",
@@ -8093,6 +12468,46 @@
         "score": 2,
         "comment_count": 0,
         "posted_at": "2025-01-12T06:10:29+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Support System / Buddy 🥹🥹🥹 (wfw, Under Ricky Nellas)",
+    "campus": "UPD",
+    "courses": [
+      "LF Chem 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "LF Chem 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1exwc0z",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2024-08-21T17:56:59+00:00"
       }
     ]
   },
@@ -8230,6 +12645,46 @@
     ]
   },
   {
+    "professor": "Tba, 2 —",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13 WFQ"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13 WFQ",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vg7yoo",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-05T13:51:09+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Teacher Cauyan, Jaclyn Marie",
     "campus": "UPD",
     "courses": [
@@ -8266,6 +12721,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-06T13:54:09+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Tengco, Laarine",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mnadkr",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2025-08-11T11:27:12+00:00"
       }
     ]
   },
@@ -8430,6 +12925,50 @@
     ]
   },
   {
+    "professor": "Torreno, Vicenzo",
+    "campus": "UPD",
+    "courses": [
+      "CHEM 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "light",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 2,
+        "clear": 0
+      },
+      "keywords": [
+        "approachable",
+        "chill",
+        "fun"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "CHEM 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mo9snk",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-08-12T14:10:46+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Tubera, Sir",
     "campus": "UPD",
     "courses": [
@@ -8513,19 +13052,20 @@
     "professor": "Umali, Lakan",
     "campus": "UPD",
     "courses": [
-      "CW10"
+      "CW10",
+      "ENG 13"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -8537,7 +13077,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "readings",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -8546,6 +13091,13 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T14:40:43+00:00"
+      },
+      {
+        "course": "ENG 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uujl42",
+        "score": 1,
+        "comment_count": 2,
+        "posted_at": "2026-07-12T16:08:03+00:00"
       }
     ]
   },
@@ -8586,6 +13138,51 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T08:07:13+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Units, Reco Classes Or Profs For Prerog",
+    "campus": "UPD",
+    "courses": [
+      "STILL AT 3"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "light",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 2,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "approachable",
+        "chill",
+        "generous",
+        "light"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "STILL AT 3",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mn1tzd",
+        "score": 7,
+        "comment_count": 13,
+        "posted_at": "2025-08-11T02:56:50+00:00"
       }
     ]
   },
@@ -8754,6 +13351,46 @@
     ]
   },
   {
+    "professor": "Ventura, Antonio Miguel",
+    "campus": "UPD",
+    "courses": [
+      "Econ 198"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Econ 198",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1m26ldw",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2025-07-17T12:46:05+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Ventura, Jade",
     "campus": "UPD",
     "courses": [
@@ -8842,10 +13479,10 @@
     ]
   },
   {
-    "professor": "Villegas, Patrick Joshua / Fil 40 - Geronimo, Jonathan / Math 10 - Caalim, Jonathan",
+    "professor": "Villaraza, Aaron Joseph",
     "campus": "UPD",
     "courses": [
-      "Philo 1"
+      "Chem 26"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -8873,13 +13510,83 @@
     },
     "discussions": [
       {
-        "course": "Philo 1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1v71mb5",
+        "course": "Chem 26",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1rf6xfc",
         "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-07-26T11:44:51+00:00"
+        "comment_count": 2,
+        "posted_at": "2026-02-26T10:42:36+00:00"
       }
     ]
+  },
+  {
+    "professor": "Villareal, John Venson",
+    "campus": "UPD",
+    "courses": [
+      "Eng 13"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Eng 13",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qhxxzo",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-20T10:48:20+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Villegas, Patrick Joshua / Fil 40 - Geronimo, Jonathan / Math 10 - Caalim, Jonathan",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "Wfr Concepcion, Gerard",
@@ -8962,6 +13669,48 @@
     ]
   },
   {
+    "professor": "Yago, Allan Christopher",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Chem 16",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1n0na7n",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2025-08-26T14:25:16+00:00"
+      }
+    ]
+  },
+  {
     "professor": "– Pagayon, Julius",
     "campus": "UPD",
     "courses": [
@@ -8998,6 +13747,46 @@
         "score": 3,
         "comment_count": 2,
         "posted_at": "2026-08-10T08:55:09+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "— Reyes, Khryn Mark",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1hurwkn",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2025-01-06T05:31:47+00:00"
       }
     ]
   },
@@ -9042,6 +13831,86 @@
     ]
   },
   {
+    "professor": "Bercansil, Mia Clare Marie",
+    "campus": "UPLB",
+    "courses": [
+      "CHEM 18"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 18",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mzrowg",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-08-25T14:16:18+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Clemencia, Mia Clare Marie",
+    "campus": "UPLB",
+    "courses": [
+      "CHEM 18"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 18",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v8vz9r",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2026-07-28T11:40:59+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Lomongo, Michael Ian",
     "campus": "UPLB",
     "courses": [
@@ -9078,6 +13947,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-08T07:43:58+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Torio, Mary Ann",
+    "campus": "UPLB",
+    "courses": [
+      "CHEM 18"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CHEM 18",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vbmmwi",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-31T10:02:29+00:00"
       }
     ]
   },
@@ -9158,6 +14067,86 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T08:13:54+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Arcenas, Agustin",
+    "campus": "UPX",
+    "courses": [
+      "AAE 142"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "AAE 142",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vgo8rp",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-05T23:57:20+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Arcenas, Sir Antonio",
+    "campus": "UPX",
+    "courses": [
+      "AAE 142"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "AAE 142",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vgbwo6",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-05T16:15:56+00:00"
       }
     ]
   }
