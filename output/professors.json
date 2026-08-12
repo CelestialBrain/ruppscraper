@@ -40,10 +40,10 @@
     ]
   },
   {
-    "professor": "1, Kailan First F2f Class Niyo?",
+    "professor": "!, Joanne Manzano Notes",
     "campus": "UPD",
     "courses": [
-      "Sa mga nakakuha ng Philo"
+      "Fil 40"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -71,73 +71,79 @@
     },
     "discussions": [
       {
-        "course": "Sa mga nakakuha ng Philo",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vl53fy",
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1s1r1tt",
         "score": 1,
         "comment_count": 0,
-        "posted_at": "2026-08-11T02:36:14+00:00"
+        "posted_at": "2026-03-23T19:34:58+00:00"
       }
     ]
+  },
+  {
+    "professor": "1, Kailan First F2f Class Niyo?",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "1, Physics 10)",
     "campus": "UPD",
-    "courses": [
-      "Science GE Reco (BIO 1, Chem 1, Env Sci 1, Geol 1, MBB 1, MS"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
-      "workload": "heavy",
-      "grading": "generous",
+      "workload": null,
+      "grading": null,
       "workload_mentions": {
-        "heavy": 2,
-        "light": 1,
+        "heavy": 0,
+        "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 3,
+        "generous": 0,
         "fair": 0,
         "strict": 0
       },
       "attendance_mentions": {
-        "strict": 1,
+        "strict": 0,
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 3,
-        "clear": 1
+        "engaging": 0,
+        "clear": 0
       },
-      "keywords": [
-        "approachable",
-        "checks attendance",
-        "chill",
-        "easy uno",
-        "engaging",
-        "fun",
-        "knowledgeable",
-        "readings",
-        "reqs",
-        "uno",
-        "unoable"
-      ]
+      "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Science GE Reco (BIO 1, Chem 1, Env Sci 1, Geol 1, MBB 1, MS",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1m0b3ji",
-        "score": 5,
-        "comment_count": 1,
-        "posted_at": "2025-07-15T07:08:24+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "1 - Pimentel, Jonathan",
     "campus": "UPD",
-    "courses": [
-      "Math 10 WFW"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -161,23 +167,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Math 10 WFW",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qirlvv",
-        "score": 1,
-        "comment_count": 3,
-        "posted_at": "2026-01-21T07:35:15+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "1 Basiao, Zubaida",
     "campus": "UPD",
-    "courses": [
-      "Bio"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -201,23 +197,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Bio",
-        "url": "https://reddit.com/r/RateUPProfs/comments/vbzldv",
-        "score": 5,
-        "comment_count": 7,
-        "posted_at": "2022-06-14T09:29:52+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "1 Francisco, Warren",
     "campus": "UPD",
-    "courses": [
-      "Soc Sci 1 THX"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -241,23 +227,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Soc Sci 1 THX",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vk7pjn",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-10T01:50:37+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "1 Under Verano, Julieta",
     "campus": "UPD",
-    "courses": [
-      "CWTS 1 CFA DSA"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -281,23 +257,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "CWTS 1 CFA DSA",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vjy65h",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-09T19:00:34+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "100.1, Jandoc",
     "campus": "UPD",
-    "courses": [
-      "econ"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -321,23 +287,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "econ",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1kvv7xa",
-        "score": 0,
-        "comment_count": 1,
-        "posted_at": "2025-05-26T14:06:17+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "2 - Castaneda, Roann Kristian",
     "campus": "UPD",
-    "courses": [
-      "PI 100 THX"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -361,23 +317,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "PI 100 THX",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vl1zrh",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-11T00:15:12+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "2 Esquivias, Michelle Anne",
     "campus": "UPD",
-    "courses": [
-      "Eng 13 THY"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -401,23 +347,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Eng 13 THY",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkfr63",
-        "score": 2,
-        "comment_count": 0,
-        "posted_at": "2026-08-10T09:13:08+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "2 – Esperida, Anna Marie Stephanie",
     "campus": "UPD",
-    "courses": [
-      "PI 100 THQ"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -441,23 +377,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "PI 100 THQ",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkb92z",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-10T04:48:24+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "21, Math",
     "campus": "UPD",
-    "courses": [
-      "sir jose aries delos santos"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -481,23 +407,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "sir jose aries delos santos",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qhk7zk",
-        "score": 0,
-        "comment_count": 0,
-        "posted_at": "2026-01-19T23:18:43+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "3 Talampas, Rolando",
     "campus": "UPD",
-    "courses": [
-      "PI 100 WFR"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -521,23 +437,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "PI 100 WFR",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vlbx1e",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-11T08:46:41+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "4 - Domingo, Ejay",
     "campus": "UPD",
-    "courses": [
-      "Eng 13 WFW"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -561,15 +467,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Eng 13 WFW",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qhs9px",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-01-20T05:18:11+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Abara, Junio, Roque, Arceo, And Aricheta",
@@ -608,6 +506,86 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-07-18T13:00:10+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Abiera, Aura",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q6z0h4",
+        "score": 5,
+        "comment_count": 0,
+        "posted_at": "2026-01-08T02:03:26+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Agapito, Julius Caesar",
+    "campus": "UPD",
+    "courses": [
+      "Math 23"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Math 23",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm8618",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T08:24:42+00:00"
       }
     ]
   },
@@ -810,6 +788,101 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2024-12-27T02:30:30+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Alcantara, Justine",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40 - Ariel Bosque, Speech 30"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 4,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "1.0",
+        "draining",
+        "fun",
+        "heavy",
+        "light",
+        "readings",
+        "reqs"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Fil 40 - Ariel Bosque, Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ukckf0",
+        "score": 1,
+        "comment_count": 7,
+        "posted_at": "2026-07-01T05:22:41+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Alcazaren, Holden Kenneth",
+    "campus": "UPD",
+    "courses": [
+      "Speech 30"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 2,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 3,
+        "clear": 0
+      },
+      "keywords": [
+        "fun",
+        "heavy",
+        "kind",
+        "manageable",
+        "reqs",
+        "understanding"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v8jzqa",
+        "score": 7,
+        "comment_count": 9,
+        "posted_at": "2026-07-28T01:37:38+00:00"
       }
     ]
   },
@@ -1139,6 +1212,46 @@
     ]
   },
   {
+    "professor": "Andrada, Michael Francis",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q72g91",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-01-08T04:41:37+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Ang, Francis Eduard",
     "campus": "UPD",
     "courses": [
@@ -1229,7 +1342,7 @@
     "professor": "Arcenas, Agustin",
     "campus": "UPD",
     "courses": [
-      "Econ 11 THD"
+      "Econ 11"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -1257,7 +1370,7 @@
     },
     "discussions": [
       {
-        "course": "Econ 11 THD",
+        "course": "Econ 11",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vkkn45",
         "score": 2,
         "comment_count": 3,
@@ -1621,6 +1734,101 @@
         "score": 1,
         "comment_count": 1,
         "posted_at": "2026-01-12T08:30:11+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ayleen, Ortiz",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40 X4-5"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40 X4-5",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uck1u8",
+        "score": 1,
+        "comment_count": 3,
+        "posted_at": "2026-06-22T13:05:09+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bacani-Florencio, Maria Katrina",
+    "campus": "UPD",
+    "courses": [
+      "Fil 18",
+      "Fil 40"
+    ],
+    "total_discussions": 3,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1sc9c6d",
+        "score": 3,
+        "comment_count": 0,
+        "posted_at": "2026-04-04T13:31:41+00:00"
+      },
+      {
+        "course": "Fil 18",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qh4j2y",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2026-01-19T13:45:43+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q65g29",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-07T04:14:30+00:00"
       }
     ]
   },
@@ -2015,10 +2223,8 @@
   {
     "professor": "Bautista, Sir Victor",
     "campus": "UPD",
-    "courses": [
-      "Eng 12"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -2042,23 +2248,16 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Eng 12",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1u0xp7k",
-        "score": 0,
-        "comment_count": 2,
-        "posted_at": "2026-06-09T07:05:13+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Bautista, Victor",
     "campus": "UPD",
     "courses": [
+      "Eng 12",
       "Eng 13"
     ],
-    "total_discussions": 2,
+    "total_discussions": 3,
     "signals_summary": {
       "workload": "heavy",
       "grading": "generous",
@@ -2095,6 +2294,13 @@
         "score": 1,
         "comment_count": 2,
         "posted_at": "2026-07-08T06:34:41+00:00"
+      },
+      {
+        "course": "Eng 12",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u0xp7k",
+        "score": 0,
+        "comment_count": 2,
+        "posted_at": "2026-06-09T07:05:13+00:00"
       },
       {
         "course": "Eng 13",
@@ -2262,6 +2468,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2024-08-10T15:33:30+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Bernales, Gabrielle Mikaela",
+    "campus": "UPD",
+    "courses": [
+      "PE 2 - PHILIPPINE GAMES"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "PE 2 - PHILIPPINE GAMES",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkgv0x",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-08-10T10:17:23+00:00"
       }
     ]
   },
@@ -2481,7 +2727,7 @@
     "professor": "Biliran, Patriz",
     "campus": "UPD",
     "courses": [
-      "Eng 11 X3"
+      "Eng 11"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -2509,7 +2755,7 @@
     },
     "discussions": [
       {
-        "course": "Eng 11 X3",
+        "course": "Eng 11",
         "url": "https://reddit.com/r/RateUPProfs/comments/1u5ier6",
         "score": 1,
         "comment_count": 1,
@@ -2692,6 +2938,80 @@
     ]
   },
   {
+    "professor": "Bosque, Ariel",
+    "campus": "UPD",
+    "courses": [
+      "FIL 40",
+      "Fil 40"
+    ],
+    "total_discussions": 5,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "kind",
+        "readings",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v57n6z",
+        "score": 6,
+        "comment_count": 0,
+        "posted_at": "2026-07-24T10:34:42+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1usctwu",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-07-10T04:04:17+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u7cq30",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-16T12:54:30+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ppnlec",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2025-12-18T10:30:28+00:00"
+      },
+      {
+        "course": "FIL 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1pntv9y",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2025-12-16T05:22:52+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Bryan Hernandez, Math 122",
     "campus": "UPD",
     "courses": [],
@@ -2837,12 +3157,53 @@
     ]
   },
   {
-    "professor": "Burgos, Peter John",
+    "professor": "Bulan, Domijoe",
     "campus": "UPD",
     "courses": [
-      "M22"
+      "Psych 124"
     ],
     "total_discussions": 1,
+    "signals_summary": {
+      "workload": "moderate",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "chill",
+        "reqs"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Psych 124",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vfvepc",
+        "score": 2,
+        "comment_count": 2,
+        "posted_at": "2026-08-05T03:05:11+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Burgos, Peter John",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -2866,15 +3227,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "M22",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qhvv45",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-01-20T08:44:26+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Caalim, Jonathan",
@@ -2920,9 +3273,10 @@
     "professor": "Cabanban, Ann Jillian",
     "campus": "UPD",
     "courses": [
-      "ARTS 1"
+      "ARTS 1",
+      "Eng 13/42"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -2947,6 +3301,13 @@
       "keywords": []
     },
     "discussions": [
+      {
+        "course": "Eng 13/42",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u75i25",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-06-16T06:21:44+00:00"
+      },
       {
         "course": "ARTS 1",
         "url": "https://reddit.com/r/RateUPProfs/comments/1qdmzdz",
@@ -2960,7 +3321,7 @@
     "professor": "Cabazor, Athena",
     "campus": "UPD",
     "courses": [
-      "Hapon 10 THX"
+      "Hapon 10"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -2988,7 +3349,7 @@
     },
     "discussions": [
       {
-        "course": "Hapon 10 THX",
+        "course": "Hapon 10",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vm2wsh",
         "score": 1,
         "comment_count": 0,
@@ -3000,7 +3361,7 @@
     "professor": "Calingasan, King Arman",
     "campus": "UPD",
     "courses": [
-      "EDL 111 THX"
+      "EDL 111"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -3028,7 +3389,7 @@
     },
     "discussions": [
       {
-        "course": "EDL 111 THX",
+        "course": "EDL 111",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vm4no8",
         "score": 1,
         "comment_count": 0,
@@ -3037,10 +3398,10 @@
     ]
   },
   {
-    "professor": "Cano, Jenny Ruth",
+    "professor": "Camagay, Luisa",
     "campus": "UPD",
     "courses": [
-      "Soc Sci 1 THQ"
+      "KAS 118"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -3068,7 +3429,47 @@
     },
     "discussions": [
       {
-        "course": "Soc Sci 1 THQ",
+        "course": "KAS 118",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm9udl",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T10:02:58+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Cano, Jenny Ruth",
+    "campus": "UPD",
+    "courses": [
+      "Soc Sci 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Soc Sci 1",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vklszi",
         "score": 2,
         "comment_count": 4,
@@ -3153,6 +3554,46 @@
         "score": 2,
         "comment_count": 0,
         "posted_at": "2026-08-09T21:29:32+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Castaneda, Roann Kristian",
+    "campus": "UPD",
+    "courses": [
+      "PI 100 - 2"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "PI 100 - 2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vl1zrh",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-11T00:15:12+00:00"
       }
     ]
   },
@@ -3319,6 +3760,46 @@
         "score": 3,
         "comment_count": 0,
         "posted_at": "2025-01-12T06:07:40+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Cauyan, Jaclyn Marie",
+    "campus": "UPD",
+    "courses": [
+      "EDCO 101"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "EDCO 101",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vh4wyj",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-06T13:54:09+00:00"
       }
     ]
   },
@@ -3539,10 +4020,8 @@
   {
     "professor": "Classmates, 6 - Looking For",
     "campus": "UPD",
-    "courses": [
-      "Math 22 X8"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -3566,23 +4045,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Math 22 X8",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1u731qd",
-        "score": 3,
-        "comment_count": 0,
-        "posted_at": "2026-06-16T04:09:30+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Classmates, Lf",
     "campus": "UPD",
-    "courses": [
-      "MATH 10 THW"
-    ],
-    "total_discussions": 2,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -3606,30 +4075,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "MATH 10 THW",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qh3mae",
-        "score": 1,
-        "comment_count": 1,
-        "posted_at": "2026-01-19T13:05:00+00:00"
-      },
-      {
-        "course": "MATH 10 THW",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qh3j5h",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-01-19T13:00:58+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Classmates!, Finding",
     "campus": "UPD",
-    "courses": [
-      "CHEM 16 and 16.1"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -3653,26 +4105,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "CHEM 16 and 16.1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1u82zp5",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-06-17T07:06:29+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Classmates!, Looking For",
     "campus": "UPD",
-    "courses": [
-      "Econ 11 WFD",
-      "Math 10 WFV",
-      "Math 22 X7",
-      "Socio 101 WFX"
-    ],
-    "total_discussions": 4,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -3696,36 +4135,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Socio 101 WFX",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vldk5n",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-11T10:22:31+00:00"
-      },
-      {
-        "course": "Math 22 X7",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1u88a2i",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-06-17T12:03:58+00:00"
-      },
-      {
-        "course": "Math 10 WFV",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qi4boy",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-01-20T15:37:10+00:00"
-      },
-      {
-        "course": "Econ 11 WFD",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1mod908",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2025-08-12T16:21:32+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Claudio, Gil C.",
@@ -3771,11 +4181,65 @@
     ]
   },
   {
+    "professor": "Concepcion, Gerard",
+    "campus": "UPD",
+    "courses": [
+      "FIL 18",
+      "Fil 40"
+    ],
+    "total_discussions": 3,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm1zip",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T02:47:09+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v5esr8",
+        "score": 5,
+        "comment_count": 0,
+        "posted_at": "2026-07-24T15:34:57+00:00"
+      },
+      {
+        "course": "FIL 18",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qitt23",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-21T09:52:26+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Consorte, Odessa",
     "campus": "UPD",
     "courses": [
-      "MATH 2 THU",
-      "MATH 2 THW"
+      "MATH 2"
     ],
     "total_discussions": 2,
     "signals_summary": {
@@ -3803,14 +4267,14 @@
     },
     "discussions": [
       {
-        "course": "MATH 2 THW",
+        "course": "MATH 2",
         "url": "https://reddit.com/r/RateUPProfs/comments/1ukhbpw",
         "score": 2,
         "comment_count": 0,
         "posted_at": "2026-07-01T09:58:51+00:00"
       },
       {
-        "course": "MATH 2 THU",
+        "course": "MATH 2",
         "url": "https://reddit.com/r/RateUPProfs/comments/1qguylm",
         "score": 1,
         "comment_count": 1,
@@ -3943,6 +4407,46 @@
         "score": 2,
         "comment_count": 1,
         "posted_at": "2026-02-10T01:18:55+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Cruel, Jevic",
+    "campus": "UPD",
+    "courses": [
+      "Span 10"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Span 10",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkf7x4",
+        "score": 1,
+        "comment_count": 5,
+        "posted_at": "2026-08-10T08:40:43+00:00"
       }
     ]
   },
@@ -4113,6 +4617,53 @@
     ]
   },
   {
+    "professor": "De Luna, Teresa Paula",
+    "campus": "UPD",
+    "courses": [
+      "Speech 30"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uvxd1d",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-14T03:35:52+00:00"
+      },
+      {
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uvw147",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-14T02:33:26+00:00"
+      }
+    ]
+  },
+  {
     "professor": "De Silva, Leopoldo",
     "campus": "UPD",
     "courses": [
@@ -4149,6 +4700,52 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T14:32:33+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Dedina, Lapar",
+    "campus": "UPD",
+    "courses": [
+      "Kas 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "moderate",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 1
+      },
+      "keywords": [
+        "clear",
+        "light",
+        "readings",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Kas 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v7v06n",
+        "score": 1,
+        "comment_count": 3,
+        "posted_at": "2026-07-27T09:04:51+00:00"
       }
     ]
   },
@@ -4283,10 +4880,8 @@
   {
     "professor": "Demo 1 - Paguiran, Arkiyoloji 1",
     "campus": "UPD",
-    "courses": [
-      "Manipon, Math 10 - Caalim"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -4310,15 +4905,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Manipon, Math 10 - Caalim",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1qcdetm",
-        "score": 1,
-        "comment_count": 2,
-        "posted_at": "2026-01-14T04:10:55+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Di Filippo, Robert Michael",
@@ -4565,9 +5152,10 @@
     "campus": "UPD",
     "courses": [
       "Eng 102",
-      "Eng 13"
+      "Eng 13",
+      "Eng 13 - 4"
     ],
-    "total_discussions": 2,
+    "total_discussions": 3,
     "signals_summary": {
       "workload": "moderate",
       "grading": "fair",
@@ -4609,16 +5197,21 @@
         "score": 3,
         "comment_count": 4,
         "posted_at": "2026-01-27T13:03:17+00:00"
+      },
+      {
+        "course": "Eng 13 - 4",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qhs9px",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-01-20T05:18:11+00:00"
       }
     ]
   },
   {
     "professor": "Domingo, Francis Rico",
     "campus": "UPD",
-    "courses": [
-      "Soc Sci 2"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -4642,15 +5235,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Soc Sci 2",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vky9eg",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-10T21:40:17+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Domingo, Gabriel Angelo",
@@ -4705,10 +5290,8 @@
   {
     "professor": "Domingo, Gabriel Econ 102- Estudillo, Jonna And Kraft, Aleli",
     "campus": "UPD",
-    "courses": [
-      "Econ 101"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -4732,15 +5315,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Econ 101",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1ei9kbk",
-        "score": 2,
-        "comment_count": 3,
-        "posted_at": "2024-08-02T13:05:13+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Dominguez, Nathan Ben",
@@ -4785,10 +5360,8 @@
   {
     "professor": "Done?, How Are The Exams",
     "campus": "UPD",
-    "courses": [
-      "Bio 1"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -4812,15 +5385,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Bio 1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1mkmdfp",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2025-08-08T05:02:49+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Dungca, George Evan",
@@ -4859,6 +5424,46 @@
         "score": 3,
         "comment_count": 0,
         "posted_at": "2026-06-13T04:59:03+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ebreo, Elvin",
+    "campus": "UPD",
+    "courses": [
+      "Span 10"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Span 10",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm6cz1",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T06:38:01+00:00"
       }
     ]
   },
@@ -4903,7 +5508,7 @@
     ]
   },
   {
-    "professor": "Elgincolin, Mx. Joan Hope",
+    "professor": "Elgincolin, Joan Hope",
     "campus": "UPD",
     "courses": [
       "cwts cmu"
@@ -4939,6 +5544,97 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-09T10:51:53+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Elgincolin, Mx. Joan Hope",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
+  },
+  {
+    "professor": "Encabo, Evangeline",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 4,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vcd38x",
+        "score": 12,
+        "comment_count": 0,
+        "posted_at": "2026-08-01T04:17:27+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qe7no0",
+        "score": 2,
+        "comment_count": 2,
+        "posted_at": "2026-01-16T05:41:14+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qcdq3k",
+        "score": 5,
+        "comment_count": 4,
+        "posted_at": "2026-01-14T04:25:53+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q6d194",
+        "score": 2,
+        "comment_count": 1,
+        "posted_at": "2026-01-07T11:32:57+00:00"
       }
     ]
   },
@@ -4979,6 +5675,46 @@
         "score": 18,
         "comment_count": 3,
         "posted_at": "2026-06-17T02:51:04+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Enriquez, Ma. Althea",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ppjwiq",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2025-12-18T06:28:29+00:00"
       }
     ]
   },
@@ -5026,10 +5762,9 @@
     "professor": "Espanola, Carmela",
     "campus": "UPD",
     "courses": [
-      "- BIO 1 GE",
       "BIO 1"
     ],
-    "total_discussions": 2,
+    "total_discussions": 1,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -5060,13 +5795,6 @@
         "score": 3,
         "comment_count": 1,
         "posted_at": "2021-09-12T06:09:42+00:00"
-      },
-      {
-        "course": "- BIO 1 GE",
-        "url": "https://reddit.com/r/RateUPProfs/comments/p8t00b",
-        "score": 3,
-        "comment_count": 2,
-        "posted_at": "2021-08-21T15:03:20+00:00"
       }
     ]
   },
@@ -5107,6 +5835,46 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2023-09-11T07:08:00+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Esperida, Anna Marie Stephanie",
+    "campus": "UPD",
+    "courses": [
+      "PI 100 - 2"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "PI 100 - 2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkb92z",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-10T04:48:24+00:00"
       }
     ]
   },
@@ -5265,9 +6033,10 @@
     "campus": "UPD",
     "courses": [
       "ENG 13",
-      "Eng 1"
+      "Eng 1",
+      "Eng 13 THY-2"
     ],
-    "total_discussions": 2,
+    "total_discussions": 3,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -5293,6 +6062,13 @@
     },
     "discussions": [
       {
+        "course": "Eng 13 THY-2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkfr63",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-08-10T09:13:08+00:00"
+      },
+      {
         "course": "ENG 13",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vih4rx",
         "score": 1,
@@ -5312,7 +6088,7 @@
     "professor": "Estrada, Luis Alfonso",
     "campus": "UPD",
     "courses": [
-      "Soc Sci 2 THZ"
+      "Soc Sci 2"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -5340,7 +6116,7 @@
     },
     "discussions": [
       {
-        "course": "Soc Sci 2 THZ",
+        "course": "Soc Sci 2",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vkzxjl",
         "score": 1,
         "comment_count": 0,
@@ -5392,9 +6168,10 @@
     "professor": "Evasco, Eugene",
     "campus": "UPD",
     "courses": [
+      "- Fil 40",
       "Fil 18"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -5425,6 +6202,13 @@
         "score": 1,
         "comment_count": 1,
         "posted_at": "2026-08-08T04:52:29+00:00"
+      },
+      {
+        "course": "- Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qdel6a",
+        "score": 2,
+        "comment_count": 4,
+        "posted_at": "2026-01-15T08:55:23+00:00"
       }
     ]
   },
@@ -5727,6 +6511,182 @@
     ]
   },
   {
+    "professor": "Flores, Ma. C.",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1rw226d",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-03-17T09:47:45+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Francisco, Warren",
+    "campus": "UPD",
+    "courses": [
+      "Soc Sci 1",
+      "Soc Sci 1 THX-1"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Soc Sci 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkfpw7",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-08-10T09:10:56+00:00"
+      },
+      {
+        "course": "Soc Sci 1 THX-1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vk7pjn",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-10T01:50:37+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Francisco, Warren [for Prerog]",
+    "campus": "UPD",
+    "courses": [
+      "Soc Sci 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Soc Sci 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vl8buo",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-11T05:20:19+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Gaba, Donn",
+    "campus": "UPD",
+    "courses": [
+      "SOC SCI 1",
+      "Soc Sci 1"
+    ],
+    "total_discussions": 2,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Soc Sci 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vdz36v",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-08-03T01:04:38+00:00"
+      },
+      {
+        "course": "SOC SCI 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v35xnc",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-07-22T04:45:07+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Garcia, Jose Neil",
     "campus": "UPD",
     "courses": [
@@ -5815,6 +6775,46 @@
     ]
   },
   {
+    "professor": "Gavina, Brenda Lyn",
+    "campus": "UPD",
+    "courses": [
+      "Math 22"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Math 22",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm8zgb",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T09:13:53+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Gigante, Earl Terrenz",
     "campus": "UPD",
     "courses": [
@@ -5851,6 +6851,52 @@
         "score": 2,
         "comment_count": 0,
         "posted_at": "2026-01-19T08:37:44+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Gochuico, Regina",
+    "campus": "UPD",
+    "courses": [
+      "Speech 30"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "light",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 2,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "chill",
+        "fun",
+        "light",
+        "reqs",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v47blw",
+        "score": 1,
+        "comment_count": 3,
+        "posted_at": "2026-07-23T07:59:23+00:00"
       }
     ]
   },
@@ -6055,10 +7101,10 @@
     ]
   },
   {
-    "professor": "Gymnastics, Rhythmic",
+    "professor": "Gutierrez, Ben Paul",
     "campus": "UPD",
     "courses": [
-      "PE 2"
+      "BA 103"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -6086,13 +7132,43 @@
     },
     "discussions": [
       {
-        "course": "PE 2",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vjt7jf",
-        "score": 3,
+        "course": "BA 103",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm60y4",
+        "score": 1,
         "comment_count": 0,
-        "posted_at": "2026-08-09T15:46:19+00:00"
+        "posted_at": "2026-08-12T06:18:31+00:00"
       }
     ]
+  },
+  {
+    "professor": "Gymnastics, Rhythmic",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "Hernandez, Bryan",
@@ -6177,8 +7253,38 @@
   {
     "professor": "Hernandez, Math 122",
     "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
+  },
+  {
+    "professor": "Hernando, Pauline",
+    "campus": "UPD",
     "courses": [
-      "- Bryan"
+      "FIL 10"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -6206,11 +7312,11 @@
     },
     "discussions": [
       {
-        "course": "- Bryan",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vle1jf",
+        "course": "FIL 10",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v2h1yx",
         "score": 1,
         "comment_count": 0,
-        "posted_at": "2026-08-11T10:49:10+00:00"
+        "posted_at": "2026-07-21T12:29:58+00:00"
       }
     ]
   },
@@ -6380,6 +7486,46 @@
     ]
   },
   {
+    "professor": "Jamandre, Niel Kenneth",
+    "campus": "UPD",
+    "courses": [
+      "Speech 30"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vgptd7",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-08-06T01:05:45+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Jandoc, Karl Robert",
     "campus": "UPD",
     "courses": [
@@ -6430,10 +7576,8 @@
   {
     "professor": "Jevic, Mx.",
     "campus": "UPD",
-    "courses": [
-      "Span 10/11"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -6457,23 +7601,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Span 10/11",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkda07",
-        "score": 1,
-        "comment_count": 8,
-        "posted_at": "2026-08-10T06:43:34+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Jiao, Mx.",
     "campus": "UPD",
-    "courses": [
-      "SOCIO 11 THW"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -6497,15 +7631,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "SOCIO 11 THW",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkl88g",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-10T13:42:06+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Jocano, Felipe",
@@ -6544,6 +7670,46 @@
         "score": 3,
         "comment_count": 6,
         "posted_at": "2026-08-10T10:02:07+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Jocson, Schedar",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uz7b7g",
+        "score": 0,
+        "comment_count": 2,
+        "posted_at": "2026-07-17T18:04:57+00:00"
       }
     ]
   },
@@ -6879,10 +8045,8 @@
   {
     "professor": "Kas 1 - Mayugba, Jeric / Eng 13",
     "campus": "UPD",
-    "courses": [
-      "Dungca, George Evan / Speech 30 - Paras, Gabrielle Carissa Marie"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -6906,15 +8070,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Dungca, George Evan / Speech 30 - Paras, Gabrielle Carissa Marie",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1v72hc6",
-        "score": 1,
-        "comment_count": 1,
-        "posted_at": "2026-07-26T12:25:12+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Koh, Bhea",
@@ -7068,8 +8224,7 @@
     "professor": "Labrador, Margarita",
     "campus": "UPD",
     "courses": [
-      "ENG 11",
-      "ENG 11 X5"
+      "ENG 11"
     ],
     "total_discussions": 2,
     "signals_summary": {
@@ -7099,7 +8254,7 @@
     },
     "discussions": [
       {
-        "course": "ENG 11 X5",
+        "course": "ENG 11",
         "url": "https://reddit.com/r/RateUPProfs/comments/1u9ugw9",
         "score": 0,
         "comment_count": 0,
@@ -7360,6 +8515,54 @@
     ]
   },
   {
+    "professor": "Laranjo, Ronel",
+    "campus": "UPD",
+    "courses": [
+      "FIL 40 PROFS"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "moderate",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 2,
+        "light": 2,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 3,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "chill",
+        "generous",
+        "light",
+        "readings",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "FIL 40 PROFS",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1umi80k",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "2026-07-03T15:55:37+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Ledesma, Augusto Xavier",
     "campus": "UPD",
     "courses": [
@@ -7500,7 +8703,7 @@
     "courses": [
       "Soc Sci 1"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -7531,6 +8734,13 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T03:12:28+00:00"
+      },
+      {
+        "course": "Soc Sci 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vf4aw5",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-08-04T08:22:17+00:00"
       }
     ]
   },
@@ -7573,6 +8783,46 @@
         "score": 2,
         "comment_count": 3,
         "posted_at": "2025-08-07T03:56:59+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Lim, Endee Kristel",
+    "campus": "UPD",
+    "courses": [
+      "PSYCH 101"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "PSYCH 101",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vgstil",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-06T03:25:46+00:00"
       }
     ]
   },
@@ -7730,7 +8980,7 @@
     "professor": "Loayon, Michelangelo",
     "campus": "UPD",
     "courses": [
-      "Socio 101 THV"
+      "Socio 101"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -7758,7 +9008,7 @@
     },
     "discussions": [
       {
-        "course": "Socio 101 THV",
+        "course": "Socio 101",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vkfj95",
         "score": 1,
         "comment_count": 0,
@@ -8186,6 +9436,54 @@
     ]
   },
   {
+    "professor": "Malban, Francis",
+    "campus": "UPD",
+    "courses": [
+      "KAS 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "light",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 1,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 3,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 3,
+        "clear": 0
+      },
+      "keywords": [
+        "1.0",
+        "best prof",
+        "chill",
+        "engaging",
+        "flat 1",
+        "understanding",
+        "uno"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "KAS 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ve2nek",
+        "score": 13,
+        "comment_count": 9,
+        "posted_at": "2026-08-03T03:58:12+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Manalastas, Nicko Enrique",
     "campus": "UPD",
     "courses": [
@@ -8276,9 +9574,10 @@
     "professor": "Manansala, Maynard",
     "campus": "UPD",
     "courses": [
+      "FIL 40",
       "Fil 40"
     ],
-    "total_discussions": 1,
+    "total_discussions": 3,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -8309,6 +9608,20 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-08T06:01:57+00:00"
+      },
+      {
+        "course": "FIL 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vfxv9p",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-05T05:08:55+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vfwu79",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-05T04:15:36+00:00"
       }
     ]
   },
@@ -8353,12 +9666,10 @@
     ]
   },
   {
-    "professor": "Manzano, Joanne",
+    "professor": "Manzano, 1 - Ma'am Joanne",
     "campus": "UPD",
-    "courses": [
-      "PI 100"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -8381,6 +9692,45 @@
         "clear": 0
       },
       "keywords": []
+    },
+    "discussions": []
+  },
+  {
+    "professor": "Manzano, Joanne",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40",
+      "PI 100"
+    ],
+    "total_discussions": 4,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 3,
+        "clear": 0
+      },
+      "keywords": [
+        "best prof",
+        "passionate",
+        "understanding",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -8389,16 +9739,35 @@
         "score": 3,
         "comment_count": 0,
         "posted_at": "2026-08-08T08:50:11+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1to6r4y",
+        "score": 27,
+        "comment_count": 6,
+        "posted_at": "2026-05-26T13:20:11+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1q8zvj3",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-01-10T09:30:55+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ppikpy",
+        "score": 1,
+        "comment_count": 8,
+        "posted_at": "2025-12-18T05:12:06+00:00"
       }
     ]
   },
   {
     "professor": "Math, Arts",
     "campus": "UPD",
-    "courses": [
-      "PHILO,"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -8422,15 +9791,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "PHILO,",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1uox6el",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-07-06T13:20:20+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Matias, Ambrocio Melvin And Mazahery, Ahmad Reza",
@@ -8734,10 +10095,8 @@
   {
     "professor": "Michael, Jennifer Yang",
     "campus": "UPD",
-    "courses": [
-      "- Maam Rene Ignacio, Vinluan Lorelei, Muega"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -8761,15 +10120,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "- Maam Rene Ignacio, Vinluan Lorelei, Muega",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkuatm",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-10T19:13:04+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Miller, Laiya Aneka",
@@ -9156,6 +10507,46 @@
     ]
   },
   {
+    "professor": "Morales, Raymond Aigee",
+    "campus": "UPD",
+    "courses": [
+      "PE 2 Pickleball"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "PE 2 Pickleball",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm7j4d",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T07:45:56+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Morco, Ryan",
     "campus": "UPD",
     "courses": [
@@ -9198,13 +10589,11 @@
   {
     "professor": "Ms. Rai, Sir Matias",
     "campus": "UPD",
-    "courses": [
-      "Bio 100"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
-      "grading": "fair",
+      "grading": null,
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
@@ -9212,7 +10601,7 @@
       },
       "grading_mentions": {
         "generous": 0,
-        "fair": 1,
+        "fair": 0,
         "strict": 0
       },
       "attendance_mentions": {
@@ -9223,19 +10612,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": [
-        "fair"
-      ]
+      "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Bio 100",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1mjqg2e",
-        "score": 3,
-        "comment_count": 2,
-        "posted_at": "2025-08-07T04:21:28+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Muega, Michael Arthus",
@@ -9274,6 +10653,69 @@
         "score": 3,
         "comment_count": 4,
         "posted_at": "2026-08-10T05:56:19+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Narvaez, Eilene Antoinette",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 3,
+    "signals_summary": {
+      "workload": "light",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 3,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 2,
+        "clear": 0
+      },
+      "keywords": [
+        "caring",
+        "chill",
+        "heavy",
+        "kind",
+        "light",
+        "light workload",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uoolzl",
+        "score": 1,
+        "comment_count": 5,
+        "posted_at": "2026-07-06T05:47:25+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uoojy6",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2026-07-06T05:44:14+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qgtjwz",
+        "score": 1,
+        "comment_count": 6,
+        "posted_at": "2026-01-19T03:50:10+00:00"
       }
     ]
   },
@@ -9361,7 +10803,7 @@
     "professor": "Nemenzo, Fidel",
     "campus": "UPD",
     "courses": [
-      "MATH 10 THX"
+      "MATH 10"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -9389,11 +10831,55 @@
     },
     "discussions": [
       {
-        "course": "MATH 10 THX",
+        "course": "MATH 10",
         "url": "https://reddit.com/r/RateUPProfs/comments/1qip6o0",
         "score": 2,
         "comment_count": 1,
         "posted_at": "2026-01-21T05:20:44+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Nepomuceno, Rex Sandro",
+    "campus": "UPD",
+    "courses": [
+      "Speech 30"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 2,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "fun",
+        "uno",
+        "unoable"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v2ivpy",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-21T13:44:08+00:00"
       }
     ]
   },
@@ -9680,6 +11166,154 @@
     ]
   },
   {
+    "professor": "Ortiz, Ayleen",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 4,
+    "signals_summary": {
+      "workload": "light",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 3,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 2,
+        "clear": 0
+      },
+      "keywords": [
+        "chill",
+        "fun",
+        "light",
+        "manageable",
+        "passionate",
+        "readings"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v5x95u",
+        "score": 2,
+        "comment_count": 2,
+        "posted_at": "2026-07-25T03:45:48+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v58gb7",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-07-24T11:16:43+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u7j0ud",
+        "score": 2,
+        "comment_count": 2,
+        "posted_at": "2026-06-16T16:49:55+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qeitxq",
+        "score": 1,
+        "comment_count": 3,
+        "posted_at": "2026-01-16T15:22:58+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ortiz, Ma. Fabiola",
+    "campus": "UPD",
+    "courses": [
+      "Speech 30"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm7v4t",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T08:06:05+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Pagayon, Julius",
+    "campus": "UPD",
+    "courses": [
+      "Physics 71"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Physics 71",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vkfgc3",
+        "score": 3,
+        "comment_count": 2,
+        "posted_at": "2026-08-10T08:55:09+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Paguiran, Arkiyoloji 1 - Manipon, Math 10 - Caalim",
     "campus": "UPD",
     "courses": [],
@@ -9753,7 +11387,7 @@
     "professor": "Palermo, Joseph",
     "campus": "UPD",
     "courses": [
-      "Env Sci 1 THY"
+      "Env Sci 1"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -9781,11 +11415,51 @@
     },
     "discussions": [
       {
-        "course": "Env Sci 1 THY",
+        "course": "Env Sci 1",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vl7xaf",
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T04:58:53+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Palis, Ricamela",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qbhzuq",
+        "score": 1,
+        "comment_count": 5,
+        "posted_at": "2026-01-13T04:37:10+00:00"
       }
     ]
   },
@@ -10013,6 +11687,46 @@
     ]
   },
   {
+    "professor": "Paz, Vina",
+    "campus": "UPD",
+    "courses": [
+      "Midyear Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Midyear Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uao3bp",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-20T05:22:36+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Pelayo, Prince",
     "campus": "UPD",
     "courses": [
@@ -10150,10 +11864,8 @@
   {
     "professor": "Philippine Games - Bernales, Gabrielle Mikaela",
     "campus": "UPD",
-    "courses": [
-      "PE 2"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -10177,23 +11889,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "PE 2",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkgv0x",
-        "score": 1,
-        "comment_count": 1,
-        "posted_at": "2026-08-10T10:17:23+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Philo 1 - Villegas, Patrick Joshua / Fil 40",
     "campus": "UPD",
-    "courses": [
-      "Geronimo, Jonathan / Math 10 - Caalim, Jonathan"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -10217,15 +11919,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Geronimo, Jonathan / Math 10 - Caalim, Jonathan",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1v71mb5",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-07-26T11:44:51+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Pimentel, Johnatan",
@@ -10314,10 +12008,10 @@
     ]
   },
   {
-    "professor": "Pls, Brian Santos - Who Has A Copy Of The Evo-Devo Ppt Or Notes?? Pahingi Pls Pls",
+    "professor": "Pimentel, Jonathan",
     "campus": "UPD",
     "courses": [
-      "Bio 1 THU"
+      "Math 10 - 1"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -10345,13 +12039,43 @@
     },
     "discussions": [
       {
-        "course": "Bio 1 THU",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1p139ac",
+        "course": "Math 10 - 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qirlvv",
         "score": 1,
-        "comment_count": 0,
-        "posted_at": "2025-11-19T09:39:16+00:00"
+        "comment_count": 3,
+        "posted_at": "2026-01-21T07:35:15+00:00"
       }
     ]
+  },
+  {
+    "professor": "Pls, Brian Santos - Who Has A Copy Of The Evo-Devo Ppt Or Notes?? Pahingi Pls Pls",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "Porras, Justine Marielle",
@@ -10396,10 +12120,8 @@
   {
     "professor": "Prerogative, 11",
     "campus": "UPD",
-    "courses": [
-      "Span 10"
-    ],
-    "total_discussions": 2,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -10423,28 +12145,43 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Span 10",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkolol",
-        "score": 1,
-        "comment_count": 1,
-        "posted_at": "2026-08-10T15:49:15+00:00"
-      },
-      {
-        "course": "Span 10",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkoksi",
-        "score": 1,
-        "comment_count": 3,
-        "posted_at": "2026-08-10T15:48:18+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Professor, 2",
     "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
+  },
+  {
+    "professor": "Profs, Thoughts On",
+    "campus": "UPD",
     "courses": [
-      "Stat 101 WFW"
+      "Fil 40"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -10472,11 +12209,11 @@
     },
     "discussions": [
       {
-        "course": "Stat 101 WFW",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vlkmrg",
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uk7coe",
         "score": 1,
         "comment_count": 0,
-        "posted_at": "2026-08-11T15:27:04+00:00"
+        "posted_at": "2026-07-01T01:05:36+00:00"
       }
     ]
   },
@@ -10524,9 +12261,10 @@
     "professor": "Puzon, Juliana Janet",
     "campus": "UPD",
     "courses": [
-      "BIO 11"
+      "BIO 11",
+      "Bio 11 - UPD"
     ],
-    "total_discussions": 2,
+    "total_discussions": 3,
     "signals_summary": {
       "workload": "light",
       "grading": "generous",
@@ -10545,12 +12283,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
         "chill",
         "light",
+        "understanding",
         "uno"
       ]
     },
@@ -10568,6 +12307,13 @@
         "score": 2,
         "comment_count": 4,
         "posted_at": "2026-01-07T11:48:18+00:00"
+      },
+      {
+        "course": "Bio 11 - UPD",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1hvsjad",
+        "score": 6,
+        "comment_count": 0,
+        "posted_at": "2025-01-07T14:25:01+00:00"
       }
     ]
   },
@@ -10579,7 +12325,7 @@
       "Bio 1",
       "help a freshie! Bio 1"
     ],
-    "total_discussions": 3,
+    "total_discussions": 4,
     "signals_summary": {
       "workload": "moderate",
       "grading": "generous",
@@ -10630,6 +12376,13 @@
         "score": 2,
         "comment_count": 1,
         "posted_at": "2023-09-05T16:14:08+00:00"
+      },
+      {
+        "course": "Bio 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/pn6fsu",
+        "score": 3,
+        "comment_count": 3,
+        "posted_at": "2021-09-13T02:21:42+00:00"
       }
     ]
   },
@@ -10834,17 +12587,61 @@
     ]
   },
   {
-    "professor": "Ramos, Anatalia",
+    "professor": "Rai, Matias",
     "campus": "UPD",
     "courses": [
-      "FIL 10.1 WFV"
+      "Bio 100"
     ],
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "fair",
       "workload_mentions": {
         "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 1,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "fair"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Bio 100",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1mjqg2e",
+        "score": 3,
+        "comment_count": 2,
+        "posted_at": "2025-08-07T04:21:28+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ramos, Anatalia",
+    "campus": "UPD",
+    "courses": [
+      "FIL 10.1",
+      "FIL 40",
+      "Fil 40"
+    ],
+    "total_discussions": 5,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
@@ -10858,18 +12655,50 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "readings",
+        "reqs"
+      ]
     },
     "discussions": [
       {
-        "course": "FIL 10.1 WFV",
+        "course": "FIL 10.1",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vlwqy4",
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-08-11T22:53:25+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1v5ckjm",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-07-24T14:12:55+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uqi7ac",
+        "score": 3,
+        "comment_count": 2,
+        "posted_at": "2026-07-08T04:21:53+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1tzvlw5",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-08T02:44:59+00:00"
+      },
+      {
+        "course": "FIL 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1qccidz",
+        "score": 3,
+        "comment_count": 10,
+        "posted_at": "2026-01-14T03:27:45+00:00"
       }
     ]
   },
@@ -10910,6 +12739,90 @@
         "score": 1,
         "comment_count": 0,
         "posted_at": "2026-01-13T17:37:55+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ranera, Lorenz Timothy",
+    "campus": "UPD",
+    "courses": [
+      "KAS 2"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 1,
+        "clear": 0
+      },
+      "keywords": [
+        "understanding"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "KAS 2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vfwgqi",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2026-08-05T03:56:55+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Ranera, Timothy",
+    "campus": "UPD",
+    "courses": [
+      "KAS 1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "1.0"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "KAS 1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vh2s15",
+        "score": 13,
+        "comment_count": 4,
+        "posted_at": "2026-08-06T12:25:02+00:00"
       }
     ]
   },
@@ -10956,10 +12869,8 @@
   {
     "professor": "Reginald, Cruz Ital 10 Wfu",
     "campus": "UPD",
-    "courses": [
-      "3"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -10983,15 +12894,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "3",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkgbbw",
-        "score": 1,
-        "comment_count": 4,
-        "posted_at": "2026-08-10T09:46:48+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Reginio, Mark Kevin",
@@ -11246,6 +13149,46 @@
     ]
   },
   {
+    "professor": "Reyes, Khryn Mark",
+    "campus": "UPD",
+    "courses": [
+      "Chem 16.1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Chem 16.1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1hurwkn",
+        "score": 3,
+        "comment_count": 1,
+        "posted_at": "2025-01-06T05:31:47+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Reyes, Ma. Theresa",
     "campus": "UPD",
     "courses": [
@@ -11364,6 +13307,46 @@
         "score": 22,
         "comment_count": 3,
         "posted_at": "2026-05-22T04:14:01+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Rodriguez, Mary Jane",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uvd6hp",
+        "score": 2,
+        "comment_count": 0,
+        "posted_at": "2026-07-13T14:29:36+00:00"
       }
     ]
   },
@@ -11530,10 +13513,8 @@
   {
     "professor": "S., Delos Angeles And Econ 191- Monsod",
     "campus": "UPD",
-    "courses": [
-      "Econ 172"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -11557,15 +13538,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Econ 172",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1huqv7g",
-        "score": 2,
-        "comment_count": 0,
-        "posted_at": "2025-01-06T04:33:05+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Saddi, Daryl Allen",
@@ -11604,6 +13577,49 @@
         "score": 6,
         "comment_count": 1,
         "posted_at": "2026-01-10T06:51:15+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Salanga-Torralba, Elyrah",
+    "campus": "UPD",
+    "courses": [
+      "Fil 40"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": "heavy",
+      "grading": "generous",
+      "workload_mentions": {
+        "heavy": 1,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 1,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": [
+        "1.0",
+        "readings"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u7ba6k",
+        "score": 0,
+        "comment_count": 3,
+        "posted_at": "2026-06-16T11:50:03+00:00"
       }
     ]
   },
@@ -11889,6 +13905,46 @@
     ]
   },
   {
+    "professor": "Santos, Juan Paolo",
+    "campus": "UPD",
+    "courses": [
+      "Math 23"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Math 23",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm8mcg",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T08:52:16+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Santos, Nick Rainier",
     "campus": "UPD",
     "courses": [
@@ -11933,9 +13989,10 @@
     "campus": "UPD",
     "courses": [
       "Fil 30",
-      "Fil 40"
+      "Fil 40",
+      "Fil 40 - 2"
     ],
-    "total_discussions": 2,
+    "total_discussions": 8,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -11973,6 +14030,88 @@
         "score": 1,
         "comment_count": 1,
         "posted_at": "2026-08-10T04:17:32+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1uzogtx",
+        "score": 5,
+        "comment_count": 0,
+        "posted_at": "2026-07-18T06:42:53+00:00"
+      },
+      {
+        "course": "Fil 40 - 2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u8ycvs",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-18T06:14:16+00:00"
+      },
+      {
+        "course": "Fil 40 - 2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1u8yb5o",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-06-18T06:11:32+00:00"
+      },
+      {
+        "course": "Fil 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1pum7es",
+        "score": 3,
+        "comment_count": 2,
+        "posted_at": "2025-12-24T12:24:09+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1ppvmoy",
+        "score": 7,
+        "comment_count": 0,
+        "posted_at": "2025-12-18T16:48:23+00:00"
+      },
+      {
+        "course": "Fil 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1pjx51x",
+        "score": 11,
+        "comment_count": 0,
+        "posted_at": "2025-12-11T13:10:52+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Sapalo, Noreen",
+    "campus": "UPD",
+    "courses": [
+      "Anthro 185"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Anthro 185",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vmb0cm",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T11:05:01+00:00"
       }
     ]
   },
@@ -12392,7 +14531,7 @@
     ]
   },
   {
-    "professor": "Sumocad, Sir Eugene",
+    "professor": "Sumocad, Eugene",
     "campus": "UPD",
     "courses": [
       "Math 21"
@@ -12430,6 +14569,36 @@
         "posted_at": "2026-08-10T14:54:55+00:00"
       }
     ]
+  },
+  {
+    "professor": "Sumocad, Sir Eugene",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "Supnet, Sarah Jean",
@@ -12472,7 +14641,7 @@
     ]
   },
   {
-    "professor": "Support System / Buddy 🥹🥹🥹 (wfw, Under Ricky Nellas)",
+    "professor": "Support System / Buddy 🥹🥹🥹 (wfw, Ricky Nellas)",
     "campus": "UPD",
     "courses": [
       "LF Chem 1"
@@ -12512,12 +14681,43 @@
     ]
   },
   {
+    "professor": "Support System / Buddy 🥹🥹🥹 (wfw, Under Ricky Nellas)",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
+  },
+  {
     "professor": "Talampas, Rolando",
     "campus": "UPD",
     "courses": [
-      "PI 100"
+      "PI 100",
+      "PI 100 WFR-3"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -12542,6 +14742,13 @@
       "keywords": []
     },
     "discussions": [
+      {
+        "course": "PI 100 WFR-3",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vlbx1e",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-11T08:46:41+00:00"
+      },
       {
         "course": "PI 100",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vhv2p8",
@@ -12647,10 +14854,8 @@
   {
     "professor": "Tba, 2 —",
     "campus": "UPD",
-    "courses": [
-      "Eng 13 WFQ"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -12674,23 +14879,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Eng 13 WFQ",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vg7yoo",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-05T13:51:09+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Teacher Cauyan, Jaclyn Marie",
     "campus": "UPD",
-    "courses": [
-      "EDCO 101"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -12714,15 +14909,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "EDCO 101",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vh4wyj",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-06T13:54:09+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Tengco, Laarine",
@@ -12765,10 +14952,10 @@
     ]
   },
   {
-    "professor": "Thy Francisco, Warren",
+    "professor": "Testa-De Ocampo, Anna Melinda Ursula",
     "campus": "UPD",
     "courses": [
-      "Soc Sci 1"
+      "CL 100"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -12796,19 +14983,79 @@
     },
     "discussions": [
       {
-        "course": "Soc Sci 1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkfpw7",
-        "score": 2,
+        "course": "CL 100",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vmasit",
+        "score": 1,
         "comment_count": 0,
-        "posted_at": "2026-08-10T09:10:56+00:00"
+        "posted_at": "2026-08-12T10:53:42+00:00"
       }
     ]
   },
   {
+    "professor": "Thy Francisco, Warren",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
+  },
+  {
     "professor": "Thy Francisco, Warren [for Prerog]",
     "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
+  },
+  {
+    "professor": "Tigno, Jorge",
+    "campus": "UPD",
     "courses": [
-      "Soc Sci 1"
+      "Soc sci 2"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -12836,11 +15083,11 @@
     },
     "discussions": [
       {
-        "course": "Soc Sci 1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vl8buo",
+        "course": "Soc sci 2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vm84el",
         "score": 1,
         "comment_count": 0,
-        "posted_at": "2026-08-11T05:20:19+00:00"
+        "posted_at": "2026-08-12T08:21:55+00:00"
       }
     ]
   },
@@ -12969,10 +15216,10 @@
     ]
   },
   {
-    "professor": "Tubera, Sir",
+    "professor": "Tosoc, Josef",
     "campus": "UPD",
     "courses": [
-      "Philo 1"
+      "Speech 30"
     ],
     "total_discussions": 1,
     "signals_summary": {
@@ -13000,21 +15247,19 @@
     },
     "discussions": [
       {
-        "course": "Philo 1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vlizp6",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-11T14:27:20+00:00"
+        "course": "Speech 30",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1upv1c1",
+        "score": 5,
+        "comment_count": 3,
+        "posted_at": "2026-07-07T13:24:56+00:00"
       }
     ]
   },
   {
-    "professor": "Twhfw, 13",
+    "professor": "Tubera, Sir",
     "campus": "UPD",
-    "courses": [
-      "Span 12"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -13038,15 +15283,37 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Span 12",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vll60f",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-11T15:46:34+00:00"
-      }
-    ]
+    "discussions": []
+  },
+  {
+    "professor": "Twhfw, 13",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "Umali, Lakan",
@@ -13142,22 +15409,20 @@
     ]
   },
   {
-    "professor": "Units, Reco Classes Or Profs For Prerog",
+    "professor": "Under Verano, Julieta",
     "campus": "UPD",
-    "courses": [
-      "STILL AT 3"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
-      "workload": "light",
-      "grading": "generous",
+      "workload": null,
+      "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 2,
+        "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 1,
+        "generous": 0,
         "fair": 0,
         "strict": 0
       },
@@ -13166,25 +15431,42 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 0,
         "clear": 0
       },
-      "keywords": [
-        "approachable",
-        "chill",
-        "generous",
-        "light"
-      ]
+      "keywords": []
     },
-    "discussions": [
-      {
-        "course": "STILL AT 3",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1mn1tzd",
-        "score": 7,
-        "comment_count": 13,
-        "posted_at": "2025-08-11T02:56:50+00:00"
-      }
-    ]
+    "discussions": []
+  },
+  {
+    "professor": "Units, Reco Classes Or Profs For Prerog",
+    "campus": "UPD",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "Untiveros, Danica",
@@ -13271,10 +15553,8 @@
   {
     "professor": "Upd - Puzon, Juliana Janet",
     "campus": "UPD",
-    "courses": [
-      "Bio 11"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -13293,22 +15573,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 0,
         "clear": 0
       },
-      "keywords": [
-        "understanding"
-      ]
+      "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Bio 11",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1hvsjad",
-        "score": 6,
-        "comment_count": 0,
-        "posted_at": "2025-01-07T14:25:01+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Uy, Natalia",
@@ -13435,6 +15705,46 @@
         "score": 2,
         "comment_count": 2,
         "posted_at": "2026-01-20T05:02:45+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Verano, Julieta",
+    "campus": "UPD",
+    "courses": [
+      "CWTS 1 CFA DSA-1"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "CWTS 1 CFA DSA-1",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vjy65h",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-09T19:00:34+00:00"
       }
     ]
   },
@@ -13591,10 +15901,8 @@
   {
     "professor": "Wfr Concepcion, Gerard",
     "campus": "UPD",
-    "courses": [
-      "Fil 40"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -13618,23 +15926,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Fil 40",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vm1zip",
-        "score": 1,
-        "comment_count": 0,
-        "posted_at": "2026-08-12T02:47:09+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Wfx: Cruel, Jevic",
     "campus": "UPD",
-    "courses": [
-      "Span 10"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -13658,15 +15956,7 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Span 10",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkf7x4",
-        "score": 1,
-        "comment_count": 5,
-        "posted_at": "2026-08-10T08:40:43+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "Yago, Allan Christopher",
@@ -13713,10 +16003,8 @@
   {
     "professor": "– Pagayon, Julius",
     "campus": "UPD",
-    "courses": [
-      "Physics 71"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -13740,23 +16028,13 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Physics 71",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1vkfgc3",
-        "score": 3,
-        "comment_count": 2,
-        "posted_at": "2026-08-10T08:55:09+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
     "professor": "— Reyes, Khryn Mark",
     "campus": "UPD",
-    "courses": [
-      "Chem 16.1"
-    ],
-    "total_discussions": 1,
+    "courses": [],
+    "total_discussions": 0,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -13780,18 +16058,10 @@
       },
       "keywords": []
     },
-    "discussions": [
-      {
-        "course": "Chem 16.1",
-        "url": "https://reddit.com/r/RateUPProfs/comments/1hurwkn",
-        "score": 3,
-        "comment_count": 1,
-        "posted_at": "2025-01-06T05:31:47+00:00"
-      }
-    ]
+    "discussions": []
   },
   {
-    "professor": "Baluyot, Prof .",
+    "professor": "Baluyot, .",
     "campus": "UPLB",
     "courses": [
       "Ethics 1"
@@ -13829,6 +16099,36 @@
         "posted_at": "2026-08-06T13:53:39+00:00"
       }
     ]
+  },
+  {
+    "professor": "Baluyot, Prof .",
+    "campus": "UPLB",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   },
   {
     "professor": "Bercansil, Mia Clare Marie",
@@ -14111,7 +16411,7 @@
     ]
   },
   {
-    "professor": "Arcenas, Sir Antonio",
+    "professor": "Arcenas, Antonio",
     "campus": "UPX",
     "courses": [
       "AAE 142"
@@ -14149,5 +16449,35 @@
         "posted_at": "2026-08-05T16:15:56+00:00"
       }
     ]
+  },
+  {
+    "professor": "Arcenas, Sir Antonio",
+    "campus": "UPX",
+    "courses": [],
+    "total_discussions": 0,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": []
   }
 ]
