@@ -265,3 +265,9 @@ class TestParseTitle:
         assert result.course == "PA 141"
         assert result.last_name == "Diñgal"
         assert result.first_name == "Ian Kenneth"
+
+    def test_rejects_conversational_false_positive(self):
+        result = parse_title(
+            "[UPD] Sa mga nakakuha ng Philo - 1, Kailan First F2f Class Niyo?"
+        )
+        assert result is None

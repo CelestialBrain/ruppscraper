@@ -52,6 +52,7 @@ jobs:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          SHARD: ${{ matrix.shard }}
         run: |
           SHARD="${{ matrix.shard }}"
           SAFE_NAME=$(echo "$SHARD" | tr ':' '_')
@@ -69,16 +70,19 @@ jobs:
           fi
 
           python -m scraper stats
-          # Fail the shard if the DB has zero posts (silent backend death).
+          # Fail sort shards on empty DB (backend death). Query shards may be
+          # legitimately empty for sparse terms — export [] and continue.
           python - <<'PY'
+          import os
           from scraper.database import get_connection, get_stats, init_db
           conn = get_connection()
           init_db(conn)
           stats = get_stats(conn)
           conn.close()
           print(stats)
-          if stats["total_posts"] == 0:
-              raise SystemExit("Shard produced 0 posts — fetch stack failed")
+          shard = os.environ.get("SHARD", "")
+          if stats["total_posts"] == 0 and shard.startswith("sort:"):
+              raise SystemExit("Sort shard produced 0 posts — fetch stack failed")
           PY
 
           python -m scraper export --format full -o "artifacts/shard_${SAFE_NAME}.json"

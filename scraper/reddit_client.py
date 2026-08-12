@@ -192,22 +192,22 @@ def _fetch_arctic_posts(
     collected: list[dict[str, Any]] = []
     before: float | None = None
 
-    sort_type = "created_utc"
+    # Query searches are picky: sort_type=created_utc often 422s. Prefer bare
+    # query params; only attach sort_type for non-query listing passes.
+    sort_type = "score" if sort == "top" else "created_utc"
     sort_dir = "desc"
-    if sort == "top":
-        sort_type = "score"
-        sort_dir = "desc"
 
     while len(collected) < target:
         page_size = min(100, target - len(collected))
         params: dict[str, str] = {
             "subreddit": subreddit,
             "limit": str(page_size),
-            "sort": sort_dir,
-            "sort_type": sort_type,
         }
         if query:
             params["query"] = query
+        else:
+            params["sort"] = sort_dir
+            params["sort_type"] = sort_type
         if before is not None:
             params["before"] = str(int(before))
 
@@ -219,14 +219,44 @@ def _fetch_arctic_posts(
                 params=params,
                 timeout=REQUEST_TIMEOUT,
             )
-            # Some query+sort combos return 422; retry with a simpler sort.
-            if resp.status_code == 422 and "sort_type" in params:
-                simple = {k: v for k, v in params.items() if k != "sort_type"}
-                simple["sort"] = "desc"
+            # Retry variants Arctic sometimes accepts when the first combo 422s.
+            if resp.status_code == 422:
+                retries: list[dict[str, str]] = []
+                if query:
+                    retries.append({
+                        "subreddit": subreddit,
+                        "limit": str(page_size),
+                        "query": f'"{query}"',
+                    })
+                    retries.append({
+                        "subreddit": subreddit,
+                        "limit": str(page_size),
+                        "query": query,
+                    })
+                else:
+                    retries.append({
+                        "subreddit": subreddit,
+                        "limit": str(page_size),
+                    })
+                for retry in retries:
+                    if before is not None:
+                        retry["before"] = str(int(before))
+                    resp = requests.get(
+                        url,
+                        headers=_session_headers(),
+                        params=retry,
+                        timeout=REQUEST_TIMEOUT,
+                    )
+                    if resp.status_code == 200:
+                        break
+                    time.sleep(0.35)
+            if resp.status_code == 429:
+                logger.warning("Arctic Shift rate-limited (429) — backing off")
+                time.sleep(2.0)
                 resp = requests.get(
                     url,
                     headers=_session_headers(),
-                    params=simple,
+                    params=params,
                     timeout=REQUEST_TIMEOUT,
                 )
             if resp.status_code != 200:
