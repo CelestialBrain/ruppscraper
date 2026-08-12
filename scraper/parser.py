@@ -146,7 +146,9 @@ def parse_title(title: str) -> ParsedTitle | None:
         course = _clean_whitespace(match.group("course"))
         last_name = _title_case_name(match.group("last_name").strip())
         first_name = _title_case_name(match.group("first_name").strip())
-        if course and last_name and first_name:
+        if course and last_name and first_name and _looks_like_professor_parse(
+            course, last_name, first_name, title
+        ):
             return ParsedTitle(
                 campus=campus,
                 course=course,
@@ -163,7 +165,9 @@ def parse_title(title: str) -> ParsedTitle | None:
         course = _clean_whitespace(match.group("course"))
         last_name = _title_case_name(match.group("last_name").strip())
         first_name = _title_case_name(match.group("first_name").strip())
-        if course and last_name and first_name:
+        if course and last_name and first_name and _looks_like_professor_parse(
+            course, last_name, first_name, title
+        ):
             return ParsedTitle(
                 campus=campus,
                 course=course,
@@ -201,7 +205,9 @@ def parse_title(title: str) -> ParsedTitle | None:
             last_name = _title_case_name(name_parts[-1])
             first_name = _title_case_name(" ".join(name_parts[:-1]))
             # Drop honorific-only given names noise later if needed
-            if course and last_name and first_name:
+            if course and last_name and first_name and _looks_like_professor_parse(
+                course, last_name, first_name, title
+            ):
                 return ParsedTitle(
                     campus=campus,
                     course=course,
@@ -212,7 +218,9 @@ def parse_title(title: str) -> ParsedTitle | None:
 
     # Try missing dash: [CAMPUS] Course LASTNAME, FIRSTNAME
     no_dash = _parse_no_dash(primary_title)
-    if no_dash is not None:
+    if no_dash is not None and _looks_like_professor_parse(
+        no_dash[1], no_dash[2], no_dash[3], title
+    ):
         return ParsedTitle(
             campus=no_dash[0],
             course=no_dash[1],
@@ -286,6 +294,39 @@ def _parse_no_dash(title: str) -> tuple[str, str, str, str] | None:
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
+
+
+def _looks_like_professor_parse(
+    course: str,
+    last_name: str,
+    first_name: str,
+    raw_title: str,
+) -> bool:
+    """Reject conversational / meta titles that regex-match by accident."""
+    if re.fullmatch(r"\d+", last_name.strip()):
+        return False
+    if "?" in raw_title:
+        return False
+    # Courses that are whole Filipino sentences / prompts are not course codes.
+    lowered = course.lower()
+    if any(
+        phrase in lowered
+        for phrase in (
+            "sa mga",
+            "nakakuha",
+            "anyone",
+            "thoughts",
+            "paano",
+            "reco",
+            "recommend",
+        )
+    ):
+        return False
+    if len(course.split()) > 6 and not re.search(r"\d", course):
+        return False
+    if len(first_name.split()) > 6:
+        return False
+    return True
 
 
 def _clean_whitespace(text: str) -> str:

@@ -223,7 +223,9 @@ def cmd_scrape(args: argparse.Namespace) -> None:
         query=args.query,
     )
     _print_scrape_summary(result)
-    if result.posts_scraped == 0:
+    # Query shards often legitimately return 0 hits for sparse terms — warn only.
+    # Sort/listing empties are treated as hard failures.
+    if result.posts_scraped == 0 and not args.query:
         sys.exit(2)
 
 
