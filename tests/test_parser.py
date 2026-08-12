@@ -271,3 +271,34 @@ class TestParseTitle:
             "[UPD] Sa mga nakakuha ng Philo - 1, Kailan First F2f Class Niyo?"
         )
         assert result is None
+
+    def test_rejects_classmate_hunt(self):
+        assert parse_title("[UPD] Socio 101 WFX - looking for classmates") is None
+        assert parse_title("[UPD] Math 22 X7 - Looking for classmates!") is None
+
+    def test_strips_section_code_from_name(self):
+        result = parse_title("[UPD] Span 10 WFX: Cruel, Jevic")
+        assert result is not None
+        assert result.last_name == "Cruel"
+        assert result.first_name == "Jevic"
+
+    def test_strips_honorific(self):
+        result = parse_title("[UPD] EDCO 101 Teacher CAUYAN, JACLYN MARIE")
+        assert result is not None
+        assert result.last_name == "Cauyan"
+        assert result.first_name == "Jaclyn Marie"
+
+    def test_en_dash_separator(self):
+        result = parse_title("[UPD] Physics 71 – Pagayon, Julius")
+        assert result is not None
+        assert result.course == "Physics 71"
+        assert result.last_name == "Pagayon"
+        assert result.first_name == "Julius"
+
+    def test_embedded_course_dash_before_name(self):
+        result = parse_title(
+            "[UPD] PE 2 - PHILIPPINE GAMES - BERNALES, GABRIELLE MIKAELA"
+        )
+        assert result is not None
+        assert result.last_name == "Bernales"
+        assert result.first_name == "Gabrielle Mikaela"

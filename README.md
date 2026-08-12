@@ -18,14 +18,21 @@ pip install -r requirements.txt
 python -m scraper scrape-all --scale 0.25
 
 # 3. Apply parser upgrades to titles already in the DB
-python -m scraper reparse
+python -m scraper reparse --all
 
 # 4. Backfill comments for posts that still have none
 python -m scraper enrich --limit 50
 
-# 5. Stats + export
+# 5. Stats + CRS resolve report (ProfstoPick acceptance sample)
 python -m scraper stats
-python -m scraper export --format professors -o output/professors.json
+python -m scraper resolve-report --sample 100 --strategy recent \
+  --crs-db ~/Antigravity/crs/data/crs.db \
+  -o output/resolve_report.json
+
+# 6. Export
+python -m scraper export --format professors --crs \
+  --crs-db ~/Antigravity/crs/data/crs.db \
+  -o output/professors_crs.json
 ```
 
 Optional OAuth (after Reddit approves a script app): copy `.env.example` → `.env`.
@@ -43,7 +50,7 @@ python -m scraper scrape --query Math --limit 100 --comments 50 --resume
 
 # Full progressive coverage (recommended while waiting on OAuth)
 python -m scraper scrape-all
-python -m scraper scrape-all --scale 0.5 --export output/professors.json --crs
+python -m scraper scrape-all --scale 0.5 --export output/professors_crs.json --crs
 ```
 
 ### Repair / backfill
@@ -54,17 +61,65 @@ python -m scraper reparse --all    # every title
 python -m scraper enrich --limit 100
 ```
 
+### CRS matching & resolve report
+
+```bash
+# Unique professors vs CRS roster (prints unmatched — never silent)
+python -m scraper match --crs-db ~/Antigravity/crs/data/crs.db
+
+# Acceptance sample: 100 mentions → resolve rate + unresolved JSON
+python -m scraper resolve-report --sample 100 --strategy recent \
+  --crs-db ~/Antigravity/crs/data/crs.db \
+  -o output/resolve_report.json
+# exit 3 if resolve rate < 80%
+```
+
 ### Exporting
 
 ```bash
 python -m scraper export --format full -o output/full.json
 python -m scraper export --format professors --crs -o output/professors_crs.json
+python -m scraper export --format comments --crs -o output/comments_rupp_shaped.json
 python -m scraper stats
 ```
 
 ### Matrix Pipeline (GitHub Actions)
 
 `.github/workflows/matrix-scrape.yml` runs 10 parallel shards (`sort:*` + `query:*`), merges into SQLite, CRS-matches, and commits `output/professors_crs.json`. Shards **fail if they produce 0 posts**.
+
+## ProfstoPick ingest
+
+ProfstoPick ROADMAP acceptance for this repo:
+
+> a sample of 100 scraped mentions resolves ≥80% to a roster professor, and every unresolved one is reported rather than silently dropped
+
+Run `resolve-report` for that gate. Latest local numbers are in [CHANGELOG.md](./CHANGELOG.md).
+
+### What exists today in ProfstoPick
+
+| Path | What it reads | Compatible with this scraper? |
+| --- | --- | --- |
+| `script/import/rupp.ts` | Alec **numeric review** dump (`teacherId`, 0–5 criteria, `reviewId`, …) with **`MINIMUM_REVIEW = 7000`** | **No** — Reddit corpus is smaller and has no star ratings |
+| Reddit / RateUPProfs importer | *(not built yet)* | — |
+
+There is **no** `reddit`/`rateup` source key in ProfstoPick yet. Do not point `npm run import -- --source rupp=` at scraper output.
+
+### Exports this repo emits
+
+1. **`professors` / `professors_crs.json`** — discovery index: name, campus, courses, discussion permalinks, optional `crs_verified`. Good for debugging and CRS join QA; **not** a comment import.
+2. **`comments` / `comments_rupp_shaped.json`** — one row per post body / comment, shaped like `ReviewRow` fields (`professor`, `teacherId`, `reviewId`, `subject`, `comment`, `date`, null ratings) plus `resolve_status` and `source_url`. Sidecar `*.unresolved.json` lists names that did not resolve.
+
+### Adapter still required in ProfstoPick
+
+A thin new importer (suggested name: `script/import/rateup.ts` or extend reviews behind a new `SourceKey`) should:
+
+1. Read `comments_rupp_shaped.json` (array).
+2. **Skip or quarantine** rows with `resolve_status != "resolved"` (unresolved must stay reported, never auto-attached to a random roster hit).
+3. Map `teacherId` → CRS/`professor.external_id` or join via the same `professorSlug` path `rupp.ts` already uses.
+4. Insert `comment` rows with `source` = new enum value (not `rupp`), `rating`/`criterion` null, sentiment from text heuristics or `neutral`.
+5. **Do not** reuse the 7000-row alec floor; use a Reddit-appropriate minimum (or none, with an explicit allow-empty flag).
+
+Until that lands, this repo’s deliverable for the ROADMAP row is the **resolve-report PASS** + honest unresolved lists, not a live import.
 
 ## How It Works
 
@@ -81,22 +136,23 @@ Expected format:
 [CAMPUS] Course Code - LASTNAME, FIRSTNAME
 ```
 
-Also handles swapped order, informal no-comma names, missing-dash titles, multi-word courses, compound / hyphenated names, and parentheticals. Non-conforming titles return `None`.
+Also handles swapped order, informal no-comma names, missing-dash titles, multi-word courses, compound / hyphenated names, parentheticals, en/em dashes, section-code noise (`WFX`, `THY`, …), and honorifics. Conversational “looking for classmates” titles are rejected. Non-conforming titles return `None`.
 
 ### Architecture
 
 ```text
 scraper/
-├── config.py         # Constants, campus codes, progressive passes
-├── parser.py         # Regex title parser with fallback patterns
-├── analyzer.py       # Rule-based student signal & keyword extractor
-├── crs_matcher.py    # Cross-referencer against official UP CRS db
-├── models.py         # Dataclasses: Professor, Post, Comment
-├── database.py       # SQLite schema, upsert logic, queries
-├── reddit_client.py  # PRAW → JSON → Arctic Shift → RSS
-├── exporter.py       # SQLite → JSON with CRS & signal enrichment
-├── cli.py            # scrape / scrape-all / reparse / enrich / export / stats / match
-└── __main__.py       # python -m scraper entrypoint
+├── config.py          # Constants, campus codes, progressive passes
+├── parser.py          # Regex title parser with fallback patterns
+├── analyzer.py        # Rule-based student signal & keyword extractor
+├── crs_matcher.py     # Cross-referencer against official UP CRS db
+├── resolve_report.py  # Mention sample → resolve rate + unresolved list
+├── models.py          # Dataclasses: Professor, Post, Comment
+├── database.py        # SQLite schema, upsert logic, queries
+├── reddit_client.py   # PRAW → JSON → Arctic Shift → RSS
+├── exporter.py        # SQLite → JSON with CRS & signal enrichment
+├── cli.py             # scrape / scrape-all / reparse / enrich / export / stats / match / resolve-report
+└── __main__.py        # python -m scraper entrypoint
 ```
 
 ### Database

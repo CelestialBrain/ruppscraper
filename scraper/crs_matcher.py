@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import re
 import sqlite3
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -26,6 +27,26 @@ from typing import Any
 # Default CRS database path (sibling repo)
 # ---------------------------------------------------------------------------
 DEFAULT_CRS_DB_PATH = Path("/Users/angelonrevelo/Antigravity/crs/data/crs.db")
+
+_HONORIFIC_RE = re.compile(
+    r"^(?:sir|ma'?am|mam|ms\.?|mr\.?|mrs\.?|mx\.?|prof\.?|professor|teacher|doc\.?|dr\.?)$",
+    re.IGNORECASE,
+)
+
+
+def _fold_accents(text: str) -> str:
+    """NFKD accent-fold so CASTAÑEDA matches CASTANEDA."""
+    decomposed = unicodedata.normalize("NFKD", text)
+    return "".join(ch for ch in decomposed if not unicodedata.combining(ch))
+
+
+def _norm_key(text: str) -> str:
+    return _fold_accents(text).strip().upper()
+
+
+def _strip_honorific_tokens(text: str) -> str:
+    kept = [tok for tok in text.split() if not _HONORIFIC_RE.match(tok.strip(".,"))]
+    return " ".join(kept).strip()
 
 
 @dataclass(frozen=True, slots=True)
@@ -60,6 +81,8 @@ class CRSLookup:
         self._by_normalized: dict[str, CRSInstructor] = {}          # exact match
         self._by_last_first_token: dict[str, list[CRSInstructor]] = {}  # "LAST, FIRST"
         self._by_last_name: dict[str, list[CRSInstructor]] = {}    # last name only
+        # First word of a multi-word surname ("INAZUNTA" from "INAZUNTA MARCA")
+        self._by_last_head: dict[str, list[CRSInstructor]] = {}
         # Course lookup: instructor_id → [course_codes]
         self._courses: dict[str, list[str]] = {}
         # University lookup: instructor_id → university_id
@@ -98,19 +121,26 @@ class CRSLookup:
             )
             self._instructors.append(inst)
 
-            # Index: exact normalized name
-            self._by_normalized[inst.name_normalized.upper()] = inst
+            # Index: exact normalized name (accent-folded)
+            self._by_normalized[_norm_key(inst.name_normalized)] = inst
 
             # Index: last_name + first token of first name
             parts = inst.name_normalized.split(",", 1)
             if len(parts) == 2:
-                last = parts[0].strip().upper()
-                first_tokens = parts[1].strip().upper().split()
+                last = _norm_key(parts[0])
+                first_tokens = _norm_key(parts[1]).split()
                 if first_tokens:
                     key = f"{last},{first_tokens[0]}"
                     self._by_last_first_token.setdefault(key, []).append(inst)
                 # Index: last name only
                 self._by_last_name.setdefault(last, []).append(inst)
+                last_words = last.split()
+                if len(last_words) >= 2:
+                    self._by_last_head.setdefault(last_words[0], []).append(inst)
+                    if first_tokens:
+                        self._by_last_first_token.setdefault(
+                            f"{last_words[0]},{first_tokens[0]}", []
+                        ).append(inst)
 
         # Load instructor → courses mapping
         course_rows = conn.execute("""
@@ -151,28 +181,10 @@ class CRSLookup:
         if not self._instructors:
             return None
 
-        last_upper = last_name.strip().upper()
-        first_upper = first_name.strip().upper()
-        normalized = f"{last_upper}, {first_upper}"
-
-        # 1. Exact match on full normalized name
-        inst = self._by_normalized.get(normalized)
-        if inst:
-            return self._build_match(inst, "exact", 1.0)
-
-        # 2. Last name + first token of first name
-        first_token = first_upper.split()[0] if first_upper else ""
-        if first_token:
-            key = f"{last_upper},{first_token}"
-            candidates = self._by_last_first_token.get(key, [])
-            if len(candidates) == 1:
-                return self._build_match(candidates[0], "first_token", 0.8)
-
-        # 3. Last name only (return best candidate if unambiguous)
-        candidates = self._by_last_name.get(last_upper, [])
-        if len(candidates) == 1:
-            return self._build_match(candidates[0], "last_name_only", 0.5)
-
+        for attempt_last, attempt_first, tag in self._name_attempts(last_name, first_name):
+            hit = self._match_pair(attempt_last, attempt_first, order_tag=tag)
+            if hit is not None:
+                return hit
         return None
 
     def match_all(self, last_name: str, first_name: str) -> list[CRSMatch]:
@@ -182,31 +194,113 @@ class CRSLookup:
         if not self._instructors:
             return []
 
-        last_upper = last_name.strip().upper()
-        first_upper = first_name.strip().upper()
-        normalized = f"{last_upper}, {first_upper}"
+        seen: set[str] = set()
         results: list[CRSMatch] = []
+        for attempt_last, attempt_first, _tag in self._name_attempts(last_name, first_name):
+            for hit in self._match_pair_all(attempt_last, attempt_first):
+                if hit.instructor.instructor_id in seen:
+                    continue
+                seen.add(hit.instructor.instructor_id)
+                results.append(hit)
+            # Prefer exact/first_token over dumping every last-name candidate.
+            if results and results[0].confidence >= 0.8:
+                return results
+        return results
 
-        # Exact
+    def _name_attempts(
+        self, last_name: str, first_name: str
+    ) -> list[tuple[str, str, str]]:
+        """Generate (last, first, tag) variants to try, in preference order."""
+        last = _strip_honorific_tokens(last_name)
+        first = _strip_honorific_tokens(first_name)
+        attempts: list[tuple[str, str, str]] = [(last, first, "as_is")]
+        # Hyphen drift: "Orozco-Bautista, Zenith" vs CRS "Orozco, Zenith Gaye".
+        if "-" in last:
+            head = last.split("-", 1)[0].strip()
+            if head:
+                attempts.append((head, first, "hyphen_head"))
+        # Reddit sometimes posts "GIVEN SURNAME" without a comma; the parser then
+        # stores last=SurnameToken, first=Given… — also try the reverse.
+        if last and first:
+            attempts.append((first, last, "reversed"))
+            # "Conception Mary Grace" parsed as last=Grace, first=Conception Mary
+            # → try moving the first token of first_name into last.
+            first_parts = first.split()
+            if len(first_parts) >= 2:
+                attempts.append(
+                    (first_parts[0], " ".join(first_parts[1:] + [last]), "rotate")
+                )
+        # Deduplicate while preserving order
+        seen: set[tuple[str, str]] = set()
+        unique: list[tuple[str, str, str]] = []
+        for a_last, a_first, tag in attempts:
+            key = (_norm_key(a_last), _norm_key(a_first))
+            if not key[0] or key in seen:
+                continue
+            seen.add(key)
+            unique.append((a_last, a_first, tag))
+        return unique
+
+    def _match_pair(
+        self, last_name: str, first_name: str, *, order_tag: str
+    ) -> CRSMatch | None:
+        last_key = _norm_key(last_name)
+        first_key = _norm_key(first_name)
+        normalized = f"{last_key}, {first_key}"
+
         inst = self._by_normalized.get(normalized)
         if inst:
-            results.append(self._build_match(inst, "exact", 1.0))
-            return results
+            label = "exact" if order_tag == "as_is" else f"exact_{order_tag}"
+            return self._build_match(inst, label, 1.0)
 
-        # First token
-        first_token = first_upper.split()[0] if first_upper else ""
+        first_token = first_key.split()[0] if first_key else ""
         if first_token:
-            key = f"{last_upper},{first_token}"
-            for inst in self._by_last_first_token.get(key, []):
+            key = f"{last_key},{first_token}"
+            candidates = self._dedupe_instructors(self._by_last_first_token.get(key, []))
+            if len(candidates) == 1:
+                label = (
+                    "first_token" if order_tag == "as_is" else f"first_token_{order_tag}"
+                )
+                return self._build_match(candidates[0], label, 0.8)
+
+        candidates = self._dedupe_instructors(self._by_last_name.get(last_key, []))
+        if len(candidates) == 1:
+            return self._build_match(candidates[0], "last_name_only", 0.5)
+
+        return None
+
+    def _match_pair_all(self, last_name: str, first_name: str) -> list[CRSMatch]:
+        last_key = _norm_key(last_name)
+        first_key = _norm_key(first_name)
+        normalized = f"{last_key}, {first_key}"
+        results: list[CRSMatch] = []
+
+        inst = self._by_normalized.get(normalized)
+        if inst:
+            return [self._build_match(inst, "exact", 1.0)]
+
+        first_token = first_key.split()[0] if first_key else ""
+        if first_token:
+            key = f"{last_key},{first_token}"
+            for inst in self._dedupe_instructors(self._by_last_first_token.get(key, [])):
                 results.append(self._build_match(inst, "first_token", 0.8))
             if results:
                 return results
 
-        # Last name
-        for inst in self._by_last_name.get(last_upper, []):
+        for inst in self._dedupe_instructors(self._by_last_name.get(last_key, [])):
             results.append(self._build_match(inst, "last_name_only", 0.5))
-
         return results
+
+    @staticmethod
+    def _dedupe_instructors(items: list[CRSInstructor]) -> list[CRSInstructor]:
+        seen: set[str] = set()
+        out: list[CRSInstructor] = []
+        for inst in items:
+            if inst.instructor_id in seen:
+                continue
+            seen.add(inst.instructor_id)
+            out.append(inst)
+        return out
 
     def _build_match(self, inst: CRSInstructor, match_type: str, confidence: float) -> CRSMatch:
         courses = sorted(set(self._courses.get(inst.instructor_id, [])))

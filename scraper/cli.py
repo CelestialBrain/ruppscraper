@@ -32,7 +32,7 @@ from scraper.database import (
     upsert_professor,
 )
 from scraper.crs_matcher import CRSLookup, match_scraped_professors
-from scraper.exporter import export_full, export_professors
+from scraper.exporter import export_comments, export_full, export_professors
 from scraper.models import Post, Professor
 from scraper.parser import parse_title
 from scraper.reddit_client import (
@@ -41,6 +41,7 @@ from scraper.reddit_client import (
     get_last_backends,
     has_praw_credentials,
 )
+from scraper.resolve_report import build_resolve_report, write_resolve_report
 
 console = Console()
 logger = logging.getLogger(__name__)
@@ -417,6 +418,15 @@ def cmd_export(args: argparse.Namespace) -> None:
         console.print(
             f"[green]✓[/green] Exported {count} professors{crs_note} → [bold]{output}[/bold]"
         )
+    elif args.format == "comments":
+        count = export_comments(output, with_crs=args.crs, crs_db_path=crs_path)
+        crs_note = " (with CRS resolve status)" if args.crs else ""
+        console.print(
+            f"[green]✓[/green] Exported {count} comment rows{crs_note} → [bold]{output}[/bold]"
+        )
+        console.print(
+            f"  Unresolved sidecar → [bold]{output.with_name(output.stem + '.unresolved.json')}[/bold]"
+        )
 
 
 def cmd_stats(args: argparse.Namespace) -> None:
@@ -526,6 +536,64 @@ def cmd_match(args: argparse.Namespace) -> None:
         console.print(
             f"\n[bold]Match rate:[/bold] {len(matched)}/{total} ({rate:.0%})"
         )
+        # Ambiguous + unmatched are always printed above — never silently dropped.
+        console.print(
+            f"[dim]Unresolved (ambiguous+unmatched): "
+            f"{len(ambiguous) + len(unmatched)}[/dim]"
+        )
+
+
+def cmd_resolve_report(args: argparse.Namespace) -> None:
+    """Sample scraped mentions and report CRS resolve rate + unresolved list."""
+    crs_path = Path(args.crs_db) if args.crs_db else None
+    out = Path(args.output)
+    report = build_resolve_report(
+        sample_size=args.sample,
+        seed=args.seed,
+        campus=None if args.all_campuses else "UPD",
+        crs_db_path=crs_path,
+        strategy=args.strategy,
+    )
+    if "error" in report:
+        console.print(f"[red bold]Error:[/red bold] {report['error']}")
+        sys.exit(2)
+
+    write_resolve_report(report, out)
+
+    table = Table(title="Mention Resolve Report", border_style="cyan")
+    table.add_column("Metric", style="bold")
+    table.add_column("Value", justify="right")
+    table.add_row("Mention pool", str(report["mention_pool"]))
+    table.add_row("Sample size", str(report["sample_size"]))
+    table.add_row("Strategy", str(report["strategy"]))
+    table.add_row("Resolved", str(report["resolved_count"]))
+    table.add_row("Ambiguous", str(report["ambiguous_count"]))
+    table.add_row("Unresolved", str(report["unresolved_count"]))
+    table.add_row("Resolve rate", report["resolve_rate_pct"])
+    table.add_row("≥80% acceptance", "PASS" if report["acceptance_met"] else "FAIL")
+    console.print(table)
+
+    if report["unresolved"]:
+        ut = Table(
+            title=f"Unresolved mentions ({len(report['unresolved'])}) — not dropped",
+            border_style="red",
+        )
+        ut.add_column("Professor", style="bold")
+        ut.add_column("Course")
+        ut.add_column("Title")
+        for u in report["unresolved"][:40]:
+            ut.add_row(
+                u["professor"],
+                u.get("course") or "",
+                (u.get("title") or "")[:60],
+            )
+        if len(report["unresolved"]) > 40:
+            ut.add_row("…", "", f"+{len(report['unresolved']) - 40} more in JSON")
+        console.print(ut)
+
+    console.print(f"[green]✓[/green] Wrote full report → [bold]{out}[/bold]")
+    if not report["acceptance_met"]:
+        sys.exit(3)
 
 
 # ---------------------------------------------------------------------------
@@ -630,9 +698,10 @@ def build_parser() -> argparse.ArgumentParser:
     sp_export = subparsers.add_parser("export", help="Export data to JSON.")
     sp_export.add_argument(
         "--format",
-        choices=["full", "professors"],
+        choices=["full", "professors", "comments"],
         default="full",
-        help="Export format (default: full).",
+        help="Export format (default: full). "
+        "'comments' is ReviewRow-shaped for a future ProfstoPick adapter.",
     )
     sp_export.add_argument(
         "--output",
@@ -666,6 +735,47 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path to CRS SQLite database (default: auto-detect sibling repo).",
     )
     sp_match.set_defaults(func=cmd_match)
+
+    # ---- resolve-report ----
+    sp_resolve = subparsers.add_parser(
+        "resolve-report",
+        help="Sample mentions vs CRS roster; report resolve rate + unresolved list.",
+    )
+    sp_resolve.add_argument(
+        "--sample",
+        type=int,
+        default=100,
+        help="Mention sample size (default: 100).",
+    )
+    sp_resolve.add_argument(
+        "--strategy",
+        choices=["recent", "random"],
+        default="recent",
+        help="How to pick the sample (default: recent).",
+    )
+    sp_resolve.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="RNG seed when --strategy random (default: 42).",
+    )
+    sp_resolve.add_argument(
+        "--all-campuses",
+        action="store_true",
+        help="Include non-UPD campuses (default: UPD only — CRS roster campus).",
+    )
+    sp_resolve.add_argument(
+        "--crs-db",
+        default=None,
+        help="Path to CRS SQLite database (default: auto-detect sibling repo).",
+    )
+    sp_resolve.add_argument(
+        "--output",
+        "-o",
+        default="output/resolve_report.json",
+        help="Report JSON path (default: output/resolve_report.json).",
+    )
+    sp_resolve.set_defaults(func=cmd_resolve_report)
 
     return parser
 
