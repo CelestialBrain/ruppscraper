@@ -596,5 +596,45 @@
         "posted_at": "1970-01-01T00:00:00+00:00"
       }
     ]
+  },
+  {
+    "professor": "Ventura, Jade",
+    "campus": "UPD",
+    "courses": [
+      "Math 22"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Math 22",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vlokms",
+        "score": 0,
+        "comment_count": 0,
+        "posted_at": "1970-01-01T00:00:00+00:00"
+      }
+    ]
   }
 ]
