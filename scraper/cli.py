@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import logging
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 
 from rich.console import Console
@@ -17,54 +19,89 @@ from rich.progress import (
 )
 from rich.table import Table
 
-from scraper.config import SUBREDDIT_NAME
+from scraper.config import PROGRESSIVE_PASSES, SUBREDDIT_NAME
 from scraper.database import (
     get_connection,
+    get_posts_missing_comments,
     get_scraped_post_ids,
     get_stats,
+    get_unparsed_posts,
     init_db,
+    update_post_parse,
     upsert_post_with_comments,
+    upsert_professor,
 )
 from scraper.crs_matcher import CRSLookup, match_scraped_professors
 from scraper.exporter import export_full, export_professors
-from scraper.models import Professor
-from scraper.reddit_client import enrich_with_comments, fetch_posts
+from scraper.models import Post, Professor
+from scraper.parser import parse_title
+from scraper.reddit_client import (
+    enrich_with_comments,
+    fetch_posts,
+    get_last_backends,
+    has_praw_credentials,
+)
 
 console = Console()
+logger = logging.getLogger(__name__)
+
 
 # ---------------------------------------------------------------------------
-# Commands
+# Shared scrape pass
 # ---------------------------------------------------------------------------
 
 
-def cmd_scrape(args: argparse.Namespace) -> None:
-    """Scrape r/RateUPProfs posts and comments into SQLite."""
+@dataclass
+class ScrapePassResult:
+    posts_scraped: int = 0
+    comments_scraped: int = 0
+    parse_successes: int = 0
+    parse_failures: int = 0
+    listing_backend: str = "none"
+    comment_backend: str = "none"
+
+
+def _print_backend_banner() -> None:
+    if has_praw_credentials():
+        console.print("[dim]Backend: PRAW OAuth[/dim]")
+    else:
+        console.print(
+            "[dim]Backend: public JSON → Arctic Shift → RSS "
+            "(set REDDIT_CLIENT_ID/SECRET for OAuth)[/dim]"
+        )
+
+
+def _run_scrape_pass(
+    *,
+    sort: str = "new",
+    limit: int | None = None,
+    comments: int | None = None,
+    resume: bool = False,
+    query: str | None = None,
+    quiet: bool = False,
+) -> ScrapePassResult:
+    """Execute one scrape + comment-enrichment pass. Returns counters."""
     conn = get_connection()
     init_db(conn)
+    result = ScrapePassResult()
 
-    # Resume support: skip already-scraped posts
     skip_ids: set[str] = set()
-    if args.resume:
+    if resume:
         skip_ids = get_scraped_post_ids(conn)
-        if skip_ids:
+        if skip_ids and not quiet:
             console.print(
                 f"[dim]Resume mode: skipping {len(skip_ids)} already-scraped posts[/dim]"
             )
 
-    console.print(
-        f"[bold cyan]Scraping r/{SUBREDDIT_NAME}[/bold cyan] "
-        f"(sort={args.sort}, limit={args.limit or 'all'})"
-    )
-    console.print("[dim]Using public .json endpoints (no OAuth required)[/dim]")
+    if not quiet:
+        console.print(
+            f"[bold cyan]Scraping r/{SUBREDDIT_NAME}[/bold cyan] "
+            f"(sort={sort}, limit={limit or 'all'}"
+            f"{f', query={query!r}' if query else ''})"
+        )
+        _print_backend_banner()
 
-    # Counters
-    posts_scraped = 0
-    comments_scraped = 0
-    parse_successes = 0
-    parse_failures = 0
-
-    # Phase 1: Fetch all post listings
-    scraped_posts = []
+    scraped_posts: list[Post] = []
 
     with Progress(
         SpinnerColumn(),
@@ -73,18 +110,19 @@ def cmd_scrape(args: argparse.Namespace) -> None:
         MofNCompleteColumn(),
         TimeElapsedColumn(),
         console=console,
+        disable=quiet,
     ) as progress:
-        task = progress.add_task("Fetching posts...", total=args.limit)
+        task = progress.add_task("Fetching posts...", total=limit)
 
         for post, parsed, _ in fetch_posts(
-            sort=args.sort,
-            limit=args.limit,
+            sort=sort,
+            limit=limit,
             skip_ids=skip_ids,
+            query=query,
         ):
-            # Build professor model if title parsed successfully
             professor: Professor | None = None
             if parsed is not None:
-                parse_successes += 1
+                result.parse_successes += 1
                 professor = Professor(
                     id=parsed.professor_id,
                     last_name=parsed.last_name,
@@ -92,29 +130,29 @@ def cmd_scrape(args: argparse.Namespace) -> None:
                     campus=parsed.campus,
                 )
             else:
-                parse_failures += 1
+                result.parse_failures += 1
 
-            # Store post (comments empty for now)
             upsert_post_with_comments(conn, post, [], professor)
             scraped_posts.append(post)
-            posts_scraped += 1
+            result.posts_scraped += 1
 
             progress.update(
                 task,
                 advance=1,
                 description=(
-                    f"[green]{posts_scraped}[/green] posts · "
-                    f"[yellow]{parse_failures}[/yellow] unparsed"
+                    f"[green]{result.posts_scraped}[/green] posts · "
+                    f"[yellow]{result.parse_failures}[/yellow] unparsed"
                 ),
             )
 
-    # Phase 2: Enrich top posts with comments (rate-paced)
+    enrich_count = 0
     if scraped_posts:
-        enrich_count = min(len(scraped_posts), args.comments or len(scraped_posts))
-        console.print(
-            f"\n[bold cyan]Enriching[/bold cyan] top {enrich_count} posts with comments "
-            f"[dim](~{enrich_count * 1.2:.0f}s at 1.2s/req)[/dim]"
-        )
+        enrich_count = min(len(scraped_posts), comments or len(scraped_posts))
+        if not quiet:
+            console.print(
+                f"\n[bold cyan]Enriching[/bold cyan] top {enrich_count} posts with comments "
+                f"[dim](~{enrich_count * 1.2:.0f}s at 1.2s/req)[/dim]"
+            )
 
         with Progress(
             SpinnerColumn(),
@@ -123,41 +161,242 @@ def cmd_scrape(args: argparse.Namespace) -> None:
             MofNCompleteColumn(),
             TimeElapsedColumn(),
             console=console,
+            disable=quiet,
         ) as progress:
             task = progress.add_task("Fetching comments...", total=enrich_count)
-
             comments_map = enrich_with_comments(scraped_posts, top_n=enrich_count)
 
-            for post_id, comments in comments_map.items():
-                # Find the post and its professor to re-upsert with comments
+            for post_id, comment_list in comments_map.items():
                 post = next((p for p in scraped_posts if p.reddit_id == post_id), None)
                 if post:
-                    upsert_post_with_comments(conn, post, comments)
-                    comments_scraped += len(comments)
+                    upsert_post_with_comments(conn, post, comment_list)
+                    result.comments_scraped += len(comment_list)
 
                 progress.update(
                     task,
                     advance=1,
                     description=(
-                        f"[blue]{comments_scraped}[/blue] comments collected"
+                        f"[blue]{result.comments_scraped}[/blue] comments collected"
                     ),
                 )
 
     conn.close()
+    result.listing_backend, result.comment_backend = get_last_backends()
+    return result
 
-    # Summary
+
+def _print_scrape_summary(result: ScrapePassResult, title: str = "Scrape Complete") -> None:
     console.print()
-    summary = Table(title="Scrape Complete", show_header=False, border_style="cyan")
+    summary = Table(title=title, show_header=False, border_style="cyan")
     summary.add_column("Metric", style="bold")
     summary.add_column("Value", justify="right")
-    summary.add_row("Posts scraped", str(posts_scraped))
-    summary.add_row("Comments collected", str(comments_scraped))
-    summary.add_row("Titles parsed", f"{parse_successes} ✓")
-    summary.add_row("Titles unparsed", f"{parse_failures} ✗")
-    if posts_scraped > 0:
-        rate = parse_successes / posts_scraped
+    summary.add_row("Posts scraped", str(result.posts_scraped))
+    summary.add_row("Comments collected", str(result.comments_scraped))
+    summary.add_row("Titles parsed", f"{result.parse_successes} ✓")
+    summary.add_row("Titles unparsed", f"{result.parse_failures} ✗")
+    if result.posts_scraped > 0:
+        rate = result.parse_successes / result.posts_scraped
         summary.add_row("Parse rate", f"{rate:.1%}")
+    summary.add_row("Listing backend", result.listing_backend)
+    summary.add_row("Comment backend", result.comment_backend)
     console.print(summary)
+
+    if result.posts_scraped == 0:
+        console.print(
+            "[yellow]Warning:[/yellow] no posts fetched. "
+            "Reddit may be blocking this IP — Arctic/RSS may also be down."
+        )
+
+
+# ---------------------------------------------------------------------------
+# Commands
+# ---------------------------------------------------------------------------
+
+
+def cmd_scrape(args: argparse.Namespace) -> None:
+    """Scrape r/RateUPProfs posts and comments into SQLite."""
+    result = _run_scrape_pass(
+        sort=args.sort,
+        limit=args.limit,
+        comments=args.comments,
+        resume=args.resume,
+        query=args.query,
+    )
+    _print_scrape_summary(result)
+    if result.posts_scraped == 0:
+        sys.exit(2)
+
+
+def cmd_scrape_all(args: argparse.Namespace) -> None:
+    """Run progressive multi-pass scrape (sorts + subject queries) with resume."""
+    console.print(
+        f"[bold cyan]Progressive scrape[/bold cyan] of r/{SUBREDDIT_NAME} "
+        f"({len(PROGRESSIVE_PASSES)} passes, resume={not args.no_resume})"
+    )
+    _print_backend_banner()
+
+    totals = ScrapePassResult()
+    scale = max(0.1, float(args.scale))
+
+    for i, (sort, query, post_limit, comment_limit) in enumerate(PROGRESSIVE_PASSES, 1):
+        pl = max(1, int(post_limit * scale))
+        cl = max(0, int(comment_limit * scale))
+        label = f"{sort}" + (f" q={query}" if query else "")
+        console.print(f"\n[bold]Pass {i}/{len(PROGRESSIVE_PASSES)}[/bold] — {label} "
+                      f"(limit={pl}, comments={cl})")
+
+        result = _run_scrape_pass(
+            sort=sort,
+            limit=pl,
+            comments=cl,
+            resume=not args.no_resume,
+            query=query,
+            quiet=False,
+        )
+        totals.posts_scraped += result.posts_scraped
+        totals.comments_scraped += result.comments_scraped
+        totals.parse_successes += result.parse_successes
+        totals.parse_failures += result.parse_failures
+        totals.listing_backend = result.listing_backend
+        totals.comment_backend = result.comment_backend
+
+        console.print(
+            f"  → +{result.posts_scraped} posts, +{result.comments_scraped} comments "
+            f"[{result.listing_backend}/{result.comment_backend}]"
+        )
+
+    _print_scrape_summary(totals, title="Progressive Scrape Complete")
+    cmd_stats(argparse.Namespace())
+
+    if args.export:
+        out = Path(args.export)
+        count = export_professors(out, with_crs=args.crs)
+        console.print(f"[green]✓[/green] Exported {count} professors → [bold]{out}[/bold]")
+
+    if totals.posts_scraped == 0:
+        sys.exit(2)
+
+
+def cmd_reparse(args: argparse.Namespace) -> None:
+    """Re-run the title parser on unparsed (or all) posts already in the DB."""
+    conn = get_connection()
+    init_db(conn)
+
+    if args.all:
+        rows = list(
+            conn.execute(
+                """
+                SELECT reddit_id, title FROM posts ORDER BY created_utc DESC
+                """
+            )
+        )
+    else:
+        rows = get_unparsed_posts(conn)
+
+    if not rows:
+        console.print("[green]Nothing to reparse.[/green]")
+        conn.close()
+        return
+
+    newly_parsed = 0
+    still_unparsed = 0
+
+    with conn:
+        for row in rows:
+            parsed = parse_title(row["title"])
+            if parsed is None:
+                still_unparsed += 1
+                if args.all:
+                    update_post_parse(conn, row["reddit_id"], None, None, None)
+                continue
+
+            upsert_professor(
+                conn,
+                Professor(
+                    id=parsed.professor_id,
+                    last_name=parsed.last_name,
+                    first_name=parsed.first_name,
+                    campus=parsed.campus,
+                ),
+            )
+            update_post_parse(
+                conn,
+                row["reddit_id"],
+                parsed.campus,
+                parsed.course,
+                parsed.professor_id,
+            )
+            newly_parsed += 1
+
+    conn.close()
+    console.print(
+        f"[green]✓[/green] Reparsed {len(rows)} titles → "
+        f"[bold]{newly_parsed}[/bold] parsed, {still_unparsed} still unparsed"
+    )
+    cmd_stats(argparse.Namespace())
+
+
+def cmd_enrich(args: argparse.Namespace) -> None:
+    """Backfill comments for DB posts that have none stored yet."""
+    conn = get_connection()
+    init_db(conn)
+    rows = get_posts_missing_comments(conn, limit=args.limit)
+    if not rows:
+        console.print("[green]All posts already have comments (or DB is empty).[/green]")
+        conn.close()
+        return
+
+    console.print(
+        f"[bold cyan]Enriching[/bold cyan] {len(rows)} posts missing comments"
+    )
+    _print_backend_banner()
+
+    posts = [
+        Post(
+            reddit_id=r["reddit_id"],
+            title=r["title"],
+            campus=r["campus"],
+            course=r["course"],
+            professor_id=r["professor_id"],
+            url=r["url"],
+            score=r["score"],
+            num_comments=r["num_comments"],
+            created_utc=r["created_utc"],
+            author=r["author"],
+            selftext=r["selftext"] or "",
+            scraped_at=r["scraped_at"],
+        )
+        for r in rows
+    ]
+
+    comments_scraped = 0
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TimeElapsedColumn(),
+        console=console,
+    ) as progress:
+        task = progress.add_task("Fetching comments...", total=len(posts))
+        comments_map = enrich_with_comments(posts, top_n=len(posts))
+        for post in posts:
+            comment_list = comments_map.get(post.reddit_id, [])
+            upsert_post_with_comments(conn, post, comment_list)
+            comments_scraped += len(comment_list)
+            progress.update(
+                task,
+                advance=1,
+                description=f"[blue]{comments_scraped}[/blue] comments collected",
+            )
+
+    conn.close()
+    _, comment_backend = get_last_backends()
+    console.print(
+        f"[green]✓[/green] Collected {comments_scraped} comments "
+        f"(backend={comment_backend})"
+    )
+    cmd_stats(argparse.Namespace())
 
 
 def cmd_export(args: argparse.Namespace) -> None:
@@ -210,7 +449,6 @@ def cmd_stats(args: argparse.Namespace) -> None:
 def cmd_match(args: argparse.Namespace) -> None:
     """Cross-reference scraped professors against the CRS instructor database."""
     from scraper.config import DB_PATH
-    from pathlib import Path
 
     crs_path = Path(args.crs_db) if args.crs_db else None
     lookup = CRSLookup(crs_path)
@@ -230,13 +468,11 @@ def cmd_match(args: argparse.Namespace) -> None:
         console.print(f"[red bold]Error:[/red bold] {results['error']}")
         return
 
-    # Summary
     console.print(
         f"  CRS instructors: [bold]{results['crs_instructor_count']:,}[/bold]\n"
         f"  Scraped professors: [bold]{results['scraped_professor_count']}[/bold]\n"
     )
 
-    # Matched table
     matched = results["matched"]
     if matched:
         mt = Table(title=f"✓ Matched ({len(matched)})", border_style="green")
@@ -259,7 +495,6 @@ def cmd_match(args: argparse.Namespace) -> None:
             )
         console.print(mt)
 
-    # Ambiguous table
     ambiguous = results["ambiguous"]
     if ambiguous:
         at = Table(title=f"? Ambiguous ({len(ambiguous)})", border_style="yellow")
@@ -274,7 +509,6 @@ def cmd_match(args: argparse.Namespace) -> None:
             at.add_row(a["name"], a["campus"], candidates_str)
         console.print(at)
 
-    # Unmatched table
     unmatched = results["unmatched"]
     if unmatched:
         ut = Table(title=f"✗ Unmatched ({len(unmatched)})", border_style="red")
@@ -284,7 +518,6 @@ def cmd_match(args: argparse.Namespace) -> None:
             ut.add_row(u["name"], u["campus"])
         console.print(ut)
 
-    # Final summary
     total = results["scraped_professor_count"]
     if total > 0:
         rate = len(matched) / total
@@ -331,7 +564,65 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Skip posts already in the database.",
     )
+    sp_scrape.add_argument(
+        "--query",
+        default=None,
+        help="Search query within the subreddit (uses Arctic Shift archive).",
+    )
     sp_scrape.set_defaults(func=cmd_scrape)
+
+    # ---- scrape-all (progressive) ----
+    sp_all = subparsers.add_parser(
+        "scrape-all",
+        help="Progressive multi-pass scrape (sorts + subject queries) with resume.",
+    )
+    sp_all.add_argument(
+        "--scale",
+        type=float,
+        default=1.0,
+        help="Scale all pass limits (e.g. 0.25 for a quick smoke run).",
+    )
+    sp_all.add_argument(
+        "--no-resume",
+        action="store_true",
+        help="Do not skip already-scraped post IDs.",
+    )
+    sp_all.add_argument(
+        "--export",
+        default=None,
+        help="Optional professors JSON path to write after scraping.",
+    )
+    sp_all.add_argument(
+        "--crs",
+        action="store_true",
+        help="With --export, enrich professors JSON via CRS matcher.",
+    )
+    sp_all.set_defaults(func=cmd_scrape_all)
+
+    # ---- reparse ----
+    sp_reparse = subparsers.add_parser(
+        "reparse",
+        help="Re-run title parser on unparsed DB posts (applies parser upgrades).",
+    )
+    sp_reparse.add_argument(
+        "--all",
+        action="store_true",
+        help="Reparse every post, not only unparsed ones.",
+    )
+    sp_reparse.set_defaults(func=cmd_reparse)
+
+    # ---- enrich ----
+    sp_enrich = subparsers.add_parser(
+        "enrich",
+        help="Backfill comments for posts that have none stored yet.",
+    )
+    sp_enrich.add_argument(
+        "--limit",
+        type=int,
+        default=50,
+        help="Max posts to enrich (default: 50).",
+    )
+    sp_enrich.set_defaults(func=cmd_enrich)
 
     # ---- export ----
     sp_export = subparsers.add_parser("export", help="Export data to JSON.")
@@ -384,6 +675,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     """CLI entrypoint."""
+    logging.basicConfig(
+        level=logging.WARNING,
+        format="%(levelname)s %(name)s: %(message)s",
+    )
     parser = build_parser()
     args = parser.parse_args()
     try:
@@ -393,6 +688,7 @@ def main() -> None:
         sys.exit(130)
     except Exception as exc:
         console.print(f"[red bold]Error:[/red bold] {exc}")
+        logger.exception("Unhandled error")
         sys.exit(1)
 
 

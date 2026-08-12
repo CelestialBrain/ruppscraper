@@ -30,16 +30,27 @@ jobs:
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
         run: |
-          python -m scraper scrape --sort new --resume
+          python -m scraper scrape-all --scale 0.5
+          python -m scraper reparse
+          python -m scraper enrich --limit 100
+          python -m scraper stats
+          python - <<'PY'
+          from scraper.database import get_connection, get_stats, init_db
+          conn = get_connection(); init_db(conn); s = get_stats(conn); conn.close()
+          print(s)
+          if s["total_posts"] == 0:
+              raise SystemExit("Scrape produced 0 posts")
+          PY
 
       - name: Export Enriched JSON
         run: |
           python -m scraper export --format professors --crs -o output/professors_crs.json
+          python -m scraper export --format professors -o output/professors.json
 
       - name: Commit updated output
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/professors_crs.json ruppscraper.db
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f output/professors_crs.json output/professors.json ruppscraper.db
           git diff --quiet && git diff --staged --quiet || git commit -m "auto: update scraped prof reviews & CRS matches"
           git push

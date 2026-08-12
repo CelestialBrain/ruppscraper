@@ -2,9 +2,9 @@
 
 **r/RateUPProfs → Structured Data Pipeline**
 
-A Python CLI tool that scrapes the [r/RateUPProfs](https://reddit.com/r/RateUPProfs) subreddit, parses structured post titles into campus/course/professor fields, collects comments, stores everything in SQLite, and exports to JSON.
+A Python CLI tool that scrapes [r/RateUPProfs](https://reddit.com/r/RateUPProfs), parses structured post titles into campus/course/professor fields, collects comments, stores everything in SQLite, and exports to JSON.
 
-**No Reddit API keys or OAuth needed.** Uses Reddit's public `.json` endpoints with RSS fallback — same approach as [pingfree](https://github.com/CelestialBrain/pingfree).
+**OAuth optional.** Fetch stack: **PRAW (if credentials)** → Reddit public `.json` → **Arctic Shift archive** → RSS. Public `.json` is often 403 without OAuth; Arctic Shift is the default working path today.
 
 ## Quick Start
 
@@ -14,128 +14,94 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# 2. Scrape (no credentials needed!)
-python -m scraper scrape --sort new --limit 50
+# 2. Progressive scrape (sorts + subject queries, resume-safe)
+python -m scraper scrape-all --scale 0.25
 
-# 3. Check stats
+# 3. Apply parser upgrades to titles already in the DB
+python -m scraper reparse
+
+# 4. Backfill comments for posts that still have none
+python -m scraper enrich --limit 50
+
+# 5. Stats + export
 python -m scraper stats
-
-# 4. Export
 python -m scraper export --format professors -o output/professors.json
 ```
+
+Optional OAuth (after Reddit approves a script app): copy `.env.example` → `.env`.
 
 ## Usage
 
 ### Scraping
 
 ```bash
-# Scrape the 50 newest posts
-python -m scraper scrape --sort new --limit 50
+# Single pass
+python -m scraper scrape --sort new --limit 50 --resume
 
-# Scrape top posts of all time
-python -m scraper scrape --sort top --limit 200
+# Subject search (Arctic Shift)
+python -m scraper scrape --query Math --limit 100 --comments 50 --resume
 
-# Resume a previous scrape (skips already-scraped posts)
-python -m scraper scrape --sort new --resume
+# Full progressive coverage (recommended while waiting on OAuth)
+python -m scraper scrape-all
+python -m scraper scrape-all --scale 0.5 --export output/professors.json --crs
+```
 
-# Control comment enrichment (default: all scraped posts)
-python -m scraper scrape --limit 100 --comments 20
+### Repair / backfill
+
+```bash
+python -m scraper reparse          # unparsed rows only
+python -m scraper reparse --all    # every title
+python -m scraper enrich --limit 100
 ```
 
 ### Exporting
 
 ```bash
-# Full export (every post with comments)
 python -m scraper export --format full -o output/full.json
-
-# Professor-grouped export (for ProfstoPick ingestion)
-python -m scraper export --format professors -o output/professors.json
-
-# Matrix Pipeline (Parallel Sharded Scraping)
-
-The repo includes a 3-stage GitHub Actions matrix pipeline in `.github/workflows/matrix-scrape.yml`:
-
-```
- ┌─────────────────────────────────────────────────────────────┐
- │                Stage 1: Parallel Shards                     │
- │          (10 Parallel Runner VMs on GitHub)                  │
- │                                                             │
- │  • Shard 0: sort:new         • Shard 5: query:Eng           │
- │  • Shard 1: sort:top         • Shard 6: query:Fil           │
- │  • Shard 2: sort:hot         • Shard 7: query:Bio           │
- │  • Shard 3: sort:rising      • Shard 8: query:Chem          │
- │  • Shard 4: query:Math       • Shard 9: query:Econ          │
- └──────────────────────────────┬──────────────────────────────┘
-                                │ (Uploads Shard Artifacts)
-                                ▼
- ┌─────────────────────────────────────────────────────────────┐
- │                 Stage 2: Merge & CRS Match                  │
- │                                                             │
- │  • Merges all 10 shard JSON artifacts into main DB          │
- │  • Runs `crs_matcher` against official UP faculty catalog   │
- │  • Runs review signal extractor for student ratings          │
- │  • Commits updated `output/professors_crs.json`              │
- └─────────────────────────────────────────────────────────────┘
-```
-
-Benefits of the Matrix Architecture:
-1. **IP Isolation**: Each parallel runner VM gets a different public IP address from GitHub's pool, bypassing per-IP rate limits.
-2. **10x Scraping Yield**: Pulls hundreds of posts across all sorts and UP subject categories simultaneously.
-
-### Statistics
-
-```bash
+python -m scraper export --format professors --crs -o output/professors_crs.json
 python -m scraper stats
 ```
+
+### Matrix Pipeline (GitHub Actions)
+
+`.github/workflows/matrix-scrape.yml` runs 10 parallel shards (`sort:*` + `query:*`), merges into SQLite, CRS-matches, and commits `output/professors_crs.json`. Shards **fail if they produce 0 posts**.
 
 ## How It Works
 
 ### Two-Phase Scrape
 
-1. **Phase 1 — Listing fetch**: Hits `reddit.com/r/RateUPProfs/new.json` with pagination (`after` cursors). Falls back to RSS if JSON is rate-limited.
-2. **Phase 2 — Comment enrichment**: For each post, hits `reddit.com/comments/{id}.json` to fetch the comment tree. Rate-paced at ~1.2s/request.
+1. **Phase 1 — Listing fetch**: Prefer Reddit JSON / PRAW; on 403/429 fall through to Arctic Shift, then RSS.
+2. **Phase 2 — Comment enrichment**: Prefer `/comments/{id}.json` / PRAW; fall through to Arctic Shift comments (~1.2s/request).
 
 ### Title Parsing
 
-The subreddit enforces structured titles:
-```
+Expected format:
+
+```text
 [CAMPUS] Course Code - LASTNAME, FIRSTNAME
 ```
 
-The parser handles:
-- All UP campus codes (UPD, UPLB, UPM, UPOU, UPV, UPMin, UPB, UPC, UPT)
-- Multi-word courses (`Speech Comm 11`, `Nat Sci 2`)
-- ALL-CAPS professor names → title-cased
-- Hyphenated last names (`Santos-Reyes`)
-- Compound names (`De La Cruz`)
-- Name abbreviations (`Ma.`, `Jr.`, `III`)
-- Parenthetical annotations (`(AY 2024-2025)`)
-- Non-conforming titles → gracefully returns `None`
+Also handles swapped order, informal no-comma names, missing-dash titles, multi-word courses, compound / hyphenated names, and parentheticals. Non-conforming titles return `None`.
 
 ### Architecture
 
-```
+```text
 scraper/
-├── config.py         # Constants, user-agents, campus codes
+├── config.py         # Constants, campus codes, progressive passes
 ├── parser.py         # Regex title parser with fallback patterns
 ├── analyzer.py       # Rule-based student signal & keyword extractor
 ├── crs_matcher.py    # Cross-referencer against official UP CRS db
 ├── models.py         # Dataclasses: Professor, Post, Comment
 ├── database.py       # SQLite schema, upsert logic, queries
-├── reddit_client.py  # Raw requests to .json endpoints + RSS fallback (or PRAW if authed)
+├── reddit_client.py  # PRAW → JSON → Arctic Shift → RSS
 ├── exporter.py       # SQLite → JSON with CRS & signal enrichment
-├── cli.py            # argparse CLI with rich progress bars
+├── cli.py            # scrape / scrape-all / reparse / enrich / export / stats / match
 └── __main__.py       # python -m scraper entrypoint
 ```
 
 ### Database
 
-SQLite with WAL mode for crash safety. Three tables:
-- `professors` — unique professor records keyed on normalized ID
-- `posts` — Reddit submissions with parsed metadata
-- `comments` — flattened comment trees with `parent_id` for reconstruction
-
-All writes use `INSERT OR REPLACE` so re-runs are idempotent.
+SQLite with WAL mode. Tables: `professors`, `posts`, `comments`. Writes use upserts so re-runs are idempotent.
 
 ## Running Tests
 
@@ -145,20 +111,9 @@ python -m pytest tests/ -v
 
 ## Compliance & Policy Safeguards
 
-This tool is designed in alignment with [Reddit's Responsible Builder Policy](https://support.reddithelp.com/hc/en-us/articles/Responsible-Builder-Policy) and Philippine NPC Advisory No. 2026-01:
+Aligned with [Reddit's Responsible Builder Policy](https://support.reddithelp.com/hc/en-us/articles/42728983564564-Responsible-Builder-Policy) and Philippine NPC Advisory No. 2026-01:
 
-1. **Zero Redditor De-anonymization**:
-   - The pipeline strictly decouples Reddit usernames from real-world identities.
-   - No attempt is made to re-identify, track, or cross-match Reddit users with off-platform student accounts.
-
-2. **Discovery & Index Layer Only**:
-   - The primary export format (`professors` JSON) treats Reddit as an external index ("18 discussions on r/RateUPProfs → View on Reddit").
-   - It outputs permalinks (`url`), scores, and comment counts to direct traffic back to original Reddit discussions rather than hosting permanent raw comment mirrors.
-
-3. **No AI Model Training**:
-   - Student sentiment signals are extracted using lightweight, deterministic rule-based regex matching ([analyzer.py](file:///Users/angelonrevelo/Antigravity/ruppscraper/scraper/analyzer.py)).
-   - No scraped Reddit content is sold, commercialized, or used for machine learning or LLM model training.
-
-4. **Rate Limit & Network Respect**:
-   - Requests enforce a courtesy delay (`1.2s` between requests) to prevent network or API disruption.
-
+1. **Zero Redditor De-anonymization** — no cross-matching Reddit users to real-world identities.
+2. **Discovery & Index Layer Only** — professor JSON points back to Reddit permalinks.
+3. **No AI Model Training** — rule-based signals only (`analyzer.py`); no scraped content for ML training.
+4. **Rate Limit Respect** — courtesy delay (~1.2s) between enrichment requests.

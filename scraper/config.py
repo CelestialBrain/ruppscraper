@@ -70,3 +70,28 @@ REQUEST_TIMEOUT: int = 30
 COURTESY_DELAY: float = 1.2            # seconds between comment enrichment calls
 COMMENT_ENRICH_TOP_N: int = 10          # how many posts to enrich with comments
 LISTING_LIMIT: int = 100                # max posts per JSON listing page
+
+# Arctic Shift archive API — used when Reddit's public .json endpoints
+# return 403/429 (common from datacenter / residential IPs without OAuth).
+ARCTIC_SHIFT_BASE: str = os.getenv(
+    "ARCTIC_SHIFT_BASE",
+    "https://arctic-shift.photon-reddit.com",
+)
+
+# Progressive scrape-all passes: (sort, query|None, post_limit, comment_limit)
+# Tuned for Arctic Shift / polite pacing — widen via CLI flags when needed.
+PROGRESSIVE_PASSES: list[tuple[str, str | None, int, int]] = [
+    ("new", None, 100, 50),
+    ("hot", None, 100, 50),
+    ("top", None, 200, 100),
+    ("rising", None, 50, 25),
+    ("new", "Math", 100, 50),
+    ("new", "Eng", 100, 50),
+    ("new", "Fil", 100, 50),
+    ("new", "Bio", 80, 40),
+    ("new", "Chem", 80, 40),
+    ("new", "Econ", 80, 40),
+    ("new", "Speech", 80, 40),
+    ("new", "KAS", 80, 40),
+    ("new", "Psych", 80, 40),
+]

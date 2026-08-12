@@ -162,11 +162,18 @@ class TestParseTitle:
 
     def test_no_dash_separator(self):
         result = parse_title("[UPD] Fil 40 Dela Cruz, Juan")
-        assert result is None
+        assert result is not None
+        assert result.course == "Fil 40"
+        assert result.last_name == "Dela Cruz"
+        assert result.first_name == "Juan"
 
     def test_no_comma(self):
         result = parse_title("[UPD] Fil 40 - Dela Cruz Juan")
-        assert result is None
+        assert result is not None
+        assert result.course == "Fil 40"
+        # Informal no-comma: last token is surname
+        assert result.last_name == "Juan"
+        assert result.first_name == "Dela Cruz"
 
     def test_empty_string(self):
         result = parse_title("")
@@ -232,3 +239,29 @@ class TestParseTitle:
         assert result is not None
         assert result.last_name == "Neri"
         assert result.first_name == "Marrick"
+
+    def test_no_comma_real_titles(self):
+        result = parse_title("[UPD] Math 22 - Arvin Lamando")
+        assert result is not None
+        assert result.course == "Math 22"
+        assert result.last_name == "Lamando"
+        assert result.first_name == "Arvin"
+
+        result = parse_title("[UPM] CMSC 11 - May Ann Grace Puquiz Palisoc")
+        assert result is not None
+        assert result.last_name == "Palisoc"
+        assert result.first_name == "May Ann Grace Puquiz"
+
+    def test_no_dash_all_caps_name(self):
+        result = parse_title("[UPD] SOC SCI 2 PAGUIRIGAN, MARK RYAN")
+        assert result is not None
+        assert result.course == "SOC SCI 2"
+        assert result.last_name == "Paguirigan"
+        assert result.first_name == "Mark Ryan"
+
+    def test_no_dash_with_course_number(self):
+        result = parse_title("[UPD] PA 141 Diñgal, Ian Kenneth")
+        assert result is not None
+        assert result.course == "PA 141"
+        assert result.last_name == "Diñgal"
+        assert result.first_name == "Ian Kenneth"

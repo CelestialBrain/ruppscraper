@@ -172,6 +172,57 @@ def get_scraped_post_ids(conn: sqlite3.Connection) -> set[str]:
     return {row["reddit_id"] for row in cursor}
 
 
+def get_unparsed_posts(conn: sqlite3.Connection) -> list[sqlite3.Row]:
+    """Return posts that have no professor_id (title parse failed or never tried)."""
+    return list(
+        conn.execute(
+            """
+            SELECT reddit_id, title, url, score, num_comments, created_utc,
+                   author, selftext, scraped_at, campus, course, professor_id
+            FROM posts
+            WHERE professor_id IS NULL
+            ORDER BY created_utc DESC
+            """
+        )
+    )
+
+
+def get_posts_missing_comments(
+    conn: sqlite3.Connection,
+    limit: int | None = None,
+) -> list[sqlite3.Row]:
+    """Return posts with no stored comments, preferring those claiming comments."""
+    sql = """
+        SELECT p.reddit_id, p.title, p.url, p.score, p.num_comments, p.created_utc,
+               p.author, p.selftext, p.scraped_at, p.campus, p.course, p.professor_id
+        FROM posts p
+        LEFT JOIN comments c ON c.post_reddit_id = p.reddit_id
+        WHERE c.reddit_id IS NULL
+        ORDER BY p.num_comments DESC, p.created_utc DESC
+    """
+    if limit is not None:
+        sql += f" LIMIT {int(limit)}"
+    return list(conn.execute(sql))
+
+
+def update_post_parse(
+    conn: sqlite3.Connection,
+    reddit_id: str,
+    campus: str | None,
+    course: str | None,
+    professor_id: str | None,
+) -> None:
+    """Update parsed fields on an existing post row."""
+    conn.execute(
+        """
+        UPDATE posts
+        SET campus = ?, course = ?, professor_id = ?
+        WHERE reddit_id = ?
+        """,
+        (campus, course, professor_id, reddit_id),
+    )
+
+
 def get_stats(conn: sqlite3.Connection) -> dict[str, Any]:
     """Return summary statistics about the database contents."""
     stats: dict[str, Any] = {}

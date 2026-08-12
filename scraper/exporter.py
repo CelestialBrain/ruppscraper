@@ -58,6 +58,7 @@ def export_full(output_path: Path, db_path: Path | None = None) -> int:
             "comments": [
                 {
                     "reddit_id": c["reddit_id"],
+                    "parent_id": c.get("parent_id"),
                     "author": c.get("author"),
                     "body": c["body"],
                     "score": c["score"],

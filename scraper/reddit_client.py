@@ -1,12 +1,15 @@
-"""Reddit scraper using raw JSON/RSS endpoints (no PRAW, no OAuth).
+"""Reddit scraper with a resilient fetch stack.
 
-Mirrors the approach used in pingfree: hit Reddit's public .json endpoints
-directly, fall back to RSS when rate-limited, rotate user-agents, and pace
-requests with courtesy delays.
+Order of preference:
+  1. PRAW (OAuth) when REDDIT_CLIENT_ID/SECRET are set
+  2. Reddit public .json endpoints
+  3. Arctic Shift archive API (when Reddit blocks unauthenticated JSON)
+  4. Subreddit RSS (listings only — no scores/comments)
 """
 
 from __future__ import annotations
 
+import logging
 import random
 import re
 import time
@@ -22,6 +25,7 @@ except ImportError:
     praw = None
 
 from scraper.config import (
+    ARCTIC_SHIFT_BASE,
     COMMENT_ENRICH_TOP_N,
     COURTESY_DELAY,
     LISTING_LIMIT,
@@ -35,10 +39,26 @@ from scraper.config import (
 from scraper.models import Comment, Post
 from scraper.parser import ParsedTitle, parse_title
 
+logger = logging.getLogger(__name__)
+
+# Last backend used by fetch_posts / enrich_with_comments (for CLI messaging).
+_last_listing_backend: str = "none"
+_last_comment_backend: str = "none"
+
+
+def get_last_backends() -> tuple[str, str]:
+    """Return (listing_backend, comment_backend) from the most recent scrape."""
+    return _last_listing_backend, _last_comment_backend
+
 
 def _has_praw_credentials() -> bool:
     """Check if Reddit API OAuth credentials are available."""
     return bool(praw and REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET)
+
+
+def has_praw_credentials() -> bool:
+    """Public alias for CLI / callers."""
+    return _has_praw_credentials()
 
 
 # ---------------------------------------------------------------------------
@@ -50,6 +70,10 @@ def _ua() -> str:
     if REDDIT_USER_AGENT:
         return REDDIT_USER_AGENT
     return random.choice(USER_AGENTS)
+
+
+def _session_headers(accept: str = "application/json") -> dict[str, str]:
+    return {"User-Agent": _ua(), "Accept": accept}
 
 
 # ---------------------------------------------------------------------------
@@ -72,22 +96,6 @@ def _subreddit_urls(subreddit: str) -> dict[str, str]:
 # JSON listing fetcher
 # ---------------------------------------------------------------------------
 
-def _fetch_json_listing(
-    url: str,
-    params: dict[str, str] | None = None,
-) -> list[dict[str, Any]]:
-    """Fetch a single page of Reddit listing JSON. Returns raw post dicts."""
-    headers = {"User-Agent": _ua(), "Accept": "application/json"}
-    try:
-        resp = requests.get(url, headers=headers, params=params, timeout=REQUEST_TIMEOUT)
-        resp.raise_for_status()
-        data = resp.json()
-        children = data.get("data", {}).get("children", [])
-        return [child.get("data", {}) for child in children if child.get("data")]
-    except (requests.RequestException, ValueError, KeyError):
-        return []
-
-
 def _fetch_json_paginated(
     url: str,
     limit: int | None = None,
@@ -96,6 +104,7 @@ def _fetch_json_paginated(
     """Fetch multiple pages of a Reddit listing, following 'after' cursors.
 
     Reddit caps each page at 100 posts and listing endpoints at ~1000 total.
+    Returns [] on hard blocks (403/429) so callers can fall back.
     """
     all_posts: list[dict[str, Any]] = []
     after: str | None = None
@@ -103,19 +112,37 @@ def _fetch_json_paginated(
     remaining = limit
 
     while True:
-        params: dict[str, str] = {"limit": str(page_size)}
+        params: dict[str, str] = {"limit": str(page_size), "raw_json": "1"}
         if after:
             params["after"] = after
         if extra_params:
             params.update(extra_params)
 
-        headers = {"User-Agent": _ua(), "Accept": "application/json"}
         try:
-            resp = requests.get(url, headers=headers, params=params, timeout=REQUEST_TIMEOUT)
+            resp = requests.get(
+                url,
+                headers=_session_headers(),
+                params=params,
+                timeout=REQUEST_TIMEOUT,
+            )
+            if resp.status_code in (403, 429):
+                logger.warning(
+                    "Reddit JSON blocked (%s) for %s — will try fallbacks",
+                    resp.status_code,
+                    url,
+                )
+                break
             if resp.status_code != 200:
+                logger.warning("Reddit JSON HTTP %s for %s", resp.status_code, url)
+                break
+            # Guard against HTML interstitial bodies
+            ctype = resp.headers.get("content-type", "")
+            if "json" not in ctype:
+                logger.warning("Reddit JSON returned non-JSON content-type: %s", ctype)
                 break
             data = resp.json()
-        except Exception:
+        except Exception as exc:
+            logger.warning("Reddit JSON fetch failed: %s", exc)
             break
 
         children = data.get("data", {}).get("children", [])
@@ -127,21 +154,145 @@ def _fetch_json_paginated(
             if post_data:
                 all_posts.append(post_data)
 
-        # Check if we've hit the limit
         if remaining is not None:
             remaining -= len(children)
             if remaining <= 0:
                 break
 
-        # Next page cursor
         after = data.get("data", {}).get("after")
         if not after:
             break
 
-        # Courtesy delay between pages
         time.sleep(COURTESY_DELAY)
 
     return all_posts[:limit] if limit else all_posts
+
+
+# ---------------------------------------------------------------------------
+# Arctic Shift archive fallback
+# ---------------------------------------------------------------------------
+
+def wrap_arctic_as_listing(posts: list[dict[str, Any]]) -> dict[str, Any]:
+    """Wrap Arctic Shift post dicts into Reddit listing JSON shape."""
+    return {
+        "data": {
+            "children": [{"kind": "t3", "data": p} for p in posts if p],
+        }
+    }
+
+
+def _fetch_arctic_posts(
+    subreddit: str,
+    limit: int | None = None,
+    query: str | None = None,
+    sort: str = "new",
+) -> list[dict[str, Any]]:
+    """Fetch submissions from the Arctic Shift archive API."""
+    target = limit or 100
+    collected: list[dict[str, Any]] = []
+    before: float | None = None
+
+    sort_type = "created_utc"
+    sort_dir = "desc"
+    if sort == "top":
+        sort_type = "score"
+        sort_dir = "desc"
+
+    while len(collected) < target:
+        page_size = min(100, target - len(collected))
+        params: dict[str, str] = {
+            "subreddit": subreddit,
+            "limit": str(page_size),
+            "sort": sort_dir,
+            "sort_type": sort_type,
+        }
+        if query:
+            params["query"] = query
+        if before is not None:
+            params["before"] = str(int(before))
+
+        url = f"{ARCTIC_SHIFT_BASE}/api/posts/search"
+        try:
+            resp = requests.get(
+                url,
+                headers=_session_headers(),
+                params=params,
+                timeout=REQUEST_TIMEOUT,
+            )
+            # Some query+sort combos return 422; retry with a simpler sort.
+            if resp.status_code == 422 and "sort_type" in params:
+                simple = {k: v for k, v in params.items() if k != "sort_type"}
+                simple["sort"] = "desc"
+                resp = requests.get(
+                    url,
+                    headers=_session_headers(),
+                    params=simple,
+                    timeout=REQUEST_TIMEOUT,
+                )
+            if resp.status_code != 200:
+                logger.warning("Arctic Shift posts HTTP %s", resp.status_code)
+                break
+            payload = resp.json()
+        except Exception as exc:
+            logger.warning("Arctic Shift posts failed: %s", exc)
+            break
+
+        batch = payload.get("data") or []
+        if not batch:
+            break
+
+        collected.extend(batch)
+        oldest = batch[-1].get("created_utc")
+        if oldest is None:
+            break
+        # Page using exclusive upper bound on created_utc
+        before = float(oldest)
+        if len(batch) < page_size:
+            break
+        time.sleep(0.35)
+
+    return collected[:target]
+
+
+def _fetch_arctic_comments(post_id: str, limit: int = 50) -> list[dict[str, Any]]:
+    """Fetch comments for a post from Arctic Shift."""
+    if not post_id:
+        return []
+
+    url = f"{ARCTIC_SHIFT_BASE}/api/comments/search"
+    params = {"link_id": post_id, "limit": str(limit)}
+    try:
+        resp = requests.get(
+            url,
+            headers=_session_headers(),
+            params=params,
+            timeout=REQUEST_TIMEOUT,
+        )
+        if resp.status_code != 200:
+            return []
+        payload = resp.json()
+    except Exception:
+        return []
+
+    raw = payload.get("data") or []
+    comments: list[dict[str, Any]] = []
+    for cdata in raw:
+        body = cdata.get("body", "")
+        if body in ("[deleted]", "[removed]", ""):
+            continue
+        parent_id = cdata.get("parent_id") or f"t3_{post_id}"
+        # Approximate depth from parent prefix (t3 = top-level).
+        depth = 0 if str(parent_id).startswith("t3_") else 1
+        comments.append({
+            "id": cdata.get("id", ""),
+            "parent_id": parent_id,
+            "author": cdata.get("author"),
+            "body": body,
+            "score": cdata.get("score", 0) or 0,
+            "created_utc": cdata.get("created_utc", 0) or 0,
+            "depth": depth,
+        })
+    return comments
 
 
 # ---------------------------------------------------------------------------
@@ -154,11 +305,18 @@ def _fetch_rss(url: str) -> list[dict[str, Any]]:
     Returns dicts shaped like the JSON API's post data so the rest of the
     pipeline doesn't need to branch.
     """
-    headers = {"User-Agent": _ua(), "Accept": "application/rss+xml, text/xml"}
+    headers = _session_headers("application/rss+xml, text/xml, */*")
     try:
         resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        if resp.status_code in (403, 429):
+            logger.warning("Reddit RSS blocked (%s)", resp.status_code)
+            return []
         resp.raise_for_status()
-    except requests.RequestException:
+    except requests.RequestException as exc:
+        logger.warning("Reddit RSS fetch failed: %s", exc)
+        return []
+
+    if not resp.text.strip():
         return []
 
     ns = {"atom": "http://www.w3.org/2005/Atom"}
@@ -166,24 +324,41 @@ def _fetch_rss(url: str) -> list[dict[str, Any]]:
 
     try:
         root = ET.fromstring(resp.text)
-        for entry in root.findall(".//atom:entry", ns):
+        entries = root.findall(".//atom:entry", ns)
+        if not entries:
+            # Some feeds use a default xmlns without prefixes in findall edge cases
+            entries = [e for e in root.iter() if str(e.tag).endswith("entry")]
+
+        for entry in entries:
             title_el = entry.find("atom:title", ns)
+            if title_el is None:
+                title_el = next((c for c in entry if str(c.tag).endswith("title")), None)
             link_el = entry.find("atom:link[@href]", ns)
+            if link_el is None:
+                link_el = next(
+                    (
+                        c
+                        for c in entry
+                        if str(c.tag).endswith("link") and c.get("href")
+                    ),
+                    None,
+                )
             id_el = entry.find("atom:id", ns)
+            if id_el is None:
+                id_el = next((c for c in entry if str(c.tag).endswith("id")), None)
             author_el = entry.find("atom:author/atom:name", ns)
             published_el = entry.find("atom:published", ns)
             updated_el = entry.find("atom:updated", ns)
             content_el = entry.find("atom:content", ns)
 
-            if title_el is None or not title_el.text:
+            if title_el is None or not (title_el.text or "").strip():
                 continue
 
             title = title_el.text.strip()
             permalink = link_el.get("href", "") if link_el is not None else ""
-            post_id = id_el.text if id_el is not None else permalink
+            post_id_raw = id_el.text if id_el is not None else permalink
             author = author_el.text if author_el is not None else None
 
-            # Extract created_utc from published date
             created_utc = 0.0
             pub_el = published_el if published_el is not None else updated_el
             if pub_el is not None and pub_el.text:
@@ -193,40 +368,40 @@ def _fetch_rss(url: str) -> list[dict[str, Any]]:
                 except ValueError:
                     pass
 
-            # Extract selftext from content HTML
             selftext = ""
             if content_el is not None and content_el.text:
-                # Strip HTML tags for plain text
                 selftext = re.sub(r"<[^>]+>", " ", content_el.text)
                 selftext = re.sub(r"\s+", " ", selftext).strip()
 
-            # Extract the reddit post ID from the permalink or id field
             reddit_id = ""
-            if post_id:
-                # ID format is usually like "t3_abc123" or a full URL
-                id_match = re.search(r"t3_(\w+)", str(post_id))
+            if post_id_raw:
+                id_match = re.search(r"t3_(\w+)", str(post_id_raw))
                 if id_match:
                     reddit_id = id_match.group(1)
                 else:
-                    # Try extracting from permalink URL
                     parts = permalink.rstrip("/").split("/")
-                    if len(parts) >= 2:
-                        reddit_id = parts[-2] if parts[-1] != "" else parts[-1]
+                    # .../comments/<id>/<slug>/
+                    if "comments" in parts:
+                        idx = parts.index("comments")
+                        if idx + 1 < len(parts):
+                            reddit_id = parts[idx + 1]
 
             posts.append({
                 "id": reddit_id,
                 "title": title,
                 "author": author.replace("/u/", "") if author else None,
-                "permalink": permalink,
+                "permalink": permalink.replace("https://www.reddit.com", "")
+                if permalink.startswith("https://")
+                else permalink,
                 "url": permalink,
                 "selftext": selftext,
-                "score": 0,       # Not available from RSS
-                "num_comments": 0,  # Not available from RSS
+                "score": 0,
+                "num_comments": 0,
                 "created_utc": created_utc,
                 "_source": "rss",
             })
-    except ET.ParseError:
-        pass
+    except ET.ParseError as exc:
+        logger.warning("RSS parse error: %s", exc)
 
     return posts
 
@@ -242,21 +417,25 @@ def _fetch_post_comments(
     """Fetch comments for a single post via /comments/{id}.json.
 
     Returns (comments_list, fresh_post_data_or_None).
-
-    Reddit returns a 2-element array:
-      [0] = listing with the post itself (freshest version)
-      [1] = listing of comments
     """
     if not post_id or len(post_id) > 12:
         return [], None
 
     url = f"https://www.reddit.com/comments/{post_id}.json"
-    headers = {"User-Agent": _ua(), "Accept": "application/json"}
-    params = {"limit": str(limit), "sort": "top", "depth": "2"}
+    params = {"limit": str(limit), "sort": "top", "depth": "2", "raw_json": "1"}
 
     try:
-        resp = requests.get(url, headers=headers, params=params, timeout=REQUEST_TIMEOUT)
+        resp = requests.get(
+            url,
+            headers=_session_headers(),
+            params=params,
+            timeout=REQUEST_TIMEOUT,
+        )
+        if resp.status_code in (403, 429):
+            return [], None
         if resp.status_code != 200:
+            return [], None
+        if "json" not in resp.headers.get("content-type", ""):
             return [], None
         payload = resp.json()
     except Exception:
@@ -265,14 +444,12 @@ def _fetch_post_comments(
     if not isinstance(payload, list) or len(payload) < 2:
         return [], None
 
-    # Extract fresh post data
     fresh_post: dict[str, Any] | None = None
     try:
         fresh_post = payload[0]["data"]["children"][0]["data"]
     except (KeyError, IndexError, TypeError):
         pass
 
-    # Extract comments
     raw_comments: list[dict[str, Any]] = []
     try:
         children = payload[1]["data"]["children"]
@@ -280,7 +457,6 @@ def _fetch_post_comments(
         children = []
 
     def _walk_comments(nodes: list[dict], depth: int = 0) -> None:
-        """Recursively walk the comment tree."""
         for node in nodes:
             if node.get("kind") != "t1":
                 continue
@@ -299,7 +475,6 @@ def _fetch_post_comments(
                 "depth": depth,
             })
 
-            # Recurse into replies
             replies = cdata.get("replies")
             if isinstance(replies, dict):
                 reply_children = replies.get("data", {}).get("children", [])
@@ -307,6 +482,42 @@ def _fetch_post_comments(
 
     _walk_comments(children)
     return raw_comments, fresh_post
+
+
+# ---------------------------------------------------------------------------
+# Post model builder
+# ---------------------------------------------------------------------------
+
+def _post_from_raw(post_data: dict[str, Any], scraped_at: float) -> tuple[Post, ParsedTitle | None]:
+    """Convert a Reddit-shaped dict into a Post + ParsedTitle."""
+    post_id = post_data.get("id", "") or ""
+    title = post_data.get("title", "") or ""
+    parsed = parse_title(title)
+
+    author = post_data.get("author")
+    permalink = post_data.get("permalink", "") or ""
+    if permalink.startswith("http"):
+        post_url = permalink
+    elif permalink.startswith("/"):
+        post_url = f"https://reddit.com{permalink}"
+    else:
+        post_url = post_data.get("url", "") or f"https://reddit.com/comments/{post_id}"
+
+    post = Post(
+        reddit_id=post_id,
+        title=title,
+        campus=parsed.campus if parsed else None,
+        course=parsed.course if parsed else None,
+        professor_id=parsed.professor_id if parsed else None,
+        url=post_url,
+        score=int(post_data.get("score", 0) or 0),
+        num_comments=int(post_data.get("num_comments", 0) or 0),
+        created_utc=float(post_data.get("created_utc", 0) or 0),
+        author=author if author and author != "[deleted]" else None,
+        selftext=post_data.get("selftext", "") or "",
+        scraped_at=scraped_at,
+    )
+    return post, parsed
 
 
 # ---------------------------------------------------------------------------
@@ -318,14 +529,17 @@ def fetch_posts(
     limit: int | None = None,
     skip_ids: set[str] | None = None,
     subreddit: str = SUBREDDIT_NAME,
+    query: str | None = None,
 ) -> Generator[tuple[Post, ParsedTitle | None, list[Comment]], None, None]:
     """Fetch posts from r/RateUPProfs and yield (Post, ParsedTitle, [Comment]).
 
-    Uses PRAW if OAuth credentials exist in .env, otherwise falls back to public RSS/JSON.
+    Uses PRAW if OAuth credentials exist, otherwise JSON → Arctic Shift → RSS.
     """
+    global _last_listing_backend
     skip = skip_ids or set()
 
-    if _has_praw_credentials():
+    if _has_praw_credentials() and not query:
+        _last_listing_backend = "praw"
         reddit = praw.Reddit(
             client_id=REDDIT_CLIENT_ID,
             client_secret=REDDIT_CLIENT_SECRET,
@@ -371,63 +585,45 @@ def fetch_posts(
         return
 
     urls = _subreddit_urls(subreddit)
+    raw_posts: list[dict[str, Any]] = []
+    _last_listing_backend = "none"
 
-    # Select endpoint by sort
-    sort_key = f"json_{sort}"
-    json_url = urls.get(sort_key, urls["json_new"])
+    # Query shards go straight to Arctic Shift (Reddit search JSON is also blocked).
+    if query:
+        raw_posts = _fetch_arctic_posts(subreddit, limit=limit, query=query, sort=sort)
+        _last_listing_backend = "arctic" if raw_posts else "none"
+    else:
+        sort_key = f"json_{sort}"
+        json_url = urls.get(sort_key, urls["json_new"])
+        extra_params: dict[str, str] = {}
+        if sort == "top":
+            extra_params["t"] = "all"
 
-    extra_params: dict[str, str] = {}
-    if sort == "top":
-        extra_params["t"] = "all"  # time_filter=all
+        raw_posts = _fetch_json_paginated(json_url, limit=limit, extra_params=extra_params)
+        if raw_posts:
+            _last_listing_backend = "json"
+        else:
+            raw_posts = _fetch_arctic_posts(subreddit, limit=limit, sort=sort)
+            if raw_posts:
+                _last_listing_backend = "arctic"
+            else:
+                raw_posts = _fetch_rss(urls["rss_new"])
+                if limit:
+                    raw_posts = raw_posts[:limit]
+                _last_listing_backend = "rss" if raw_posts else "none"
 
-    # Try JSON first (richer data)
-    raw_posts = _fetch_json_paginated(json_url, limit=limit, extra_params=extra_params)
-
-    # Fallback to RSS if JSON failed
-    if not raw_posts:
-        raw_posts = _fetch_rss(urls["rss_new"])
-        if limit:
-            raw_posts = raw_posts[:limit]
-
-    # Process each post
     now = datetime.now(timezone.utc).timestamp()
 
     for post_data in raw_posts:
         post_id = post_data.get("id", "")
-
-        # Skip already-scraped
         if post_id in skip:
             continue
-
-        # Skip removed / meta / stickied posts
         if post_data.get("removed_by_category") or post_data.get("stickied"):
             continue
 
-        # Parse the title
-        title = post_data.get("title", "")
-        parsed = parse_title(title)
-
-        # Build the Post model
-        author = post_data.get("author")
-        permalink = post_data.get("permalink", "")
-        post_url = f"https://reddit.com{permalink}" if permalink.startswith("/") else permalink
-
-        post = Post(
-            reddit_id=post_id,
-            title=title,
-            campus=parsed.campus if parsed else None,
-            course=parsed.course if parsed else None,
-            professor_id=parsed.professor_id if parsed else None,
-            url=post_url,
-            score=post_data.get("score", 0),
-            num_comments=post_data.get("num_comments", 0),
-            created_utc=post_data.get("created_utc", 0),
-            author=author if author and author != "[deleted]" else None,
-            selftext=post_data.get("selftext", ""),
-            scraped_at=now,
-        )
-
-        # Comments will be empty initially — enriched separately
+        post, parsed = _post_from_raw(post_data, now)
+        if not post.reddit_id:
+            continue
         yield post, parsed, []
 
 
@@ -438,9 +634,12 @@ def enrich_with_comments(
     """Fetch comments for the top N posts.
 
     Returns a dict mapping post reddit_id → list of Comment models.
+    Tries Reddit JSON / PRAW first, then Arctic Shift per post.
     """
+    global _last_comment_backend
     now = datetime.now(timezone.utc).timestamp()
     result: dict[str, list[Comment]] = {}
+    backends_used: set[str] = set()
 
     if _has_praw_credentials():
         reddit = praw.Reddit(
@@ -474,9 +673,28 @@ def enrich_with_comments(
                         )
                     )
                 result[post.reddit_id] = comments
+                backends_used.add("praw")
             except Exception:
-                pass
+                # Fall through to Arctic for this post
+                arctic_raw = _fetch_arctic_comments(post.reddit_id)
+                comments = [
+                    Comment(
+                        reddit_id=c["id"],
+                        post_reddit_id=post.reddit_id,
+                        parent_id=c["parent_id"],
+                        author=c["author"] if c["author"] != "[deleted]" else None,
+                        body=c["body"],
+                        score=c["score"],
+                        created_utc=float(c["created_utc"] or 0),
+                        depth=c["depth"],
+                        scraped_at=now,
+                    )
+                    for c in arctic_raw
+                ]
+                result[post.reddit_id] = comments
+                backends_used.add("arctic")
             time.sleep(COURTESY_DELAY)
+        _last_comment_backend = "+".join(sorted(backends_used)) or "none"
         return result
 
     for post in posts[:top_n]:
@@ -484,29 +702,54 @@ def enrich_with_comments(
             continue
 
         raw_comments, fresh_post = _fetch_post_comments(post.reddit_id)
+        backend = "json"
 
-        # Update post score/num_comments from fresh data if available
         if fresh_post and isinstance(fresh_post, dict):
             post.score = fresh_post.get("score", post.score)
             post.num_comments = fresh_post.get("num_comments", post.num_comments)
 
-        comments: list[Comment] = []
-        for c in raw_comments:
-            comments.append(
-                Comment(
-                    reddit_id=c["id"],
-                    post_reddit_id=post.reddit_id,
-                    parent_id=c["parent_id"],
-                    author=c["author"] if c["author"] != "[deleted]" else None,
-                    body=c["body"],
-                    score=c["score"],
-                    created_utc=c["created_utc"],
-                    depth=c["depth"],
-                    scraped_at=now,
-                )
-            )
+        if not raw_comments:
+            raw_comments = _fetch_arctic_comments(post.reddit_id)
+            backend = "arctic"
+            # Refresh score/num_comments from arctic post if listing was RSS-thin
+            if post.num_comments == 0 or post.created_utc == 0:
+                try:
+                    resp = requests.get(
+                        f"{ARCTIC_SHIFT_BASE}/api/posts/ids",
+                        headers=_session_headers(),
+                        params={"ids": post.reddit_id},
+                        timeout=REQUEST_TIMEOUT,
+                    )
+                    if resp.status_code == 200:
+                        rows = (resp.json() or {}).get("data") or []
+                        if rows:
+                            post.score = int(rows[0].get("score", post.score) or post.score)
+                            post.num_comments = int(
+                                rows[0].get("num_comments", post.num_comments)
+                                or post.num_comments
+                            )
+                            if not post.created_utc:
+                                post.created_utc = float(rows[0].get("created_utc") or 0)
+                except Exception:
+                    pass
 
+        comments = [
+            Comment(
+                reddit_id=c["id"],
+                post_reddit_id=post.reddit_id,
+                parent_id=c["parent_id"],
+                author=c["author"] if c["author"] != "[deleted]" else None,
+                body=c["body"],
+                score=c["score"],
+                created_utc=float(c["created_utc"] or 0),
+                depth=c["depth"],
+                scraped_at=now,
+            )
+            for c in raw_comments
+        ]
         result[post.reddit_id] = comments
+        backends_used.add(backend)
         time.sleep(COURTESY_DELAY)
 
+    _last_comment_backend = "+".join(sorted(backends_used)) or "none"
     return result

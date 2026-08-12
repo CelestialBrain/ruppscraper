@@ -60,9 +60,27 @@ jobs:
           if [[ "$SHARD" == sort:* ]]; then
             SORT_TYPE="${SHARD#sort:}"
             python -m scraper scrape --sort "$SORT_TYPE" --limit 200 --comments 50
+          elif [[ "$SHARD" == query:* ]]; then
+            QUERY="${SHARD#query:}"
+            python -m scraper scrape --sort new --query "$QUERY" --limit 100 --comments 50
+          else
+            echo "Unknown shard type: $SHARD" >&2
+            exit 1
           fi
 
-          # Export shard DB or export output
+          python -m scraper stats
+          # Fail the shard if the DB has zero posts (silent backend death).
+          python - <<'PY'
+          from scraper.database import get_connection, get_stats, init_db
+          conn = get_connection()
+          init_db(conn)
+          stats = get_stats(conn)
+          conn.close()
+          print(stats)
+          if stats["total_posts"] == 0:
+              raise SystemExit("Shard produced 0 posts — fetch stack failed")
+          PY
+
           python -m scraper export --format full -o "artifacts/shard_${SAFE_NAME}.json"
 
       - name: Upload Shard Artifact
@@ -102,75 +120,128 @@ jobs:
 
       - name: Ingest shard JSONs into main database
         run: |
-          python3 -c "
-          import json, glob, sqlite3
-          from scraper.database import get_connection, init_db, upsert_post, upsert_comment, upsert_professor
-          from scraper.models import Post, Comment, Professor
+          python3 <<'PY'
+          import glob
+          import json
+          from datetime import datetime
+
+          from scraper.database import (
+              get_connection,
+              init_db,
+              upsert_comment,
+              upsert_post,
+              upsert_professor,
+          )
+          from scraper.models import Comment, Post, Professor
+          from scraper.parser import parse_title
+
+          def parse_iso(ts: str | None) -> float:
+              if not ts:
+                  return 0.0
+              try:
+                  return datetime.fromisoformat(ts.replace("Z", "+00:00")).timestamp()
+              except ValueError:
+                  return 0.0
 
           conn = get_connection()
           init_db(conn)
 
-          files = glob.glob('artifacts/shard_*.json')
-          print(f'Merging {len(files)} shard files...')
+          files = sorted(glob.glob("artifacts/shard_*.json"))
+          print(f"Merging {len(files)} shard files...")
 
           for fpath in files:
-              with open(fpath, 'r') as f:
+              with open(fpath, "r") as f:
                   data = json.load(f)
-              for item in data:
-                  post_data = item['post']
-                  prof_data = item.get('professor')
-                  prof_id = None
+              if not isinstance(data, list):
+                  print(f"  skip {fpath}: not a list")
+                  continue
+              print(f"  {fpath}: {len(data)} posts")
 
-                  if prof_data and prof_data.get('last_name'):
-                      last = prof_data['last_name']
-                      first = prof_data['first_name']
-                      campus = item.get('campus', 'UPD')
-                      prof_id = f'{campus.lower()}__{last.lower()}__{first.lower()}'
-                      upsert_professor(conn, Professor(id=prof_id, last_name=last, first_name=first, campus=campus))
+              for item in data:
+                  post_data = item["post"]
+                  title = post_data["title"]
+                  parsed = parse_title(title)
+
+                  prof_id = None
+                  if parsed is not None:
+                      prof_id = parsed.professor_id
+                      upsert_professor(
+                          conn,
+                          Professor(
+                              id=prof_id,
+                              last_name=parsed.last_name,
+                              first_name=parsed.first_name,
+                              campus=parsed.campus,
+                          ),
+                      )
+                  else:
+                      prof_data = item.get("professor") or {}
+                      if prof_data.get("last_name"):
+                          campus = item.get("campus") or "UPD"
+                          last = prof_data["last_name"]
+                          first = prof_data.get("first_name") or ""
+                          # Keep merge resilient if parser still fails
+                          from scraper.parser import _normalize_for_id
+
+                          prof_id = (
+                              f"{campus.lower()}__"
+                              f"{_normalize_for_id(last)}__"
+                              f"{_normalize_for_id(first)}"
+                          )
+                          upsert_professor(
+                              conn,
+                              Professor(
+                                  id=prof_id,
+                                  last_name=last,
+                                  first_name=first,
+                                  campus=campus,
+                              ),
+                          )
 
                   post = Post(
-                      reddit_id=post_data['reddit_id'],
-                      title=post_data['title'],
-                      campus=item.get('campus'),
-                      course=item.get('course'),
+                      reddit_id=post_data["reddit_id"],
+                      title=title,
+                      campus=(parsed.campus if parsed else item.get("campus")),
+                      course=(parsed.course if parsed else item.get("course")),
                       professor_id=prof_id,
-                      url=post_data['url'],
-                      score=post_data['score'],
-                      num_comments=post_data['num_comments'],
-                      created_utc=0.0,
-                      author=post_data.get('author'),
-                      selftext=post_data.get('body', ''),
+                      url=post_data["url"],
+                      score=int(post_data.get("score") or 0),
+                      num_comments=int(post_data.get("num_comments") or 0),
+                      created_utc=parse_iso(post_data.get("posted_at")),
+                      author=post_data.get("author"),
+                      selftext=post_data.get("body", "") or "",
                   )
                   upsert_post(conn, post)
 
-                  for c in item.get('comments', []):
+                  for c in item.get("comments") or []:
                       comment = Comment(
-                          reddit_id=c['reddit_id'],
-                          post_reddit_id=post_data['reddit_id'],
-                          parent_id='',
-                          author=c.get('author'),
-                          body=c['body'],
-                          score=c['score'],
-                          created_utc=0.0,
-                          depth=c['depth'],
+                          reddit_id=c["reddit_id"],
+                          post_reddit_id=post_data["reddit_id"],
+                          parent_id=c.get("parent_id") or f"t3_{post_data['reddit_id']}",
+                          author=c.get("author"),
+                          body=c["body"],
+                          score=int(c.get("score") or 0),
+                          created_utc=parse_iso(c.get("posted_at")),
+                          depth=int(c.get("depth") or 0),
                       )
                       upsert_comment(conn, comment)
 
           conn.commit()
           conn.close()
-          print('Merge complete.')
-          "
+          print("Merge complete.")
+          PY
 
       - name: Match against CRS & Export Final JSON
         run: |
           python -m scraper export --format professors --crs -o output/professors_crs.json
+          python -m scraper export --format professors -o output/professors.json
           python -m scraper stats
 
       - name: Commit updated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f output/professors_crs.json ruppscraper.db
+          git add -f output/professors_crs.json output/professors.json ruppscraper.db
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
