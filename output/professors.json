@@ -2426,7 +2426,7 @@
       },
       "grading_mentions": {
         "generous": 2,
-        "fair": 0,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -2438,6 +2438,7 @@
         "clear": 0
       },
       "keywords": [
+        "fair",
         "uno",
         "unoable"
       ]
@@ -2994,7 +2995,7 @@
       "workload": "light",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 2,
         "moderate": 0
       },
@@ -3016,6 +3017,7 @@
         "kind",
         "manageable",
         "passionate",
+        "reqs",
         "uno",
         "unoable"
       ]
@@ -4653,15 +4655,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -4673,7 +4675,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "heavy",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -5143,10 +5150,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun"
+      ]
     },
     "discussions": [
       {
@@ -5546,10 +5555,10 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -5566,7 +5575,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy"
+      ]
     },
     "discussions": [
       {
@@ -5593,11 +5604,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -5610,10 +5621,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "kind",
+        "manageable"
+      ]
     },
     "discussions": [
       {
@@ -5755,7 +5770,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -5768,6 +5783,7 @@
         "clear": 1
       },
       "keywords": [
+        "flat 1",
         "light",
         "manageable",
         "organized",
@@ -5823,15 +5839,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 3,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -5840,10 +5856,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 2,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "engaging",
+        "heavy",
+        "organized",
+        "readings",
+        "reqs",
+        "understanding",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -6037,10 +6063,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 3,
         "light": 0,
         "moderate": 0
       },
@@ -6054,10 +6080,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 1,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "clear",
+        "fun",
+        "heavy",
+        "readings",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -6403,10 +6435,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "understanding"
+      ]
     },
     "discussions": [
       {
@@ -6433,15 +6467,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -6453,7 +6487,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -6662,15 +6700,15 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -6682,7 +6720,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -7883,7 +7925,7 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 3,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -7902,6 +7944,7 @@
       "keywords": [
         "fun",
         "heavy",
+        "manageable",
         "readings",
         "reqs",
         "understanding",
@@ -8851,10 +8894,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -8871,7 +8914,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -8993,10 +9038,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "understanding"
+      ]
     },
     "discussions": [
       {
@@ -9112,14 +9159,14 @@
     "total_discussions": 2,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -9128,10 +9175,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -9718,7 +9769,7 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
-        "light": 2,
+        "light": 3,
         "moderate": 0
       },
       "grading_mentions": {
@@ -9731,11 +9782,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 0
       },
       "keywords": [
         "chill",
+        "fun",
+        "light",
         "manageable",
         "reqs",
         "understanding",
@@ -10018,15 +10071,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -10035,10 +10088,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "generous",
+        "kind",
+        "reqs",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -10240,10 +10298,10 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -10257,10 +10315,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "fun",
+        "reqs",
         "uno",
         "unoable"
       ]
@@ -11453,9 +11513,11 @@
       },
       "pedagogy_mentions": {
         "engaging": 0,
-        "clear": 0
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "knowledgeable"
+      ]
     },
     "discussions": [
       {
@@ -12077,15 +12139,15 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -12097,7 +12159,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -12187,15 +12253,15 @@
     ],
     "total_discussions": 8,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -12207,7 +12273,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -12276,15 +12346,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -12296,7 +12366,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -13016,14 +13089,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -13035,7 +13108,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -13178,15 +13254,15 @@
     "total_discussions": 4,
     "signals_summary": {
       "workload": "moderate",
-      "grading": null,
+      "grading": "fair",
       "workload_mentions": {
-        "heavy": 1,
-        "light": 1,
+        "heavy": 2,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
         "generous": 0,
-        "fair": 0,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -13194,13 +13270,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 5,
         "clear": 0
       },
       "keywords": [
+        "best prof",
+        "engaging",
+        "fair",
         "fun",
+        "kind",
         "light",
-        "readings"
+        "manageable",
+        "readings",
+        "reqs",
+        "understanding"
       ]
     },
     "discussions": [
@@ -13783,15 +13866,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -13800,10 +13883,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "reqs",
+        "understanding",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -13872,15 +13961,15 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -13892,7 +13981,13 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "manageable",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -14254,10 +14349,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "passionate"
+      ]
     },
     "discussions": [
       {
@@ -14277,11 +14375,11 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -14294,10 +14392,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "chill",
+        "fun",
+        "kind",
+        "light"
+      ]
     },
     "discussions": [
       {
@@ -15014,11 +15118,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -15034,7 +15138,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill"
+      ]
     },
     "discussions": [
       {
@@ -15318,14 +15424,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -15334,10 +15440,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "best prof",
+        "fun",
+        "generous"
+      ]
     },
     "discussions": [
       {
@@ -15480,12 +15591,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
-        "clear": 0
+        "engaging": 3,
+        "clear": 1
       },
       "keywords": [
         "approachable",
         "chill",
+        "clear",
+        "fun",
         "kind",
         "light",
         "readings",
@@ -15727,12 +15840,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
         "approachable",
         "kind",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -16520,15 +16634,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -16538,9 +16652,14 @@
       },
       "pedagogy_mentions": {
         "engaging": 0,
-        "clear": 0
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "organized",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -17047,11 +17166,11 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": "heavy",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -17068,6 +17187,7 @@
         "clear": 0
       },
       "keywords": [
+        "manageable",
         "reqs",
         "uno",
         "unoable"
@@ -17452,15 +17572,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -17472,7 +17592,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -17569,15 +17694,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -17586,10 +17711,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs",
+        "understanding",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -18443,7 +18572,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 1,
+        "generous": 2,
         "fair": 1,
         "strict": 0
       },
@@ -18452,14 +18581,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 1,
+        "clear": 1
       },
       "keywords": [
+        "approachable",
         "fair",
+        "organized",
         "readings",
         "reqs",
-        "uno"
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -19009,15 +19141,15 @@
     ],
     "total_discussions": 9,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -19026,10 +19158,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "best prof",
+        "kind",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -19695,14 +19833,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -19714,7 +19852,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "line of 1"
+      ]
     },
     "discussions": [
       {
@@ -19735,16 +19875,16 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 2,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -19755,7 +19895,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "demanding",
+        "gives feedback",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -19794,7 +19939,7 @@
       },
       "grading_mentions": {
         "generous": 2,
-        "fair": 0,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -19802,13 +19947,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 1
       },
       "keywords": [
         "clear",
         "light",
         "manageable",
+        "transparent",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -20378,11 +20525,11 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -20398,7 +20545,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -20624,16 +20774,16 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "fair",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
         "generous": 0,
-        "fair": 0,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -20641,10 +20791,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fair",
+        "fun",
+        "light"
+      ]
     },
     "discussions": [
       {
@@ -21632,15 +21786,15 @@
     ],
     "total_discussions": 9,
     "signals_summary": {
-      "workload": "light",
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 5,
         "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -21649,12 +21803,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
+        "1.0",
         "approachable",
         "chill",
+        "fun",
+        "heavy",
+        "overwhelming",
+        "reading-heavy",
+        "readings",
+        "reqs",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -22229,16 +22391,16 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 2,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -22246,10 +22408,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "best prof",
+        "chill",
+        "fair",
+        "fun",
+        "kind",
+        "manageable",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -22812,15 +22984,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -22832,7 +23004,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "readings",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -22866,15 +23042,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -22886,7 +23062,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "generous",
+        "manageable"
+      ]
     },
     "discussions": [
       {
@@ -25185,15 +25364,15 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -25205,7 +25384,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -25681,7 +25865,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -25690,10 +25874,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "fun",
+        "generous",
         "uno",
         "unoable"
       ]
@@ -25849,14 +26035,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -25868,7 +26054,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -26761,10 +26950,10 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -26781,7 +26970,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -27700,15 +27891,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -27720,7 +27911,13 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "heavy",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -28072,11 +28269,11 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -28092,7 +28289,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "light",
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -28448,10 +28648,11 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "kind",
         "reqs",
         "uno",
         "unoable"
@@ -28968,15 +29169,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -28985,10 +29186,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "generous",
+        "light",
+        "readings",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -29632,16 +29840,16 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 2,
+        "fair": 2,
         "strict": 0
       },
       "attendance_mentions": {
@@ -29649,10 +29857,21 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 4,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "engaging",
+        "fair",
+        "gives feedback",
+        "kind",
+        "manageable",
+        "reqs",
+        "understanding",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -29750,17 +29969,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 4,
         "clear": 0
       },
       "keywords": [
+        "approachable",
         "flat 1",
         "fun",
         "generous",
         "justified",
         "manageable",
+        "passionate",
         "readings",
         "reqs",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -30901,15 +31123,15 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -30917,10 +31139,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 3,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "fair",
+        "fun",
+        "organized",
+        "understanding",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -31126,14 +31355,14 @@
     "total_discussions": 2,
     "signals_summary": {
       "workload": "heavy",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -31142,11 +31371,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
-        "readings"
+        "engaging",
+        "readings",
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -33140,14 +33372,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -33156,10 +33388,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -34058,15 +34293,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -34078,7 +34313,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "light",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -34285,10 +34524,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -34305,7 +34544,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -34875,15 +35116,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -34892,10 +35133,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "1.0",
+        "fun",
+        "readings",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -35875,7 +36121,7 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
@@ -35897,6 +36143,7 @@
         "easy uno",
         "engaging",
         "heavy",
+        "heavy workload",
         "uno",
         "unoable"
       ]
@@ -36484,15 +36731,15 @@
     ],
     "total_discussions": 10,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -36504,7 +36751,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -36722,15 +36974,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -36742,7 +36994,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "manageable",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -37682,14 +37937,14 @@
     "total_discussions": 8,
     "signals_summary": {
       "workload": "light",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
         "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -37704,7 +37959,8 @@
       "keywords": [
         "chill",
         "light",
-        "reqs"
+        "reqs",
+        "uno"
       ]
     },
     "discussions": [
@@ -37856,15 +38112,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -37873,10 +38129,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "best prof",
+        "caring",
+        "chill",
+        "readings",
+        "understanding",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -38273,14 +38537,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -38292,7 +38556,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -38917,10 +39183,10 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": "light",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 1,
         "moderate": 0
       },
@@ -38934,12 +39200,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
         "chill",
+        "engaging",
         "generous",
+        "readings",
         "uno"
       ]
     },
@@ -39089,10 +39357,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 2,
+        "clear": 1
       },
       "keywords": [
+        "clear",
+        "fun",
+        "kind",
         "uno",
         "unoable"
       ]
@@ -40046,15 +40317,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -40063,10 +40334,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "chill",
+        "heavy",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -41206,14 +41482,14 @@
     "total_discussions": 4,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -41225,7 +41501,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -41718,7 +41997,7 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 3,
-        "light": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -41737,6 +42016,7 @@
       "keywords": [
         "chill",
         "heavy",
+        "manageable",
         "readings",
         "reqs",
         "understanding",
@@ -42245,11 +42525,11 @@
     ],
     "total_discussions": 7,
     "signals_summary": {
-      "workload": "heavy",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -42262,13 +42542,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 0
       },
       "keywords": [
+        "chill",
         "generous",
         "kind",
         "readings",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -42640,15 +42922,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 3,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -42657,10 +42939,19 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 2,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "caring",
+        "heavy",
+        "kind",
+        "organized",
+        "readings",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -44331,10 +44622,11 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "approachable",
         "easy uno",
         "light",
         "uno"
@@ -44776,7 +45068,7 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -44789,10 +45081,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 3,
+        "engaging": 4,
         "clear": 0
       },
       "keywords": [
+        "approachable",
+        "chill",
         "fun",
         "kind",
         "manageable",
@@ -45081,11 +45375,11 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -45101,7 +45395,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill"
+      ]
     },
     "discussions": [
       {
@@ -45294,14 +45590,14 @@
     "total_discussions": 2,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -45313,7 +45609,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -45485,7 +45783,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -45499,6 +45797,7 @@
       },
       "keywords": [
         "chill",
+        "generous",
         "readings",
         "uno",
         "unoable"
@@ -45618,11 +45917,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -45635,10 +45934,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fun",
+        "light"
+      ]
     },
     "discussions": [
       {
@@ -46300,13 +46603,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 0
       },
       "keywords": [
         "kind",
         "reqs",
         "transparent",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -48186,10 +48490,10 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -48203,10 +48507,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "kind"
+      ]
     },
     "discussions": [
       {
@@ -48574,10 +48881,10 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -48594,7 +48901,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "overwhelming"
+      ]
     },
     "discussions": [
       {
@@ -49217,7 +49526,7 @@
       },
       "grading_mentions": {
         "generous": 0,
-        "fair": 1,
+        "fair": 2,
         "strict": 0
       },
       "attendance_mentions": {
@@ -49226,14 +49535,16 @@
       },
       "pedagogy_mentions": {
         "engaging": 1,
-        "clear": 0
+        "clear": 1
       },
       "keywords": [
+        "clear",
         "fair",
         "fun",
         "heavy",
         "manageable",
-        "reqs"
+        "reqs",
+        "transparent"
       ]
     },
     "discussions": [
@@ -49844,11 +50155,11 @@
     ],
     "total_discussions": 6,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 4,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -49861,10 +50172,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
+        "approachable",
+        "engaging",
+        "heavy",
+        "heavy workload",
+        "light",
+        "readings",
+        "reqs",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -50253,14 +50572,14 @@
     "total_discussions": 3,
     "signals_summary": {
       "workload": "light",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
         "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -50275,7 +50594,8 @@
       "keywords": [
         "chill",
         "manageable",
-        "readings"
+        "readings",
+        "uno"
       ]
     },
     "discussions": [
@@ -50319,18 +50639,21 @@
       },
       "grading_mentions": {
         "generous": 2,
-        "fair": 0,
-        "strict": 0
+        "fair": 1,
+        "strict": 1
       },
       "attendance_mentions": {
         "strict": 0,
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "fair",
+        "fun",
+        "kuripot",
         "reqs",
         "uno",
         "unoable"
@@ -50368,15 +50691,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -50388,7 +50711,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -51132,11 +51459,11 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 3,
-        "light": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 1,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -51149,13 +51476,15 @@
         "clear": 0
       },
       "keywords": [
+        "chill",
         "fun",
         "heavy",
         "light",
         "readings",
         "reqs",
         "understanding",
-        "uno"
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -51703,14 +52032,14 @@
     "total_discussions": 2,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -51719,10 +52048,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 1,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "knowledgeable",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -53387,7 +53721,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 3,
+        "generous": 4,
         "fair": 1,
         "strict": 0
       },
@@ -53396,16 +53730,19 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
-        "clear": 2
+        "engaging": 2,
+        "clear": 3
       },
       "keywords": [
         "approachable",
         "clear",
         "fair",
+        "fun",
+        "generous",
         "knowledgeable",
         "line of 1",
         "manageable",
+        "organized",
         "uno",
         "unoable"
       ]
@@ -53490,14 +53827,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -53509,7 +53846,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -53596,10 +53936,11 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 3,
+        "engaging": 4,
         "clear": 0
       },
       "keywords": [
+        "approachable",
         "demanding",
         "draining",
         "fun",
@@ -54491,15 +54832,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -54508,10 +54849,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "kind",
+        "light",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -54810,11 +55157,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
+        "engaging": 3,
         "clear": 1
       },
       "keywords": [
         "approachable",
+        "engaging",
         "kind",
         "knowledgeable",
         "readings",
@@ -55517,10 +55865,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "understanding"
+      ]
     },
     "discussions": [
       {
@@ -55794,15 +56144,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -55814,7 +56164,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "line of 1",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -56372,15 +56727,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -56389,10 +56744,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "1.0",
+        "approachable",
+        "chill",
+        "light",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -56509,15 +56872,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -56529,7 +56892,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -56673,15 +57041,15 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -56693,7 +57061,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -57735,11 +58107,11 @@
     ],
     "total_discussions": 8,
     "signals_summary": {
-      "workload": "moderate",
+      "workload": "light",
       "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
-        "light": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -57760,6 +58132,7 @@
         "clear",
         "fun",
         "kind",
+        "light",
         "reqs",
         "uno",
         "unoable"
@@ -57941,10 +58314,11 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "great professor",
         "reqs"
       ]
     },
@@ -58989,15 +59363,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -59006,10 +59380,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "fun",
+        "heavy",
+        "light",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -59323,15 +59704,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -59340,10 +59721,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "best prof",
+        "fun",
+        "light",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -59478,15 +59865,15 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
-      "grading": "fair",
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 3,
         "fair": 1,
         "strict": 0
       },
@@ -59495,13 +59882,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
+        "engaging": 4,
         "clear": 0
       },
       "keywords": [
+        "chill",
         "engaging",
         "fair",
-        "fun"
+        "fun",
+        "light",
+        "line of 1",
+        "passionate",
+        "understanding",
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -59981,14 +60375,14 @@
     "total_discussions": 6,
     "signals_summary": {
       "workload": "moderate",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
         "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -59997,15 +60391,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
+        "engaging": 4,
         "clear": 1
       },
       "keywords": [
+        "best prof",
         "chill",
+        "fun",
         "kind",
         "organized",
         "passionate",
-        "readings"
+        "readings",
+        "uno"
       ]
     },
     "discussions": [
@@ -60356,10 +60753,10 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": "moderate",
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 1,
         "moderate": 0
       },
@@ -60379,6 +60776,7 @@
       "keywords": [
         "heavy",
         "manageable",
+        "reqs",
         "uno",
         "unoable"
       ]
@@ -60502,16 +60900,16 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 2,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -60522,7 +60920,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fair",
+        "generous",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -60543,16 +60946,16 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -60560,10 +60963,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fair",
+        "fun",
+        "generous"
+      ]
     },
     "discussions": [
       {
@@ -60896,11 +61304,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -60913,10 +61321,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "passionate",
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -61026,14 +61438,14 @@
     "total_discussions": 3,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -61042,10 +61454,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 1,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "clear",
+        "fun",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -61448,26 +61864,32 @@
     "total_discussions": 10,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
       "attendance_mentions": {
-        "strict": 0,
+        "strict": 1,
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "checks attendance",
+        "fun",
+        "generous",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -61924,12 +62346,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
-        "clear": 0
+        "engaging": 3,
+        "clear": 1
       },
       "keywords": [
+        "caring",
         "chill",
         "fun",
+        "knowledgeable",
+        "understanding",
         "uno"
       ]
     },
@@ -61977,15 +62402,15 @@
     ],
     "total_discussions": 11,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 3,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 1,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -61994,10 +62419,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 3,
+        "clear": 1
       },
       "keywords": [
+        "1.0",
+        "approachable",
+        "chill",
+        "clear",
+        "fun",
+        "heavy",
+        "kind",
+        "light",
+        "manageable",
+        "readings",
         "uno"
       ]
     },
@@ -62236,7 +62671,7 @@
       "FIL 40 PROFS",
       "Fil 40"
     ],
-    "total_discussions": 4,
+    "total_discussions": 5,
     "signals_summary": {
       "workload": "heavy",
       "grading": "generous",
@@ -62298,6 +62733,13 @@
         "score": 7,
         "comment_count": 4,
         "posted_at": "2021-01-26T19:25:42+00:00"
+      },
+      {
+        "course": "FIL 40",
+        "url": "https://reddit.com/r/RateUPProfs/comments/eccnaf",
+        "score": 1,
+        "comment_count": 1,
+        "posted_at": "2019-12-18T13:31:20+00:00"
       }
     ]
   },
@@ -62645,14 +63087,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -62664,7 +63106,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -62830,7 +63274,7 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
@@ -62840,6 +63284,7 @@
         "light",
         "reqs",
         "strict with attendance",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -62894,10 +63339,10 @@
     ],
     "total_discussions": 7,
     "signals_summary": {
-      "workload": "light",
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 1,
         "moderate": 0
       },
@@ -62911,13 +63356,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 0
       },
       "keywords": [
         "chill",
         "fair",
+        "fun",
         "generous",
+        "heavy",
+        "heavy workload",
         "kind",
         "uno",
         "unoable"
@@ -63170,7 +63618,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 4,
         "fair": 0,
         "strict": 0
       },
@@ -63183,11 +63631,13 @@
         "clear": 0
       },
       "keywords": [
+        "1.0",
         "approachable",
         "best prof",
         "chill",
         "engaging",
         "fun",
+        "generous",
         "heavy",
         "kind",
         "light",
@@ -63314,15 +63764,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": "heavy",
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -63331,11 +63781,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
-        "reqs"
+        "light",
+        "reqs",
+        "understanding",
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -63603,11 +64057,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 3,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -63623,7 +64077,13 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "heavy",
+        "light",
+        "readings",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -63652,22 +64112,27 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
-        "fair": 0,
+        "generous": 3,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
-        "strict": 0,
+        "strict": 1,
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
-        "clear": 0
+        "engaging": 2,
+        "clear": 1
       },
       "keywords": [
         "chill",
+        "fair",
         "fun",
+        "gives uno",
         "heavy",
+        "mandatory",
+        "organized",
+        "passionate",
         "readings",
         "reqs",
         "uno",
@@ -64416,11 +64881,11 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 3,
         "moderate": 0
       },
       "grading_mentions": {
@@ -64433,11 +64898,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "best prof",
+        "chill",
         "fair",
+        "light",
+        "manageable",
         "uno",
         "unoable"
       ]
@@ -64767,11 +65236,11 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -64784,10 +65253,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fun"
+      ]
     },
     "discussions": [
       {
@@ -65294,16 +65766,16 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 3,
+        "fair": 2,
         "strict": 0
       },
       "attendance_mentions": {
@@ -65311,10 +65783,22 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 3,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "clear",
+        "engaging",
+        "fair",
+        "fun",
+        "generous",
+        "readings",
+        "reqs",
+        "transparent",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -65353,15 +65837,15 @@
     ],
     "total_discussions": 6,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -65370,11 +65854,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
-        "fun"
+        "approachable",
+        "chill",
+        "fun",
+        "kind",
+        "manageable",
+        "reqs",
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -65597,15 +66088,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -65617,7 +66108,12 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "readings",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -65651,10 +66147,10 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
@@ -65671,7 +66167,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -66381,16 +66880,16 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 3,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -66398,10 +66897,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "chill",
+        "fair",
+        "fun",
+        "light",
+        "manageable",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -66746,11 +67253,11 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 1,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -66764,9 +67271,12 @@
       },
       "keywords": [
         "best prof",
+        "chill",
         "fun",
         "generous",
-        "light"
+        "light",
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -66985,10 +67495,10 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -67002,10 +67512,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 2,
+        "clear": 2
       },
-      "keywords": []
+      "keywords": [
+        "engaging",
+        "explains well",
+        "organized",
+        "readings",
+        "understanding"
+      ]
     },
     "discussions": [
       {
@@ -67227,15 +67743,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -67247,7 +67763,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "draining",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -67284,16 +67804,16 @@
     ],
     "total_discussions": 6,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
         "generous": 2,
-        "fair": 0,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -67301,12 +67821,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 1
       },
       "keywords": [
+        "approachable",
+        "fair",
         "kind",
         "organized",
+        "readings",
         "uno",
         "unoable"
       ]
@@ -67838,10 +68361,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "engaging"
+      ]
     },
     "discussions": [
       {
@@ -69312,11 +69837,11 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": "heavy",
+      "workload": "moderate",
       "grading": "fair",
       "workload_mentions": {
         "heavy": 1,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -69329,12 +69854,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 3,
+        "engaging": 5,
         "clear": 0
       },
       "keywords": [
+        "approachable",
         "engaging",
         "fun",
+        "kind",
+        "manageable",
         "reqs",
         "transparent",
         "understanding"
@@ -70068,15 +70596,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -70088,7 +70616,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -70265,15 +70797,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -70282,10 +70814,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "heavy",
+        "light",
+        "light workload",
+        "readings",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -70886,11 +71425,11 @@
     ],
     "total_discussions": 9,
     "signals_summary": {
-      "workload": "moderate",
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
-        "heavy": 1,
-        "light": 1,
+        "heavy": 2,
+        "light": 3,
         "moderate": 0
       },
       "grading_mentions": {
@@ -70907,7 +71446,10 @@
         "clear": 0
       },
       "keywords": [
+        "chill",
         "fun",
+        "heavy",
+        "light",
         "manageable",
         "reqs"
       ]
@@ -71393,10 +71935,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable"
+      ]
     },
     "discussions": [
       {
@@ -71714,11 +72258,11 @@
     ],
     "total_discussions": 9,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -71731,10 +72275,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fun"
+      ]
     },
     "discussions": [
       {
@@ -72321,7 +72868,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 1,
         "strict": 0
       },
@@ -72334,6 +72881,7 @@
         "clear": 2
       },
       "keywords": [
+        "1.0",
         "approachable",
         "chill",
         "clear",
@@ -72959,11 +73507,11 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": "moderate",
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 1,
-        "light": 1,
+        "light": 3,
         "moderate": 0
       },
       "grading_mentions": {
@@ -72976,12 +73524,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 4,
         "clear": 0
       },
       "keywords": [
+        "approachable",
+        "chill",
         "fun",
+        "kind",
+        "light",
         "manageable",
+        "passionate",
         "reqs"
       ]
     },
@@ -73166,11 +73719,13 @@
       },
       "pedagogy_mentions": {
         "engaging": 1,
-        "clear": 0
+        "clear": 2
       },
       "keywords": [
         "fun",
         "heavy",
+        "knowledgeable",
+        "organized",
         "readings",
         "reqs",
         "uno",
@@ -73415,10 +73970,10 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": "light",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 1,
         "moderate": 0
       },
@@ -73440,6 +73995,7 @@
         "fun",
         "high grades",
         "passionate",
+        "reqs",
         "understanding",
         "uno",
         "unoable"
@@ -73534,11 +74090,11 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -73551,10 +74107,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "light",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -74114,14 +74672,14 @@
     "total_discussions": 3,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -74133,7 +74691,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -75716,11 +76277,11 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -75736,7 +76297,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -75890,10 +76454,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable"
+      ]
     },
     "discussions": [
       {
@@ -76086,16 +76652,16 @@
     ],
     "total_discussions": 6,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
         "generous": 3,
-        "fair": 0,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -76109,8 +76675,11 @@
       "keywords": [
         "approachable",
         "engaging",
+        "fair",
         "fun",
         "generous",
+        "manageable",
+        "reqs",
         "uno",
         "unoable"
       ]
@@ -77223,15 +77792,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -77240,10 +77809,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "kind",
+        "readings",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -77732,11 +78308,11 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -77752,7 +78328,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill"
+      ]
     },
     "discussions": [
       {
@@ -77877,14 +78455,14 @@
     "total_discussions": 6,
     "signals_summary": {
       "workload": "heavy",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 3,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -77897,7 +78475,11 @@
         "clear": 0
       },
       "keywords": [
-        "readings"
+        "overwhelming",
+        "readings",
+        "reqs",
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -78075,15 +78657,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -78092,10 +78674,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "fun",
+        "manageable",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -78836,14 +79425,14 @@
     "total_discussions": 6,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -78855,7 +79444,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -79443,10 +80035,10 @@
     ],
     "total_discussions": 11,
     "signals_summary": {
-      "workload": "light",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 2,
         "moderate": 0
       },
@@ -79460,14 +80052,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 1
       },
       "keywords": [
+        "approachable",
         "chill",
         "kind",
         "manageable",
         "organized",
+        "readings",
         "reqs",
         "uno",
         "unoable"
@@ -79604,15 +80198,15 @@
     ],
     "total_discussions": 6,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -79621,10 +80215,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fun",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -79883,10 +80482,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
+        "best prof",
+        "fun",
         "kind",
         "reqs",
         "uno",
@@ -80004,16 +80605,16 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "fair",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 4,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 2,
         "strict": 0
       },
       "attendance_mentions": {
@@ -80021,10 +80622,25 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 5,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "best prof",
+        "chill",
+        "engaging",
+        "fair",
+        "fair grading",
+        "fun",
+        "kind",
+        "knowledgeable",
+        "light",
+        "light workload",
+        "manageable",
+        "readings",
+        "understanding",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -80891,15 +81507,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -80911,7 +81527,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "1.0",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -81766,15 +82385,15 @@
     ],
     "total_discussions": 7,
     "signals_summary": {
-      "workload": "light",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 1,
         "strict": 0
       },
@@ -81788,10 +82407,12 @@
       },
       "keywords": [
         "fair",
+        "generous",
         "light",
         "manageable",
         "passionate",
         "readings",
+        "reqs",
         "uno",
         "unoable"
       ]
@@ -82060,10 +82681,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
+        "best prof",
+        "engaging",
         "manageable",
         "understanding",
         "uno",
@@ -82269,15 +82892,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -82286,10 +82909,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "kind",
+        "light",
+        "readings",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -82980,7 +83610,7 @@
       "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 2,
+        "heavy": 3,
         "light": 0,
         "moderate": 0
       },
@@ -82994,13 +83624,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
         "engaging",
         "exhausting",
         "heavy",
+        "kind",
+        "time-consuming",
         "understanding"
       ]
     },
@@ -83419,14 +84051,14 @@
     "total_discussions": 2,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -83438,7 +84070,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -83999,15 +84634,15 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -84016,10 +84651,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "best prof",
+        "manageable",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -84998,14 +85639,14 @@
     "total_discussions": 10,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -85017,7 +85658,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -85975,8 +86619,8 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -85997,6 +86641,8 @@
         "fun",
         "generous",
         "heavy",
+        "manageable",
+        "reqs",
         "understanding",
         "uno",
         "unoable"
@@ -86030,14 +86676,14 @@
     "total_discussions": 3,
     "signals_summary": {
       "workload": "heavy",
-      "grading": "fair",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 1,
         "strict": 0
       },
@@ -86047,11 +86693,14 @@
       },
       "pedagogy_mentions": {
         "engaging": 0,
-        "clear": 0
+        "clear": 1
       },
       "keywords": [
         "fair",
-        "reqs"
+        "organized",
+        "readings",
+        "reqs",
+        "uno"
       ]
     },
     "discussions": [
@@ -86088,11 +86737,11 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -86105,10 +86754,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "understanding"
+      ]
     },
     "discussions": [
       {
@@ -86392,15 +87044,15 @@
     "total_discussions": 5,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -86411,7 +87063,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fair",
+        "generous"
+      ]
     },
     "discussions": [
       {
@@ -89022,7 +89677,7 @@
       "workload": "heavy",
       "grading": "fair",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
@@ -89036,12 +89691,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
       "keywords": [
         "fair",
-        "readings"
+        "kind",
+        "readings",
+        "reqs",
+        "understanding"
       ]
     },
     "discussions": [
@@ -89292,10 +89950,11 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 3,
+        "engaging": 5,
         "clear": 0
       },
       "keywords": [
+        "best prof",
         "fun",
         "gives uno",
         "heavy",
@@ -89303,6 +89962,7 @@
         "kind",
         "low grades",
         "manageable",
+        "passionate",
         "readings",
         "reqs",
         "understanding",
@@ -89672,15 +90332,15 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -89688,10 +90348,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fair",
+        "fun",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -90592,7 +91256,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 1,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -90605,7 +91269,8 @@
         "clear": 0
       },
       "keywords": [
-        "uno"
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -90742,8 +91407,8 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -90761,7 +91426,9 @@
       },
       "keywords": [
         "approachable",
+        "chill",
         "demanding",
+        "heavy",
         "kind",
         "uno",
         "unoable"
@@ -90866,16 +91533,16 @@
     ],
     "total_discussions": 7,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
-        "fair": 0,
+        "generous": 3,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -90887,6 +91554,10 @@
         "clear": 0
       },
       "keywords": [
+        "fair",
+        "fairly high",
+        "light",
+        "readings",
         "uno",
         "unoable"
       ]
@@ -91076,15 +91747,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -91093,10 +91764,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "kind",
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -91530,13 +92207,13 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
-        "light": 0,
+        "heavy": 3,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
-        "fair": 0,
+        "generous": 3,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -91548,8 +92225,14 @@
         "clear": 0
       },
       "keywords": [
+        "chill",
+        "easy uno",
+        "fair",
         "fun",
+        "heavy",
+        "light",
         "readings",
+        "reqs",
         "uno",
         "unoable"
       ]
@@ -93173,10 +93856,10 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -93190,10 +93873,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "engaging",
+        "fun",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -93324,15 +94012,15 @@
     ],
     "total_discussions": 9,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -93341,10 +94029,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 2,
+        "clear": 2
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "fun",
+        "knowledgeable",
+        "organized",
+        "reqs",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -94695,15 +95390,15 @@
     "total_discussions": 3,
     "signals_summary": {
       "workload": "moderate",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
         "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -94711,12 +95406,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "gives feedback",
         "manageable",
-        "reqs"
+        "reqs",
+        "understanding",
+        "uno"
       ]
     },
     "discussions": [
@@ -95134,14 +95832,14 @@
     "total_discussions": 12,
     "signals_summary": {
       "workload": "heavy",
-      "grading": "fair",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 2,
-        "light": 0,
+        "heavy": 3,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 1,
         "strict": 0
       },
@@ -95150,14 +95848,20 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
-        "clear": 0
+        "engaging": 2,
+        "clear": 1
       },
       "keywords": [
+        "chill",
+        "clear",
         "fair",
         "fun",
+        "heavy",
+        "kind",
+        "low effort",
         "readings",
-        "reqs"
+        "reqs",
+        "uno"
       ]
     },
     "discussions": [
@@ -95577,15 +96281,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -95594,10 +96298,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 2,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "clear",
+        "fun",
+        "readings",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -97751,15 +98462,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -97768,10 +98479,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "engaging",
+        "reqs",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -97798,11 +98513,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -97818,7 +98533,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill"
+      ]
     },
     "discussions": [
       {
@@ -98024,10 +98741,10 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -98041,10 +98758,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "kind",
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -98497,7 +99218,7 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 3,
+        "heavy": 4,
         "light": 1,
         "moderate": 0
       },
@@ -98519,6 +99240,7 @@
         "heavy",
         "heavy workload",
         "light",
+        "readings",
         "reqs",
         "uno",
         "unoable"
@@ -98801,16 +99523,16 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 2,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -98818,10 +99540,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "caring",
+        "fun",
+        "light",
+        "readings",
+        "transparent",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -99135,10 +99865,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "best prof",
+        "fun"
+      ]
     },
     "discussions": [
       {
@@ -99407,15 +100140,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -99427,7 +100160,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "manageable",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -100020,14 +100757,14 @@
     "total_discussions": 3,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -100036,10 +100773,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "caring",
+        "fun",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -100240,15 +100982,15 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -100260,7 +101002,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "reqs",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -100548,11 +101294,11 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
+      "workload": "moderate",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -100568,7 +101314,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -100980,11 +101729,11 @@
     ],
     "total_discussions": 12,
     "signals_summary": {
-      "workload": "heavy",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
-        "light": 0,
+        "heavy": 2,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -100997,12 +101746,18 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
+        "approachable",
         "fair",
+        "kind",
+        "light",
+        "manageable",
         "readings",
+        "reqs",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -101924,11 +102679,11 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 4,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -101937,7 +102692,7 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 1
       },
       "keywords": [
@@ -101945,10 +102700,13 @@
         "demanding",
         "heavy",
         "kind",
+        "light",
         "line of 1",
+        "passionate",
         "readings",
         "reqs",
-        "uno"
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -102315,14 +103073,14 @@
     "total_discussions": 11,
     "signals_summary": {
       "workload": "heavy",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -102335,8 +103093,11 @@
         "clear": 0
       },
       "keywords": [
+        "easy uno",
         "fun",
-        "readings"
+        "heavy",
+        "readings",
+        "uno"
       ]
     },
     "discussions": [
@@ -102532,7 +103293,7 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 4,
         "light": 0,
         "moderate": 0
       },
@@ -102550,6 +103311,9 @@
         "clear": 0
       },
       "keywords": [
+        "heavy",
+        "heavy workload",
+        "readings",
         "reqs",
         "uno",
         "unoable"
@@ -102803,10 +103567,10 @@
     ],
     "total_discussions": 13,
     "signals_summary": {
-      "workload": "light",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 1,
         "moderate": 0
       },
@@ -102828,6 +103592,7 @@
         "chill",
         "fun",
         "kind",
+        "readings",
         "uno",
         "unoable"
       ]
@@ -103468,7 +104233,7 @@
       },
       "grading_mentions": {
         "generous": 4,
-        "fair": 1,
+        "fair": 2,
         "strict": 0
       },
       "attendance_mentions": {
@@ -103483,6 +104248,7 @@
         "1.0",
         "approachable",
         "checks attendance",
+        "fair",
         "generous",
         "gives feedback",
         "heavy",
@@ -103696,11 +104462,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
+        "engaging": 4,
         "clear": 0
       },
       "keywords": [
+        "approachable",
         "easy uno",
+        "engaging",
         "fair",
         "fun",
         "generous",
@@ -104481,10 +105249,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 1
       },
       "keywords": [
+        "approachable",
+        "engaging",
+        "kind",
         "knowledgeable",
         "readings",
         "uno"
@@ -104537,10 +105308,10 @@
     ],
     "total_discussions": 4,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -104554,10 +105325,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -106304,10 +107078,12 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "engaging"
+      ]
     },
     "discussions": [
       {
@@ -106431,15 +107207,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -106448,10 +107224,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "fun",
+        "heavy",
+        "manageable",
+        "readings",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -107752,10 +108534,10 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -107769,10 +108551,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "fun",
+        "heavy"
+      ]
     },
     "discussions": [
       {
@@ -107894,31 +108680,38 @@
     ],
     "total_discussions": 9,
     "signals_summary": {
-      "workload": "light",
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 3,
         "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 1,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
       "attendance_mentions": {
-        "strict": 0,
+        "strict": 1,
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 3,
         "clear": 1
       },
       "keywords": [
+        "best prof",
         "chill",
+        "fun",
+        "heavy",
         "kind",
+        "mandatory",
+        "paper-heavy",
+        "readings",
         "structured",
-        "uno"
+        "uno",
+        "unoable"
       ]
     },
     "discussions": [
@@ -108177,7 +108970,7 @@
       },
       "pedagogy_mentions": {
         "engaging": 2,
-        "clear": 1
+        "clear": 2
       },
       "keywords": [
         "approachable",
@@ -108188,6 +108981,7 @@
         "light",
         "readings",
         "reqs",
+        "structured",
         "uno",
         "unoable"
       ]
@@ -108473,10 +109267,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
+        "approachable",
+        "fun",
+        "understanding",
         "uno",
         "unoable"
       ]
@@ -108670,11 +109467,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -108687,10 +109484,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "understanding"
+      ]
     },
     "discussions": [
       {
@@ -109115,14 +109915,14 @@
     "total_discussions": 1,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -109134,7 +109934,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -109910,11 +110713,11 @@
     ],
     "total_discussions": 8,
     "signals_summary": {
-      "workload": "heavy",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -109932,6 +110735,7 @@
       },
       "keywords": [
         "1.0",
+        "light",
         "reqs",
         "uno",
         "unoable"
@@ -110418,10 +111222,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -110438,7 +111242,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -110669,16 +111475,16 @@
     ],
     "total_discussions": 2,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 2,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -110686,10 +111492,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fair",
+        "fun",
+        "readings",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -111034,7 +111847,7 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -111047,12 +111860,15 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 2
       },
       "keywords": [
+        "fun",
         "generous",
+        "kind",
         "knowledgeable",
+        "light",
         "manageable",
         "organized"
       ]
@@ -111330,7 +112146,7 @@
       "workload": "light",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 3,
         "moderate": 0
       },
@@ -111344,15 +112160,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 1
       },
       "keywords": [
+        "approachable",
         "chill",
         "clear",
         "fun",
         "light",
         "manageable",
+        "reqs",
         "uno",
         "unoable"
       ]
@@ -111450,15 +112268,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -111470,7 +112288,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -111937,7 +112759,7 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 1,
+        "heavy": 2,
         "light": 0,
         "moderate": 0
       },
@@ -111955,6 +112777,7 @@
         "clear": 0
       },
       "keywords": [
+        "heavy",
         "reqs",
         "uno",
         "unoable"
@@ -113294,10 +114117,10 @@
     ],
     "total_discussions": 10,
     "signals_summary": {
-      "workload": "moderate",
+      "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 2,
+        "heavy": 3,
         "light": 2,
         "moderate": 0
       },
@@ -113319,6 +114142,7 @@
         "clear",
         "fair",
         "fun",
+        "heavy",
         "high grades",
         "kind",
         "light",
@@ -113708,10 +114532,11 @@
       },
       "pedagogy_mentions": {
         "engaging": 2,
-        "clear": 0
+        "clear": 1
       },
       "keywords": [
         "approachable",
+        "clear",
         "easy reqs",
         "fair",
         "fun",
@@ -114205,10 +115030,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 2,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "passionate",
+        "understanding"
+      ]
     },
     "discussions": [
       {
@@ -114603,7 +115431,7 @@
       "workload": "heavy",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 2,
+        "heavy": 3,
         "light": 1,
         "moderate": 0
       },
@@ -114617,11 +115445,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
       "keywords": [
+        "approachable",
         "chill",
+        "heavy",
         "readings",
         "reqs",
         "uno",
@@ -115263,10 +116093,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -115283,7 +116113,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -115346,14 +116178,14 @@
     "total_discussions": 7,
     "signals_summary": {
       "workload": "moderate",
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 1,
         "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -115362,13 +116194,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 0
       },
       "keywords": [
         "chill",
+        "easy uno",
+        "fun",
+        "generous",
         "kind",
-        "reqs"
+        "reqs",
+        "uno"
       ]
     },
     "discussions": [
@@ -117012,7 +117848,7 @@
       "workload": "light",
       "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 2,
         "moderate": 0
       },
@@ -117035,6 +117871,7 @@
         "kind",
         "light",
         "manageable",
+        "readings",
         "uno",
         "unoable"
       ]
@@ -117426,15 +118263,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -117448,7 +118285,10 @@
       },
       "keywords": [
         "best prof",
-        "fun"
+        "fun",
+        "manageable",
+        "reqs",
+        "uno"
       ]
     },
     "discussions": [
@@ -117807,14 +118647,14 @@
     "total_discussions": 6,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -117826,7 +118666,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -117881,10 +118724,10 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
@@ -117901,7 +118744,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs"
+      ]
     },
     "discussions": [
       {
@@ -119107,15 +119952,15 @@
     ],
     "total_discussions": 5,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -119124,10 +119969,17 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
-        "clear": 0
+        "engaging": 1,
+        "clear": 1
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "kind",
+        "knowledgeable",
+        "light",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -119801,15 +120653,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -119818,10 +120670,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "chill",
+        "generous",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -120129,15 +120987,15 @@
     ],
     "total_discussions": 3,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
+        "heavy": 1,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -120149,7 +121007,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "reqs",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -120459,7 +121321,7 @@
       },
       "pedagogy_mentions": {
         "engaging": 3,
-        "clear": 0
+        "clear": 1
       },
       "keywords": [
         "approachable",
@@ -120467,6 +121329,7 @@
         "kind",
         "light",
         "manageable",
+        "organized",
         "reqs"
       ]
     },
@@ -121736,12 +122599,13 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 2,
         "clear": 0
       },
       "keywords": [
         "fun",
         "heavy",
+        "passionate",
         "readings",
         "uno",
         "unoable"
@@ -121831,15 +122695,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "heavy",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -121848,10 +122712,19 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 3,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "approachable",
+        "chill",
+        "fun",
+        "readings",
+        "reqs",
+        "understanding",
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -121874,11 +122747,11 @@
     ],
     "total_discussions": 8,
     "signals_summary": {
-      "workload": "heavy",
+      "workload": "moderate",
       "grading": "generous",
       "workload_mentions": {
         "heavy": 2,
-        "light": 0,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -121891,12 +122764,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 1,
+        "engaging": 3,
         "clear": 0
       },
       "keywords": [
         "1.0",
         "best prof",
+        "fun",
+        "light",
+        "light workload",
+        "passionate",
         "readings",
         "reqs",
         "uno",
