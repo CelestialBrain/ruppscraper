@@ -48,6 +48,9 @@ jobs:
           - shard: "archive:2021"
             after: "2020-01-01"
             before: "2022-01-01"
+          - shard: "archive:2019"
+            after: "2019-01-01"
+            before: "2020-01-01"
 
     steps:
       - uses: actions/checkout@v4

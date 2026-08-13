@@ -85,7 +85,7 @@ python -m scraper stats
 
 ### Matrix Pipeline (GitHub Actions)
 
-`.github/workflows/matrix-scrape.yml` runs every 10 minutes: 6 parallel Arctic Shift year-windows covering the full r/RateUPProfs archive, then merge → reparse → enrich comments → CRS export. Shards **fail if they produce 0 posts**. Sequential `scrape-all` is `workflow_dispatch` only (`.github/workflows/scrape.yml`).
+`.github/workflows/matrix-scrape.yml` runs every 10 minutes: 7 parallel Arctic Shift year-windows covering the full r/RateUPProfs archive (2019–2026), then merge → reparse → enrich comments → CRS export. Shards **fail if they produce 0 posts**. Sequential `scrape-all` is `workflow_dispatch` only (`.github/workflows/scrape.yml`).
 
 ## ProfstoPick ingest
 
