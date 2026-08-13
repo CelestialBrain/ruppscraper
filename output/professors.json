@@ -261,11 +261,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "light",
       "grading": null,
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -281,7 +281,9 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill"
+      ]
     },
     "discussions": [
       {
@@ -21778,11 +21780,11 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
+      "workload": "heavy",
       "grading": null,
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 2,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
@@ -21798,7 +21800,11 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "heavy",
+        "light",
+        "readings"
+      ]
     },
     "discussions": [
       {
@@ -91056,15 +91062,15 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "light",
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
-        "light": 0,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 1,
         "fair": 0,
         "strict": 0
       },
@@ -91073,10 +91079,14 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "engaging",
+        "uno"
+      ]
     },
     "discussions": [
       {
@@ -109412,14 +109422,14 @@
       },
       {
         "course": "POL SC 14",
-        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pm",
+        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pf",
         "score": 1,
         "comment_count": 0,
         "posted_at": "2024-01-17T01:33:32+00:00"
       },
       {
         "course": "POL SC 14",
-        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pf",
+        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pm",
         "score": 1,
         "comment_count": 0,
         "posted_at": "2024-01-17T01:33:32+00:00"
@@ -111998,7 +112008,7 @@
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 2,
+        "generous": 3,
         "fair": 0,
         "strict": 0
       },
@@ -112013,6 +112023,7 @@
       "keywords": [
         "approachable",
         "chill",
+        "line of 1",
         "readings",
         "reqs",
         "uno",
@@ -118751,16 +118762,16 @@
     ],
     "total_discussions": 1,
     "signals_summary": {
-      "workload": null,
-      "grading": null,
+      "workload": "moderate",
+      "grading": "generous",
       "workload_mentions": {
-        "heavy": 0,
-        "light": 0,
+        "heavy": 1,
+        "light": 1,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
-        "fair": 0,
+        "generous": 1,
+        "fair": 1,
         "strict": 0
       },
       "attendance_mentions": {
@@ -118768,10 +118779,16 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 0,
+        "engaging": 1,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "chill",
+        "fair",
+        "readings",
+        "understanding",
+        "uno"
+      ]
     },
     "discussions": [
       {
