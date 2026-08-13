@@ -2,38 +2,52 @@ name: Matrix Scraper Pipeline
 
 on:
   schedule:
-    # Run twice daily at 00:00 and 12:00 UTC
-    - cron: '0 0,12 * * *'
+    # Every 10 minutes. GitHub may delay public-repo crons under load.
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 concurrency:
-  group: ruppscraper-matrix-pipeline
+  group: ruppscraper-commit
   cancel-in-progress: false
 
 permissions:
   contents: write
 
+env:
+  RUPP_PREFER_ARCTIC: "1"
+  RUPP_COMMENT_WORKERS: "8"
+  RUPP_COURTESY_DELAY: "0.1"
+  RUPP_ARCTIC_PAGE_DELAY: "0.35"
+
 jobs:
   # -------------------------------------------------------------------------
-  # Stage 1: Sharded parallel scraping across 10 parallel runner VMs
+  # Stage 1: Parallel Arctic Shift archive windows (full subreddit history)
   # -------------------------------------------------------------------------
   shard-scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
-        shard:
-          - "sort:new"
-          - "sort:top"
-          - "sort:hot"
-          - "sort:rising"
-          - "query:Math"
-          - "query:Eng"
-          - "query:Fil"
-          - "query:Bio"
-          - "query:Chem"
-          - "query:Econ"
+        include:
+          - shard: "archive:2026"
+            after: "2026-01-01"
+            before: "2027-01-01"
+          - shard: "archive:2025"
+            after: "2025-01-01"
+            before: "2026-01-01"
+          - shard: "archive:2024"
+            after: "2024-01-01"
+            before: "2025-01-01"
+          - shard: "archive:2023"
+            after: "2023-01-01"
+            before: "2024-01-01"
+          - shard: "archive:2022"
+            after: "2022-01-01"
+            before: "2023-01-01"
+          - shard: "archive:2021"
+            after: "2020-01-01"
+            before: "2022-01-01"
 
     steps:
       - uses: actions/checkout@v4
@@ -57,21 +71,14 @@ jobs:
           SHARD="${{ matrix.shard }}"
           SAFE_NAME=$(echo "$SHARD" | tr ':' '_')
           mkdir -p artifacts
+          # Fresh DB so this artifact is this window's posts only (merge upserts into main).
+          rm -f ruppscraper.db
 
-          if [[ "$SHARD" == sort:* ]]; then
-            SORT_TYPE="${SHARD#sort:}"
-            python -m scraper scrape --sort "$SORT_TYPE" --limit 200 --comments 50
-          elif [[ "$SHARD" == query:* ]]; then
-            QUERY="${SHARD#query:}"
-            python -m scraper scrape --sort new --query "$QUERY" --limit 100 --comments 50
-          else
-            echo "Unknown shard type: $SHARD" >&2
-            exit 1
-          fi
+          python -m scraper scrape --archive \
+            --after "${{ matrix.after }}" \
+            --before "${{ matrix.before }}"
 
           python -m scraper stats
-          # Fail sort shards on empty DB (backend death). Query shards may be
-          # legitimately empty for sparse terms — export [] and continue.
           python - <<'PY'
           import os
           from scraper.database import get_connection, get_stats, init_db
@@ -80,9 +87,8 @@ jobs:
           stats = get_stats(conn)
           conn.close()
           print(stats)
-          shard = os.environ.get("SHARD", "")
-          if stats["total_posts"] == 0 and shard.startswith("sort:"):
-              raise SystemExit("Sort shard produced 0 posts — fetch stack failed")
+          if stats["total_posts"] == 0:
+              raise SystemExit("Archive shard produced 0 posts — Arctic fetch failed")
           PY
 
           python -m scraper export --format full -o "artifacts/shard_${SAFE_NAME}.json"
@@ -95,13 +101,13 @@ jobs:
           retention-days: 1
 
   # -------------------------------------------------------------------------
-  # Stage 2: Merge shard results, match CRS database, export & commit
+  # Stage 2: Merge shard results, reparse, enrich comments, export & commit
   # -------------------------------------------------------------------------
   merge-and-commit:
     needs: shard-scrape
     if: always()
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -234,6 +240,16 @@ jobs:
           conn.close()
           print("Merge complete.")
           PY
+
+      - name: Reparse titles and backfill comments
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+        run: |
+          python -m scraper reparse
+          python -m scraper enrich --limit 200
+          python -m scraper stats
 
       - name: Match against CRS & Export Final JSON
         run: |

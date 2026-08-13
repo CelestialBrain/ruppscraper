@@ -1,14 +1,21 @@
 name: RateUPProfs Scraper Pipeline
 
 on:
-  schedule:
-    # Run twice daily at 00:00 and 12:00 UTC
-    - cron: '0 0,12 * * *'
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+  # Daily scrape lives in matrix-scrape.yml. Keep this for a sequential
+  # scrape-all (reparse + enrich) when you want to run it by hand.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ruppscraper-commit
+  cancel-in-progress: false
 
 jobs:
   scrape-and-export:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout ruppscraper
@@ -29,10 +36,14 @@ jobs:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          RUPP_PREFER_ARCTIC: "1"
+          RUPP_COMMENT_WORKERS: "8"
+          RUPP_COURTESY_DELAY: "0.1"
+          RUPP_ARCTIC_PAGE_DELAY: "0.1"
         run: |
-          python -m scraper scrape-all --scale 0.5
+          python -m scraper scrape-all --scale 1.0
           python -m scraper reparse
-          python -m scraper enrich --limit 100
+          python -m scraper enrich --limit 200
           python -m scraper stats
           python - <<'PY'
           from scraper.database import get_connection, get_stats, init_db
@@ -52,5 +63,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -f output/professors_crs.json output/professors.json ruppscraper.db
-          git diff --quiet && git diff --staged --quiet || git commit -m "auto: update scraped prof reviews & CRS matches"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "auto: update scraped prof reviews & CRS matches"
+            git pull --rebase origin main || true
+            git push
+          fi

@@ -85,7 +85,7 @@ python -m scraper stats
 
 ### Matrix Pipeline (GitHub Actions)
 
-`.github/workflows/matrix-scrape.yml` runs 10 parallel shards (`sort:*` + `query:*`), merges into SQLite, CRS-matches, and commits `output/professors_crs.json`. Shards **fail if they produce 0 posts**.
+`.github/workflows/matrix-scrape.yml` runs every 10 minutes: 6 parallel Arctic Shift year-windows covering the full r/RateUPProfs archive, then merge → reparse → enrich comments → CRS export. Shards **fail if they produce 0 posts**. Sequential `scrape-all` is `workflow_dispatch` only (`.github/workflows/scrape.yml`).
 
 ## ProfstoPick ingest
 

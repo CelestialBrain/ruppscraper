@@ -6,6 +6,7 @@ import argparse
 import logging
 import sys
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 
 from rich.console import Console
@@ -19,7 +20,7 @@ from rich.progress import (
 )
 from rich.table import Table
 
-from scraper.config import PROGRESSIVE_PASSES, SUBREDDIT_NAME
+from scraper.config import COMMENT_WORKERS, COURTESY_DELAY, PROGRESSIVE_PASSES, SUBREDDIT_NAME
 from scraper.database import (
     get_connection,
     get_posts_missing_comments,
@@ -31,7 +32,11 @@ from scraper.database import (
     upsert_post_with_comments,
     upsert_professor,
 )
-from scraper.crs_matcher import CRSLookup, match_scraped_professors
+from scraper.crs_matcher import (
+    CRSLookup,
+    match_scraped_professors,
+    purge_junk_professors,
+)
 from scraper.exporter import export_comments, export_full, export_professors
 from scraper.models import Post, Professor
 from scraper.parser import parse_title
@@ -80,6 +85,9 @@ def _run_scrape_pass(
     resume: bool = False,
     query: str | None = None,
     quiet: bool = False,
+    archive: bool = False,
+    after: float | None = None,
+    before: float | None = None,
 ) -> ScrapePassResult:
     """Execute one scrape + comment-enrichment pass. Returns counters."""
     conn = get_connection()
@@ -98,7 +106,8 @@ def _run_scrape_pass(
         console.print(
             f"[bold cyan]Scraping r/{SUBREDDIT_NAME}[/bold cyan] "
             f"(sort={sort}, limit={limit or 'all'}"
-            f"{f', query={query!r}' if query else ''})"
+            f"{f', query={query!r}' if query else ''}"
+            f"{', archive' if archive else ''})"
         )
         _print_backend_banner()
 
@@ -120,6 +129,9 @@ def _run_scrape_pass(
             limit=limit,
             skip_ids=skip_ids,
             query=query,
+            after=after,
+            before=before,
+            archive=archive,
         ):
             professor: Professor | None = None
             if parsed is not None:
@@ -150,9 +162,14 @@ def _run_scrape_pass(
     if scraped_posts:
         enrich_count = min(len(scraped_posts), comments or len(scraped_posts))
         if not quiet:
+            eta = (
+                f"~{enrich_count / COMMENT_WORKERS:.0f}s × {COMMENT_WORKERS} workers"
+                if COMMENT_WORKERS > 1
+                else f"~{enrich_count * COURTESY_DELAY:.0f}s at {COURTESY_DELAY:.1f}s/req"
+            )
             console.print(
                 f"\n[bold cyan]Enriching[/bold cyan] top {enrich_count} posts with comments "
-                f"[dim](~{enrich_count * 1.2:.0f}s at 1.2s/req)[/dim]"
+                f"[dim]({eta})[/dim]"
             )
 
         with Progress(
@@ -214,6 +231,24 @@ def _print_scrape_summary(result: ScrapePassResult, title: str = "Scrape Complet
 # ---------------------------------------------------------------------------
 
 
+def _parse_time_bound(value: str | None) -> float | None:
+    """Parse ISO date (YYYY-MM-DD) or unix timestamp into UTC seconds."""
+    if not value:
+        return None
+    raw = value.strip()
+    if raw.isdigit():
+        return float(raw)
+    try:
+        dt = datetime.fromisoformat(raw)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(
+            f"invalid time bound {value!r}; use YYYY-MM-DD or unix timestamp"
+        ) from exc
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.timestamp()
+
+
 def cmd_scrape(args: argparse.Namespace) -> None:
     """Scrape r/RateUPProfs posts and comments into SQLite."""
     result = _run_scrape_pass(
@@ -222,6 +257,9 @@ def cmd_scrape(args: argparse.Namespace) -> None:
         comments=args.comments,
         resume=args.resume,
         query=args.query,
+        archive=bool(getattr(args, "archive", False)),
+        after=_parse_time_bound(getattr(args, "after", None)),
+        before=_parse_time_bound(getattr(args, "before", None)),
     )
     _print_scrape_summary(result)
     # Query shards often legitimately return 0 hits for sparse terms — warn only.
@@ -480,9 +518,13 @@ def cmd_match(args: argparse.Namespace) -> None:
         console.print(f"[red bold]Error:[/red bold] {results['error']}")
         return
 
+    junk = results.get("junk", [])
+    considered = results.get("considered_count", results["scraped_professor_count"])
     console.print(
         f"  CRS instructors: [bold]{results['crs_instructor_count']:,}[/bold]\n"
         f"  Scraped professors: [bold]{results['scraped_professor_count']}[/bold]\n"
+        f"  Junk skipped: [bold]{results.get('junk_count', 0)}[/bold]\n"
+        f"  Considered: [bold]{considered}[/bold]\n"
     )
 
     matched = results["matched"]
@@ -494,7 +536,7 @@ def cmd_match(args: argparse.Namespace) -> None:
         mt.add_column("Match", justify="center")
         mt.add_column("CRS Courses")
         for m in matched:
-            confidence_icon = "🟢" if m["confidence"] == 1.0 else "🟡"
+            confidence_icon = "🟢" if m["confidence"] >= 0.95 else "🟡"
             courses_str = ", ".join(m["crs_courses"][:5])
             if len(m["crs_courses"]) > 5:
                 courses_str += f" (+{len(m['crs_courses']) - 5})"
@@ -530,17 +572,38 @@ def cmd_match(args: argparse.Namespace) -> None:
             ut.add_row(u["name"], u["campus"])
         console.print(ut)
 
-    total = results["scraped_professor_count"]
-    if total > 0:
-        rate = len(matched) / total
+    if junk:
+        jt = Table(title=f"🗑 Junk skipped ({len(junk)})", border_style="magenta")
+        jt.add_column("Reddit Name", style="bold")
+        jt.add_column("Campus")
+        for j in junk[:40]:
+            jt.add_row(j["name"], j["campus"])
+        if len(junk) > 40:
+            jt.add_row(f"… +{len(junk) - 40} more", "")
+        console.print(jt)
+
+    if considered > 0:
+        rate = len(matched) / considered
         console.print(
-            f"\n[bold]Match rate:[/bold] {len(matched)}/{total} ({rate:.0%})"
+            f"\n[bold]Match rate:[/bold] {len(matched)}/{considered} ({rate:.0%})"
+            f"  [dim](junk excluded; {results['scraped_professor_count']} raw rows)[/dim]"
         )
-        # Ambiguous + unmatched are always printed above — never silently dropped.
         console.print(
             f"[dim]Unresolved (ambiguous+unmatched): "
             f"{len(ambiguous) + len(unmatched)}[/dim]"
         )
+
+
+def cmd_clean_junk(args: argparse.Namespace) -> None:
+    """Detach posts from junk professor rows and delete those professors."""
+    from scraper.config import DB_PATH
+
+    console.print("[bold cyan]Purging junk professor rows...[/bold cyan]")
+    result = purge_junk_professors(DB_PATH)
+    console.print(
+        f"  Removed professors: [bold]{result['junk_professors_removed']}[/bold]\n"
+        f"  Posts unlinked: [bold]{result['posts_unlinked']}[/bold]"
+    )
 
 
 def cmd_resolve_report(args: argparse.Namespace) -> None:
@@ -639,6 +702,21 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Search query within the subreddit (uses Arctic Shift archive).",
     )
+    sp_scrape.add_argument(
+        "--archive",
+        action="store_true",
+        help="Page the full Arctic Shift archive (optional --after/--before window).",
+    )
+    sp_scrape.add_argument(
+        "--after",
+        default=None,
+        help="Archive window start (YYYY-MM-DD or unix timestamp).",
+    )
+    sp_scrape.add_argument(
+        "--before",
+        default=None,
+        help="Archive window end (YYYY-MM-DD or unix timestamp).",
+    )
     sp_scrape.set_defaults(func=cmd_scrape)
 
     # ---- scrape-all (progressive) ----
@@ -735,6 +813,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path to CRS SQLite database (default: auto-detect sibling repo).",
     )
     sp_match.set_defaults(func=cmd_match)
+
+    # ---- clean-junk ----
+    sp_clean = subparsers.add_parser(
+        "clean-junk",
+        help="Unlink posts from junk professor rows and delete those professors.",
+    )
+    sp_clean.set_defaults(func=cmd_clean_junk)
 
     # ---- resolve-report ----
     sp_resolve = subparsers.add_parser(

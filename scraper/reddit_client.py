@@ -13,6 +13,7 @@ import logging
 import random
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from typing import Any, Generator
 from xml.etree import ElementTree as ET
@@ -25,10 +26,13 @@ except ImportError:
     praw = None
 
 from scraper.config import (
+    ARCTIC_PAGE_DELAY,
     ARCTIC_SHIFT_BASE,
     COMMENT_ENRICH_TOP_N,
+    COMMENT_WORKERS,
     COURTESY_DELAY,
     LISTING_LIMIT,
+    PREFER_ARCTIC,
     REDDIT_CLIENT_ID,
     REDDIT_CLIENT_SECRET,
     REDDIT_USER_AGENT,
@@ -186,11 +190,17 @@ def _fetch_arctic_posts(
     limit: int | None = None,
     query: str | None = None,
     sort: str = "new",
+    after: float | None = None,
+    before: float | None = None,
 ) -> list[dict[str, Any]]:
-    """Fetch submissions from the Arctic Shift archive API."""
-    target = limit or 100
+    """Fetch submissions from the Arctic Shift archive API.
+
+    ``limit=None`` pages until the window is exhausted (capped at 50k).
+    ``after`` / ``before`` are unix timestamps (inclusive after, exclusive before).
+    """
+    target = limit if limit is not None else 50_000
     collected: list[dict[str, Any]] = []
-    before: float | None = None
+    cursor = before
 
     # Query searches are picky: sort_type=created_utc often 422s. Prefer bare
     # query params; only attach sort_type for non-query listing passes.
@@ -208,8 +218,8 @@ def _fetch_arctic_posts(
         else:
             params["sort"] = sort_dir
             params["sort_type"] = sort_type
-        if before is not None:
-            params["before"] = str(int(before))
+        if cursor is not None:
+            params["before"] = str(int(cursor))
 
         url = f"{ARCTIC_SHIFT_BASE}/api/posts/search"
         try:
@@ -221,7 +231,9 @@ def _fetch_arctic_posts(
             )
             # Retry variants Arctic sometimes accepts when the first combo 422s.
             if resp.status_code == 422:
-                retries: list[dict[str, str]] = []
+                logger.warning("Arctic Shift 422 — slowing down and retrying")
+                time.sleep(max(2.0, ARCTIC_PAGE_DELAY * 8))
+                retries: list[dict[str, str]] = [dict(params)]
                 if query:
                     retries.append({
                         "subreddit": subreddit,
@@ -239,8 +251,8 @@ def _fetch_arctic_posts(
                         "limit": str(page_size),
                     })
                 for retry in retries:
-                    if before is not None:
-                        retry["before"] = str(int(before))
+                    if cursor is not None:
+                        retry["before"] = str(int(cursor))
                     resp = requests.get(
                         url,
                         headers=_session_headers(),
@@ -249,7 +261,7 @@ def _fetch_arctic_posts(
                     )
                     if resp.status_code == 200:
                         break
-                    time.sleep(0.35)
+                    time.sleep(2.0)
             if resp.status_code == 429:
                 logger.warning("Arctic Shift rate-limited (429) — backing off")
                 time.sleep(2.0)
@@ -271,15 +283,26 @@ def _fetch_arctic_posts(
         if not batch:
             break
 
-        collected.extend(batch)
+        if after is not None:
+            in_window = [
+                p for p in batch if float(p.get("created_utc") or 0) >= after
+            ]
+            collected.extend(in_window)
+            if len(in_window) < len(batch):
+                break
+        else:
+            collected.extend(batch)
+
         oldest = batch[-1].get("created_utc")
         if oldest is None:
             break
         # Page using exclusive upper bound on created_utc
-        before = float(oldest)
+        cursor = float(oldest)
+        if after is not None and cursor < after:
+            break
         if len(batch) < page_size:
             break
-        time.sleep(0.35)
+        time.sleep(ARCTIC_PAGE_DELAY)
 
     return collected[:target]
 
@@ -560,15 +583,42 @@ def fetch_posts(
     skip_ids: set[str] | None = None,
     subreddit: str = SUBREDDIT_NAME,
     query: str | None = None,
+    after: float | None = None,
+    before: float | None = None,
+    archive: bool = False,
 ) -> Generator[tuple[Post, ParsedTitle | None, list[Comment]], None, None]:
     """Fetch posts from r/RateUPProfs and yield (Post, ParsedTitle, [Comment]).
 
     Uses PRAW if OAuth credentials exist, otherwise JSON → Arctic Shift → RSS.
+    ``archive=True`` pages Arctic Shift over an optional after/before window.
     """
     global _last_listing_backend
     skip = skip_ids or set()
 
-    if _has_praw_credentials() and not query:
+    if archive or after is not None or before is not None:
+        raw_posts = _fetch_arctic_posts(
+            subreddit,
+            limit=limit,
+            query=query,
+            sort=sort,
+            after=after,
+            before=before,
+        )
+        _last_listing_backend = "arctic" if raw_posts else "none"
+        now = datetime.now(timezone.utc).timestamp()
+        for post_data in raw_posts:
+            post_id = post_data.get("id", "")
+            if post_id in skip:
+                continue
+            if post_data.get("removed_by_category") or post_data.get("stickied"):
+                continue
+            post, parsed = _post_from_raw(post_data, now)
+            if not post.reddit_id:
+                continue
+            yield post, parsed, []
+        return
+
+    if _has_praw_credentials() and not query and not PREFER_ARCTIC:
         _last_listing_backend = "praw"
         reddit = praw.Reddit(
             client_id=REDDIT_CLIENT_ID,
@@ -618,10 +668,15 @@ def fetch_posts(
     raw_posts: list[dict[str, Any]] = []
     _last_listing_backend = "none"
 
-    # Query shards go straight to Arctic Shift (Reddit search JSON is also blocked).
-    if query:
+    # Query shards (and CI) go straight to Arctic — Reddit search/listing JSON is 403.
+    if query or PREFER_ARCTIC:
         raw_posts = _fetch_arctic_posts(subreddit, limit=limit, query=query, sort=sort)
         _last_listing_backend = "arctic" if raw_posts else "none"
+        if not raw_posts:
+            raw_posts = _fetch_rss(urls["rss_new"])
+            if limit:
+                raw_posts = raw_posts[:limit]
+            _last_listing_backend = "rss" if raw_posts else "none"
     else:
         sort_key = f"json_{sort}"
         json_url = urls.get(sort_key, urls["json_new"])
@@ -657,30 +712,108 @@ def fetch_posts(
         yield post, parsed, []
 
 
+def _comments_from_raw(
+    post_id: str, raw: list[dict[str, Any]], now: float
+) -> list[Comment]:
+    comments: list[Comment] = []
+    for c in raw:
+        comments.append(
+            Comment(
+                reddit_id=c["id"],
+                post_reddit_id=post_id,
+                parent_id=c["parent_id"],
+                author=c["author"] if c["author"] != "[deleted]" else None,
+                body=c["body"],
+                score=c["score"],
+                created_utc=float(c["created_utc"] or 0),
+                depth=c["depth"],
+                scraped_at=now,
+            )
+        )
+    return comments
+
+
+def _fetch_comments_for_post(post: Post, now: float) -> tuple[str, list[Comment], str]:
+    """Fetch comments for one post. Arctic-first when PREFER_ARCTIC is set."""
+    if PREFER_ARCTIC:
+        raw = _fetch_arctic_comments(post.reddit_id)
+        return post.reddit_id, _comments_from_raw(post.reddit_id, raw, now), (
+            "arctic" if raw else "none"
+        )
+
+    if _has_praw_credentials() and praw is not None:
+        try:
+            reddit = praw.Reddit(
+                client_id=REDDIT_CLIENT_ID,
+                client_secret=REDDIT_CLIENT_SECRET,
+                user_agent=_ua(),
+            )
+            reddit.read_only = True
+            submission = reddit.submission(id=post.reddit_id)
+            submission.comments.replace_more(limit=0)
+            comments: list[Comment] = []
+            for c in submission.comments.list():
+                if not hasattr(c, "body") or c.body in ("[deleted]", "[removed]", ""):
+                    continue
+                author = str(c.author) if c.author else None
+                comments.append(
+                    Comment(
+                        reddit_id=c.id,
+                        post_reddit_id=post.reddit_id,
+                        parent_id=c.parent_id,
+                        author=author if author != "[deleted]" else None,
+                        body=c.body,
+                        score=c.score,
+                        created_utc=c.created_utc,
+                        depth=c.depth,
+                        scraped_at=now,
+                    )
+                )
+            return post.reddit_id, comments, "praw"
+        except Exception:
+            raw = _fetch_arctic_comments(post.reddit_id)
+            return (
+                post.reddit_id,
+                _comments_from_raw(post.reddit_id, raw, now),
+                "arctic",
+            )
+
+    raw_comments, fresh_post = _fetch_post_comments(post.reddit_id)
+    backend = "json"
+    if fresh_post and isinstance(fresh_post, dict):
+        post.score = fresh_post.get("score", post.score)
+        post.num_comments = fresh_post.get("num_comments", post.num_comments)
+    if not raw_comments:
+        raw_comments = _fetch_arctic_comments(post.reddit_id)
+        backend = "arctic"
+    return post.reddit_id, _comments_from_raw(post.reddit_id, raw_comments, now), backend
+
+
 def enrich_with_comments(
     posts: list[Post],
     top_n: int = COMMENT_ENRICH_TOP_N,
 ) -> dict[str, list[Comment]]:
     """Fetch comments for the top N posts.
 
-    Returns a dict mapping post reddit_id → list of Comment models.
-    Tries Reddit JSON / PRAW first, then Arctic Shift per post.
+    Sequential + courtesy delay by default. In CI, set RUPP_PREFER_ARCTIC=1
+    and RUPP_COMMENT_WORKERS>1 to fetch Arctic comments in parallel.
     """
     global _last_comment_backend
     now = datetime.now(timezone.utc).timestamp()
     result: dict[str, list[Comment]] = {}
     backends_used: set[str] = set()
+    targets = [
+        p for p in posts[:top_n] if p.reddit_id and len(p.reddit_id) <= 12
+    ]
 
-    if _has_praw_credentials():
+    if _has_praw_credentials() and not PREFER_ARCTIC and praw is not None:
         reddit = praw.Reddit(
             client_id=REDDIT_CLIENT_ID,
             client_secret=REDDIT_CLIENT_SECRET,
             user_agent=_ua(),
         )
         reddit.read_only = True
-        for post in posts[:top_n]:
-            if not post.reddit_id or len(post.reddit_id) > 12:
-                continue
+        for post in targets:
             try:
                 submission = reddit.submission(id=post.reddit_id)
                 submission.comments.replace_more(limit=0)
@@ -705,81 +838,29 @@ def enrich_with_comments(
                 result[post.reddit_id] = comments
                 backends_used.add("praw")
             except Exception:
-                # Fall through to Arctic for this post
-                arctic_raw = _fetch_arctic_comments(post.reddit_id)
-                comments = [
-                    Comment(
-                        reddit_id=c["id"],
-                        post_reddit_id=post.reddit_id,
-                        parent_id=c["parent_id"],
-                        author=c["author"] if c["author"] != "[deleted]" else None,
-                        body=c["body"],
-                        score=c["score"],
-                        created_utc=float(c["created_utc"] or 0),
-                        depth=c["depth"],
-                        scraped_at=now,
-                    )
-                    for c in arctic_raw
-                ]
-                result[post.reddit_id] = comments
+                raw = _fetch_arctic_comments(post.reddit_id)
+                result[post.reddit_id] = _comments_from_raw(post.reddit_id, raw, now)
                 backends_used.add("arctic")
             time.sleep(COURTESY_DELAY)
         _last_comment_backend = "+".join(sorted(backends_used)) or "none"
         return result
 
-    for post in posts[:top_n]:
-        if not post.reddit_id or len(post.reddit_id) > 12:
-            continue
-
-        raw_comments, fresh_post = _fetch_post_comments(post.reddit_id)
-        backend = "json"
-
-        if fresh_post and isinstance(fresh_post, dict):
-            post.score = fresh_post.get("score", post.score)
-            post.num_comments = fresh_post.get("num_comments", post.num_comments)
-
-        if not raw_comments:
-            raw_comments = _fetch_arctic_comments(post.reddit_id)
-            backend = "arctic"
-            # Refresh score/num_comments from arctic post if listing was RSS-thin
-            if post.num_comments == 0 or post.created_utc == 0:
-                try:
-                    resp = requests.get(
-                        f"{ARCTIC_SHIFT_BASE}/api/posts/ids",
-                        headers=_session_headers(),
-                        params={"ids": post.reddit_id},
-                        timeout=REQUEST_TIMEOUT,
-                    )
-                    if resp.status_code == 200:
-                        rows = (resp.json() or {}).get("data") or []
-                        if rows:
-                            post.score = int(rows[0].get("score", post.score) or post.score)
-                            post.num_comments = int(
-                                rows[0].get("num_comments", post.num_comments)
-                                or post.num_comments
-                            )
-                            if not post.created_utc:
-                                post.created_utc = float(rows[0].get("created_utc") or 0)
-                except Exception:
-                    pass
-
-        comments = [
-            Comment(
-                reddit_id=c["id"],
-                post_reddit_id=post.reddit_id,
-                parent_id=c["parent_id"],
-                author=c["author"] if c["author"] != "[deleted]" else None,
-                body=c["body"],
-                score=c["score"],
-                created_utc=float(c["created_utc"] or 0),
-                depth=c["depth"],
-                scraped_at=now,
-            )
-            for c in raw_comments
-        ]
-        result[post.reddit_id] = comments
-        backends_used.add(backend)
-        time.sleep(COURTESY_DELAY)
+    workers = COMMENT_WORKERS if PREFER_ARCTIC else 1
+    if workers <= 1:
+        for post in targets:
+            rid, comments, backend = _fetch_comments_for_post(post, now)
+            result[rid] = comments
+            backends_used.add(backend)
+            time.sleep(COURTESY_DELAY)
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = [
+                pool.submit(_fetch_comments_for_post, post, now) for post in targets
+            ]
+            for fut in as_completed(futures):
+                rid, comments, backend = fut.result()
+                result[rid] = comments
+                backends_used.add(backend)
 
     _last_comment_backend = "+".join(sorted(backends_used)) or "none"
     return result

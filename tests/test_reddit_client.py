@@ -55,3 +55,36 @@ def test_wrap_arctic_as_listing_shape():
     assert len(children) == 2
     assert children[0]["kind"] == "t3"
     assert children[0]["data"]["id"] == "abc123"
+
+
+def test_comments_from_raw():
+    from scraper.reddit_client import _comments_from_raw
+
+    comments = _comments_from_raw(
+        "abc123",
+        [
+            {
+                "id": "c1",
+                "parent_id": "t3_abc123",
+                "author": "stu",
+                "body": "take him",
+                "score": 2,
+                "created_utc": 1700000001,
+                "depth": 0,
+            }
+        ],
+        now=1700000100,
+    )
+    assert len(comments) == 1
+    assert comments[0].reddit_id == "c1"
+    assert comments[0].post_reddit_id == "abc123"
+
+
+def test_parse_time_bound():
+    from scraper.cli import _parse_time_bound
+
+    assert _parse_time_bound(None) is None
+    assert _parse_time_bound("1700000000") == 1700000000.0
+    ts = _parse_time_bound("2026-01-01")
+    assert ts is not None
+    assert ts == 1767225600.0

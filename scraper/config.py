@@ -67,7 +67,14 @@ DB_PATH: Path = PROJECT_ROOT / "ruppscraper.db"
 # ---------------------------------------------------------------------------
 DEFAULT_SORT: str = "new"
 REQUEST_TIMEOUT: int = 30
-COURTESY_DELAY: float = 1.2            # seconds between comment enrichment calls
+COURTESY_DELAY: float = float(os.getenv("RUPP_COURTESY_DELAY", "1.2"))
+COMMENT_WORKERS: int = max(1, int(os.getenv("RUPP_COMMENT_WORKERS", "1")))
+ARCTIC_PAGE_DELAY: float = float(os.getenv("RUPP_ARCTIC_PAGE_DELAY", "0.35"))
+PREFER_ARCTIC: bool = os.getenv("RUPP_PREFER_ARCTIC", "").lower() in {
+    "1",
+    "true",
+    "yes",
+}
 COMMENT_ENRICH_TOP_N: int = 10          # how many posts to enrich with comments
 LISTING_LIMIT: int = 100                # max posts per JSON listing page
 

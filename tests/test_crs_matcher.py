@@ -7,7 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from scraper.crs_matcher import CRSLookup, _fold_accents, _norm_key
+from scraper.crs_matcher import CRSLookup, match_scraped_professors, purge_junk_professors
+from scraper.name_resolver import fold_key
 
 
 @pytest.fixture
@@ -41,10 +42,21 @@ def crs_db(tmp_path: Path) -> Path:
             ('i4', 'CASTAÑEDA, ROANN KRISTIAN', 'Castañeda, Roann Kristian'),
             ('i5', 'INAZUNTA MARCA, CATALINA', 'Inazunta Marca, Catalina'),
             ('i6', 'CRUEL, JEVIC ANJIN', 'Cruel, Jevic Anjin'),
-            ('i7', 'CONCEPCION, MARY GRACE', 'Concepcion, Mary Grace');
-        INSERT INTO course VALUES ('c1', 'CHEM 31');
-        INSERT INTO section VALUES ('s1', 'c1', 'upd');
-        INSERT INTO section_instructor VALUES ('s1', 'i1');
+            ('i7', 'CONCEPCION, MARY GRACE', 'Concepcion, Mary Grace'),
+            ('i8', 'SANTOS, ANA MARIA', 'Santos, Ana Maria'),
+            ('i9', 'SANTOS, JUAN CARLOS', 'Santos, Juan Carlos');
+        INSERT INTO course VALUES
+            ('c1', 'CHEM 31'),
+            ('c2', 'MATH 21'),
+            ('c3', 'ENG 10');
+        INSERT INTO section VALUES
+            ('s1', 'c1', 'upd'),
+            ('s2', 'c2', 'upd'),
+            ('s3', 'c3', 'upd');
+        INSERT INTO section_instructor VALUES
+            ('s1', 'i1'),
+            ('s2', 'i8'),
+            ('s3', 'i9');
         """
     )
     conn.commit()
@@ -54,8 +66,8 @@ def crs_db(tmp_path: Path) -> Path:
 
 class TestAccentFold:
     def test_fold(self):
-        assert _fold_accents("CASTAÑEDA") == "CASTANEDA"
-        assert _norm_key("Castañeda, Roann") == "CASTANEDA, ROANN"
+        assert fold_key("CASTAÑEDA") == "CASTANEDA"
+        assert fold_key("Castañeda") == "CASTANEDA"
 
 
 class TestCRSLookup:
@@ -101,3 +113,95 @@ class TestCRSLookup:
         m = lookup.match("Cruel", "Jevic")
         assert m is not None
         assert m.match_type == "first_token"
+
+    def test_section_prefix_cleaned(self, crs_db: Path):
+        lookup = CRSLookup(crs_db)
+        lookup.load()
+        m = lookup.match("1 Cauyan", "Jaclyn Marie")
+        assert m is not None
+        assert m.confidence == 1.0
+
+    def test_course_disambiguates_last_name(self, crs_db: Path):
+        lookup = CRSLookup(crs_db)
+        lookup.load()
+        # Last name only → ambiguous Santos pair
+        assert lookup.match("Santos", "") is None
+        m = lookup.match("Santos", "", courses=["MATH 21"])
+        assert m is not None
+        assert m.instructor.instructor_id == "i8"
+        assert "course" in m.match_type
+
+
+class TestMatchScraped:
+    def test_skips_junk_and_matches(self, crs_db: Path, tmp_path: Path):
+        rupp = tmp_path / "rupp.db"
+        conn = sqlite3.connect(rupp)
+        conn.executescript(
+            """
+            CREATE TABLE professors (
+                id INTEGER PRIMARY KEY,
+                last_name TEXT,
+                first_name TEXT,
+                campus TEXT
+            );
+            CREATE TABLE posts (
+                id INTEGER PRIMARY KEY,
+                professor_id INTEGER,
+                course TEXT
+            );
+            INSERT INTO professors VALUES
+                (1, 'Cauyan', 'Jaclyn Marie', 'UPD'),
+                (2, 'Prerogative', '11', 'UPD'),
+                (3, 'Santos', 'Ana', 'UPD');
+            INSERT INTO posts VALUES
+                (1, 1, 'CHEM 31'),
+                (2, 2, 'MATH 21'),
+                (3, 3, 'MATH 21');
+            """
+        )
+        conn.commit()
+        conn.close()
+
+        results = match_scraped_professors(rupp, crs_db)
+        assert results["junk_count"] == 1
+        assert results["match_rate"] == "2/2"
+        names = {m["crs_name"] for m in results["matched"]}
+        assert "Cauyan, Jaclyn Marie" in names
+        assert "Santos, Ana Maria" in names
+
+    def test_purge_junk(self, tmp_path: Path):
+        rupp = tmp_path / "rupp.db"
+        conn = sqlite3.connect(rupp)
+        conn.executescript(
+            """
+            CREATE TABLE professors (
+                id INTEGER PRIMARY KEY,
+                last_name TEXT,
+                first_name TEXT,
+                campus TEXT
+            );
+            CREATE TABLE posts (
+                id INTEGER PRIMARY KEY,
+                professor_id INTEGER,
+                course TEXT
+            );
+            INSERT INTO professors VALUES
+                (1, 'Garcia', 'Mark', 'UPD'),
+                (2, 'Prerogative', '11', 'UPD');
+            INSERT INTO posts VALUES (1, 1, 'MATH 21'), (2, 2, 'ENG 10');
+            """
+        )
+        conn.commit()
+        conn.close()
+
+        result = purge_junk_professors(rupp)
+        assert result["junk_professors_removed"] == 1
+        conn = sqlite3.connect(rupp)
+        assert conn.execute("SELECT COUNT(*) FROM professors").fetchone()[0] == 1
+        assert (
+            conn.execute(
+                "SELECT professor_id FROM posts WHERE id = 2"
+            ).fetchone()[0]
+            is None
+        )
+        conn.close()
