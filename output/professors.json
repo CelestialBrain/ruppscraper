@@ -6901,6 +6901,49 @@
     ]
   },
   {
+    "professor": "Gomez, David",
+    "campus": "UPD",
+    "courses": [
+      "Span 10"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 2,
+        "clear": 0
+      },
+      "keywords": [
+        "kind",
+        "understanding"
+      ]
+    },
+    "discussions": [
+      {
+        "course": "Span 10",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vmhbxb",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T15:27:51+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Gonzales, Laya",
     "campus": "UPD",
     "courses": [
@@ -9666,6 +9709,46 @@
     ]
   },
   {
+    "professor": "Manipon, Dante",
+    "campus": "UPD",
+    "courses": [
+      "Arkiyoloji 1 (DRM2)"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "Arkiyoloji 1 (DRM2)",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vmd225",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T12:42:18+00:00"
+      }
+    ]
+  },
+  {
     "professor": "Manzano, 1 - Ma'am Joanne",
     "campus": "UPD",
     "courses": [],
@@ -10917,7 +11000,7 @@
       {
         "course": "Math 22",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vlegjj",
-        "score": 1,
+        "score": 2,
         "comment_count": 0,
         "posted_at": "2026-08-11T11:10:55+00:00"
       }
@@ -11507,6 +11590,46 @@
         "score": 1,
         "comment_count": 2,
         "posted_at": "2026-01-19T14:03:16+00:00"
+      }
+    ]
+  },
+  {
+    "professor": "Parrilla, Nilo",
+    "campus": "UPD",
+    "courses": [
+      "FA 133"
+    ],
+    "total_discussions": 1,
+    "signals_summary": {
+      "workload": null,
+      "grading": null,
+      "workload_mentions": {
+        "heavy": 0,
+        "light": 0,
+        "moderate": 0
+      },
+      "grading_mentions": {
+        "generous": 0,
+        "fair": 0,
+        "strict": 0
+      },
+      "attendance_mentions": {
+        "strict": 0,
+        "lenient": 0
+      },
+      "pedagogy_mentions": {
+        "engaging": 0,
+        "clear": 0
+      },
+      "keywords": []
+    },
+    "discussions": [
+      {
+        "course": "FA 133",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vmcor4",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T12:26:05+00:00"
       }
     ]
   },
@@ -14081,7 +14204,7 @@
     "courses": [
       "Anthro 185"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -14106,6 +14229,13 @@
       "keywords": []
     },
     "discussions": [
+      {
+        "course": "Anthro 185",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vmf5al",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T14:07:19+00:00"
+      },
       {
         "course": "Anthro 185",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vmb0cm",
@@ -15055,9 +15185,10 @@
     "professor": "Tigno, Jorge",
     "campus": "UPD",
     "courses": [
+      "SOC SCI 2",
       "Soc sci 2"
     ],
-    "total_discussions": 1,
+    "total_discussions": 2,
     "signals_summary": {
       "workload": null,
       "grading": null,
@@ -15082,6 +15213,13 @@
       "keywords": []
     },
     "discussions": [
+      {
+        "course": "SOC SCI 2",
+        "url": "https://reddit.com/r/RateUPProfs/comments/1vmgpat",
+        "score": 1,
+        "comment_count": 0,
+        "posted_at": "2026-08-12T15:04:51+00:00"
+      },
       {
         "course": "Soc sci 2",
         "url": "https://reddit.com/r/RateUPProfs/comments/1vm84el",
