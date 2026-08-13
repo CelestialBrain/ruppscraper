@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS posts (
     author        TEXT,
     selftext      TEXT NOT NULL DEFAULT '',
     scraped_at    REAL NOT NULL,
+    is_review     INTEGER NOT NULL DEFAULT 1,
     FOREIGN KEY (professor_id) REFERENCES professors(id)
 );
 
@@ -51,6 +52,7 @@ CREATE TABLE IF NOT EXISTS comments (
     created_utc      REAL NOT NULL,
     depth            INTEGER NOT NULL DEFAULT 0,
     scraped_at       REAL NOT NULL,
+    is_review        INTEGER NOT NULL DEFAULT 1,
     FOREIGN KEY (post_reddit_id) REFERENCES posts(reddit_id)
 );
 
@@ -78,7 +80,18 @@ def get_connection(db_path: Path | None = None) -> sqlite3.Connection:
 def init_db(conn: sqlite3.Connection) -> None:
     """Create tables and indexes if they don't exist."""
     conn.executescript(_SCHEMA)
+    _ensure_column(conn, "posts", "is_review", "INTEGER NOT NULL DEFAULT 1")
+    _ensure_column(conn, "comments", "is_review", "INTEGER NOT NULL DEFAULT 1")
     conn.commit()
+
+
+def _ensure_column(
+    conn: sqlite3.Connection, table: str, column: str, decl: str
+) -> None:
+    """Add a column on existing DBs created before it existed."""
+    names = {row[1] for row in conn.execute(f"PRAGMA table_info({table})")}
+    if column not in names:
+        conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {decl}")
 
 
 # ---------------------------------------------------------------------------
@@ -256,6 +269,26 @@ def get_stats(conn: sqlite3.Connection) -> dict[str, Any]:
         "WHERE campus IS NOT NULL GROUP BY campus ORDER BY cnt DESC"
     ).fetchall()
     stats["campuses"] = {row["campus"]: row["cnt"] for row in rows}
+
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(comments)")}
+    if "is_review" in cols:
+        stats["review_comment_count"] = conn.execute(
+            "SELECT COUNT(*) AS cnt FROM comments WHERE is_review = 1"
+        ).fetchone()["cnt"]
+        stats["dropped_comment_count"] = (
+            stats["total_comments"] - stats["review_comment_count"]
+        )
+        stats["review_post_count"] = conn.execute(
+            "SELECT COUNT(*) AS cnt FROM posts WHERE is_review = 1"
+        ).fetchone()["cnt"]
+        stats["dropped_post_count"] = (
+            stats["total_posts"] - stats["review_post_count"]
+        )
+    else:
+        stats["review_comment_count"] = stats["total_comments"]
+        stats["dropped_comment_count"] = 0
+        stats["review_post_count"] = 0
+        stats["dropped_post_count"] = 0
 
     return stats
 

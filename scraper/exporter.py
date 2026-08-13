@@ -127,25 +127,20 @@ def export_comments(
 
         bodies: list[tuple[str, str, str | None]] = []
         selftext = (post.get("selftext") or "").strip()
-        if selftext:
+        if selftext and int(post.get("is_review") or 0) == 1:
             bodies.append((f"post:{post['reddit_id']}", selftext, _ts_to_iso(post["created_utc"])))
         for c in entry["comments"]:
             body = (c.get("body") or "").strip()
             if not body or body in ("[deleted]", "[removed]"):
+                continue
+            if int(c.get("is_review") or 0) != 1:
                 continue
             bodies.append(
                 (f"comment:{c['reddit_id']}", body, _ts_to_iso(c["created_utc"]))
             )
 
         if not bodies:
-            # Still emit one row so the mention is not silently dropped.
-            bodies.append(
-                (
-                    f"post:{post['reddit_id']}",
-                    post.get("title") or "(no body)",
-                    _ts_to_iso(post["created_utc"]),
-                )
-            )
+            continue
 
         for review_id, comment_body, date in bodies:
             export.append({

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-08-13 — exhaust triage of every post body and comment
+
+### Measured (this machine)
+
+| Check | Result |
+| --- | --- |
+| Comments classified | **57,935 / 57,935** — **22,264** review · **35,671** dropped |
+| Post bodies classified | **14,098 / 14,098** — **3,308** review · **10,790** dropped |
+| `export --format comments --crs` | **10,147** review rows (was 27,586 before triage) |
+| Second `triage-reviews` | identical counts (dry) |
+
+Rows are flagged (`is_review`), not deleted. Drop reasons: request / too_short / thanks / ask / reaction / empty / thin.
+
+### Code
+
+- `python -m scraper triage-reviews` walks every `posts.selftext` and `comments.body`.
+- `export --format comments` emits only `is_review = 1` (no title-as-fake-review fallback).
+- Matrix and sequential scrape jobs run triage before export.
+
 ## 2026-08-13 — roster cleanup, Arctic comment paging, full-corpus resolve
 
 ### Measured (this machine, ~14k archive)

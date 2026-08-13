@@ -17,9 +17,10 @@ pip install -r requirements.txt
 # 2. Progressive scrape (sorts + subject queries, resume-safe)
 python -m scraper scrape-all --scale 0.25
 
-# 3. Apply parser upgrades to titles already in the DB, then drop junk names
+# 3. Apply parser upgrades, drop junk names, keep only review text
 python -m scraper reparse --all
 python -m scraper clean-junk
+python -m scraper triage-reviews
 
 # 4. Backfill comments (includes threads truncated by the old 50-comment page)
 python -m scraper enrich --limit 1500
@@ -60,6 +61,7 @@ python -m scraper scrape-all --scale 0.5 --export output/professors_crs.json --c
 python -m scraper reparse          # unparsed rows only
 python -m scraper reparse --all    # every title
 python -m scraper clean-junk       # unlink junk names + merge duplicate roster rows
+python -m scraper triage-reviews   # flag every post body + comment as a review or not
 python -m scraper enrich --limit 1500
 ```
 
@@ -87,7 +89,7 @@ python -m scraper stats
 
 ### Matrix Pipeline (GitHub Actions)
 
-`.github/workflows/matrix-scrape.yml` runs every 10 minutes: 7 parallel Arctic Shift year-windows covering the full r/RateUPProfs archive (2019–2026), then merge → reparse → clean-junk → enrich comments (Arctic pages past 50) → CRS + comments export + resolve-report. Unparsed shard leftovers do **not** create professor rows. Shards **fail if they produce 0 posts**. Sequential `scrape-all` is `workflow_dispatch` only (`.github/workflows/scrape.yml`).
+`.github/workflows/matrix-scrape.yml` runs every 10 minutes: 7 parallel Arctic Shift year-windows covering the full r/RateUPProfs archive (2019–2026), then merge → reparse → clean-junk → enrich comments → **triage-reviews** → CRS + comments export + resolve-report. `triage-reviews` flags every post body and comment (`is_review`); export `--format comments` emits only those rows. Unparsed shard leftovers do **not** create professor rows. Shards **fail if they produce 0 posts**. Sequential `scrape-all` is `workflow_dispatch` only (`.github/workflows/scrape.yml`).
 
 ## ProfstoPick ingest
 
@@ -117,7 +119,7 @@ npm run import -- --source reddit=/path/to/comments_rupp_shaped.json --universit
 ### Exports this repo emits
 
 1. **`professors` / `professors_crs.json`** — discovery index: name, campus, courses, discussion permalinks, optional `crs_verified`. Good for debugging and CRS join QA; **not** a comment import.
-2. **`comments` / `comments_rupp_shaped.json`** — one row per post body / comment, shaped like `ReviewRow` fields (`professor`, `teacherId`, `reviewId`, `subject`, `comment`, `date`, null ratings) plus `resolve_status` and `source_url`. Sidecar `*.unresolved.json` lists names that did not resolve. Matrix CI force-adds this file on each merge.
+2. **`comments` / `comments_rupp_shaped.json`** — one row per **review** post body / comment (`is_review = 1`). Same ReviewRow-shaped fields as before. Sidecar `*.unresolved.json` lists names that did not resolve. Matrix CI force-adds this file on each merge.
 
 Unresolved rows stay in the sidecar; the reddit importer should skip `resolve_status != "resolved"` rather than attaching them to a random roster hit.
 
@@ -146,12 +148,13 @@ scraper/
 ├── parser.py          # Regex title parser with fallback patterns
 ├── analyzer.py        # Rule-based student signal & keyword extractor
 ├── crs_matcher.py     # Cross-referencer against official UP CRS db
+├── review_triage.py   # Keep/drop every post body and comment as a professor review
 ├── resolve_report.py  # Mention sample → resolve rate + unresolved list
 ├── models.py          # Dataclasses: Professor, Post, Comment
 ├── database.py        # SQLite schema, upsert logic, queries
 ├── reddit_client.py   # PRAW → JSON → Arctic Shift → RSS
 ├── exporter.py        # SQLite → JSON with CRS & signal enrichment
-├── cli.py             # scrape / scrape-all / reparse / enrich / export / stats / match / clean-junk / resolve-report
+├── cli.py             # scrape / scrape-all / reparse / enrich / export / stats / match / clean-junk / triage-reviews / resolve-report
 └── __main__.py        # python -m scraper entrypoint
 ```
 

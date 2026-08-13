@@ -234,6 +234,7 @@ jobs:
           python -m scraper reparse --all
           python -m scraper clean-junk
           python -m scraper enrich --limit 1500
+          python -m scraper triage-reviews
           python -m scraper stats
 
       - name: Match against CRS & Export Final JSON
