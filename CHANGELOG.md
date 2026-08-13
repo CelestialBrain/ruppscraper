@@ -6,7 +6,7 @@
 
 | Check | Result |
 | --- | --- |
-| DB after `reparse --all` + `clean-junk` | **14,098 posts · 55,884 comments · 5,392 parsed (38.2%) · 1,872 professor rows** |
+| DB after `reparse --all` + `clean-junk` + comment enrich | **14,098 posts · 57,935 comments · 5,392 parsed (38.2%) · 1,872 professor rows** |
 | Junk purge | **50 + 7** implausible rows removed; **237** duplicate groups collapsed (**268** extra rows) |
 | Mention resolve sample 100 **random** seed=42 | **95%** resolved (2 ambiguous · 3 unresolved) — **PASS ≥80%** |
 | Mention resolve sample 100 **recent** UPD | **87%** resolved (6 ambiguous · 7 unresolved) — **PASS ≥80%** |
@@ -24,7 +24,7 @@ Unresolved names in the sample are roster gaps (Parena, Lizarraga, Diñgal, …)
 
 ### Still open
 
-1. **Comment backfill** — paging is in the client; a full `enrich --limit 1500` (or higher) has not been run on this machine. CI merge job now does 1500.
+1. **Comment backfill** — local enrich raised stored comments **55,884 → 57,935**. Arctic’s ~61k figure includes `[deleted]`/`[removed]` bodies this scraper skips. Remaining Reddit claimed-vs-stored gap is those skipped rows, not unpaged threads. `enrich` now only targets truncated threads (`stored < num_comments`), not posts that claim zero comments.
 2. **Parse rate ~38%** — conversational / multi-prof / prerog posts stay unparsed (correctly excluded from the mention sample).
 3. **Roster gaps** — well-parsed names missing from the CRS snapshot still show as unresolved.
 4. **OAuth still optional** — listings/comments stay on Arctic Shift without Reddit credentials.

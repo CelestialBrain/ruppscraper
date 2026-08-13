@@ -166,4 +166,24 @@ def test_unparsed_and_missing_comments(tmp_path: Path):
     )
     missing3 = get_posts_missing_comments(conn)
     assert [r["reddit_id"] for r in missing3] == ["p2"]
+
+    # A thread that claims zero comments is not a refill target.
+    upsert_post_with_comments(
+        conn,
+        Post(
+            reddit_id="p3",
+            title="meta",
+            campus=None,
+            course=None,
+            professor_id=None,
+            url="https://reddit.com/r/RateUPProfs/comments/p3/",
+            score=0,
+            num_comments=0,
+            created_utc=1700000004,
+            author="c",
+            selftext="",
+        ),
+        [],
+    )
+    assert [r["reddit_id"] for r in get_posts_missing_comments(conn)] == ["p2"]
     conn.close()

@@ -191,9 +191,10 @@ def get_posts_missing_comments(
     conn: sqlite3.Connection,
     limit: int | None = None,
 ) -> list[sqlite3.Row]:
-    """Return posts with no stored comments, or fewer than Reddit claimed.
+    """Return posts with fewer stored comments than Reddit claimed.
 
     Prefers the largest remaining gap so truncated Arctic pages get refilled.
+    Posts that claim zero comments are skipped — they have nothing to fetch.
     """
     sql = """
         SELECT p.reddit_id, p.title, p.url, p.score, p.num_comments, p.created_utc,
@@ -202,8 +203,7 @@ def get_posts_missing_comments(
         FROM posts p
         LEFT JOIN comments c ON c.post_reddit_id = p.reddit_id
         GROUP BY p.reddit_id
-        HAVING stored_comment_count = 0
-            OR stored_comment_count < p.num_comments
+        HAVING stored_comment_count < p.num_comments
         ORDER BY (p.num_comments - stored_comment_count) DESC, p.created_utc DESC
     """
     if limit is not None:
