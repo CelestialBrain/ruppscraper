@@ -93926,14 +93926,14 @@
     "total_discussions": 2,
     "signals_summary": {
       "workload": null,
-      "grading": null,
+      "grading": "generous",
       "workload_mentions": {
         "heavy": 0,
         "light": 0,
         "moderate": 0
       },
       "grading_mentions": {
-        "generous": 0,
+        "generous": 2,
         "fair": 0,
         "strict": 0
       },
@@ -93945,7 +93945,10 @@
         "engaging": 0,
         "clear": 0
       },
-      "keywords": []
+      "keywords": [
+        "uno",
+        "unoable"
+      ]
     },
     "discussions": [
       {
@@ -109409,14 +109412,14 @@
       },
       {
         "course": "POL SC 14",
-        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pf",
+        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pm",
         "score": 1,
         "comment_count": 0,
         "posted_at": "2024-01-17T01:33:32+00:00"
       },
       {
         "course": "POL SC 14",
-        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pm",
+        "url": "https://reddit.com/r/RateUPProfs/comments/198k9pf",
         "score": 1,
         "comment_count": 0,
         "posted_at": "2024-01-17T01:33:32+00:00"
@@ -110341,7 +110344,7 @@
       "grading": "generous",
       "workload_mentions": {
         "heavy": 3,
-        "light": 1,
+        "light": 2,
         "moderate": 0
       },
       "grading_mentions": {
@@ -110354,16 +110357,19 @@
         "lenient": 0
       },
       "pedagogy_mentions": {
-        "engaging": 2,
+        "engaging": 4,
         "clear": 0
       },
       "keywords": [
         "approachable",
+        "best prof",
         "chill",
         "fun",
         "heavy",
+        "manageable",
         "readings",
         "reqs",
+        "understanding",
         "uno",
         "unoable"
       ]
