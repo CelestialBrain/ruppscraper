@@ -44,6 +44,8 @@ class TestPlausible:
         assert not is_plausible_professor_name("?", "What")
         assert not is_plausible_professor_name("Math", "22")
         assert not is_plausible_professor_name("Garcia", "")
+        assert not is_plausible_professor_name("Espanola", "Carmela And Orozco, Zenith")
+        assert not is_plausible_professor_name("Villegas", "Patrick / Fil 40")
 
     def test_accepts_real(self):
         assert is_plausible_professor_name("Garcia", "Mark Lester")

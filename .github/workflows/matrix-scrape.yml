@@ -250,7 +250,8 @@ jobs:
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
         run: |
-          python -m scraper reparse
+          python -m scraper reparse --all
+          python -m scraper clean-junk
           python -m scraper enrich --limit 200
           python -m scraper stats
 

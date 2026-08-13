@@ -57,6 +57,36 @@ CAMPUS_CODES: set[str] = {
 # Normalized lookup (case-insensitive) → canonical form
 CAMPUS_LOOKUP: dict[str, str] = {code.upper(): code for code in CAMPUS_CODES}
 
+# Bracket tokens that are not campuses (title slang / flair).
+CAMPUS_ALIASES: dict[str, str] = {
+    "DILIMAN": "UPD",
+    "UPDILIMAN": "UPD",
+    "UP-DILIMAN": "UPD",
+}
+FAKE_CAMPUS_CODES: set[str] = {
+    "REVIEW",
+    "PREROG",
+    "EMAIL",
+    "HELP",
+    "QUESTION",
+    "ART",
+    "UPX",
+}
+
+
+def canonical_campus(raw: str | None) -> str | None:
+    """Map a title campus token to a real UP code, or None if unknown."""
+    if not raw:
+        return None
+    key = raw.strip().upper()
+    if key in CAMPUS_LOOKUP:
+        return CAMPUS_LOOKUP[key]
+    if key in CAMPUS_ALIASES:
+        return CAMPUS_ALIASES[key]
+    if key in FAKE_CAMPUS_CODES:
+        return "UPD"
+    return None
+
 # ---------------------------------------------------------------------------
 # Database
 # ---------------------------------------------------------------------------

@@ -142,10 +142,20 @@ class TestParseTitle:
     # ------------------------------------------------------------------
 
     def test_unknown_campus_code(self):
-        """Unknown codes should still parse, just preserved as uppercase."""
+        """Unknown codes are not real campuses — don't invent a professor row."""
         result = parse_title("[UPXYZ] Math 1 - Test, User")
+        assert result is None
+
+    def test_fake_campus_coerced_to_upd(self):
+        result = parse_title("[REVIEW] Econ 11 - Jandoc, Karl Robert")
         assert result is not None
-        assert result.campus == "UPXYZ"
+        assert result.campus == "UPD"
+        assert result.last_name == "Jandoc"
+
+    def test_diliman_alias(self):
+        result = parse_title("[DILIMAN] PE 2 - Guinto, Maria Luisa")
+        assert result is not None
+        assert result.campus == "UPD"
 
     def test_upmin_campus(self):
         result = parse_title("[UPMin] Hist 1 - Garcia, Pedro")

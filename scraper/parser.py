@@ -10,7 +10,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from scraper.config import CAMPUS_LOOKUP
+from scraper.config import canonical_campus
+from scraper.name_resolver import is_plausible_professor_name
 
 # ---------------------------------------------------------------------------
 # Dataclass for parsed results
@@ -148,30 +149,30 @@ def parse_title(title: str) -> ParsedTitle | None:
 
     match = _TITLE_RE.match(primary_title)
     if match:
-        campus_raw = match.group("campus").strip()
-        campus = CAMPUS_LOOKUP.get(campus_raw.upper(), campus_raw.upper())
-        course, last_name, first_name = _clean_name_fields(
-            match.group("course"),
-            match.group("last_name"),
-            match.group("first_name"),
-        )
-        built = _maybe_build(campus, course, last_name, first_name, title)
-        if built is not None:
-            return built
+        campus = canonical_campus(match.group("campus"))
+        if campus:
+            course, last_name, first_name = _clean_name_fields(
+                match.group("course"),
+                match.group("last_name"),
+                match.group("first_name"),
+            )
+            built = _maybe_build(campus, course, last_name, first_name, title)
+            if built is not None:
+                return built
 
     # Try swapped order: [CAMPUS] LastName, FirstName - Course
     match = _TITLE_SWAPPED_RE.match(primary_title)
     if match:
-        campus_raw = match.group("campus").strip()
-        campus = CAMPUS_LOOKUP.get(campus_raw.upper(), campus_raw.upper())
-        course, last_name, first_name = _clean_name_fields(
-            match.group("course"),
-            match.group("last_name"),
-            match.group("first_name"),
-        )
-        built = _maybe_build(campus, course, last_name, first_name, title)
-        if built is not None:
-            return built
+        campus = canonical_campus(match.group("campus"))
+        if campus:
+            course, last_name, first_name = _clean_name_fields(
+                match.group("course"),
+                match.group("last_name"),
+                match.group("first_name"),
+            )
+            built = _maybe_build(campus, course, last_name, first_name, title)
+            if built is not None:
+                return built
 
     # Try unbracketed order: Course - LastName, FirstName (defaults to UPD)
     match = _TITLE_NO_BRACKET_RE.match(primary_title)
@@ -192,15 +193,15 @@ def parse_title(title: str) -> ParsedTitle | None:
         full_name = _strip_honorifics(_clean_whitespace(match.group("full_name")))
         name_parts = [p for p in full_name.split() if not _is_section_token(p)]
         if len(name_parts) >= 2:
-            campus_raw = match.group("campus").strip()
-            campus = CAMPUS_LOOKUP.get(campus_raw.upper(), campus_raw.upper())
-            course = _strip_section_tokens(_clean_whitespace(match.group("course")))
-            # Last token = surname; preceding tokens = given names
-            last_name = _title_case_name(name_parts[-1])
-            first_name = _title_case_name(" ".join(name_parts[:-1]))
-            built = _maybe_build(campus, course, last_name, first_name, title)
-            if built is not None:
-                return built
+            campus = canonical_campus(match.group("campus"))
+            if campus:
+                course = _strip_section_tokens(_clean_whitespace(match.group("course")))
+                # Last token = surname; preceding tokens = given names
+                last_name = _title_case_name(name_parts[-1])
+                first_name = _title_case_name(" ".join(name_parts[:-1]))
+                built = _maybe_build(campus, course, last_name, first_name, title)
+                if built is not None:
+                    return built
 
     # Try missing dash: [CAMPUS] Course LASTNAME, FIRSTNAME
     no_dash = _parse_no_dash(primary_title)
@@ -225,6 +226,8 @@ def _maybe_build(
     if not (course and last_name and first_name):
         return None
     if not _looks_like_professor_parse(course, last_name, first_name, raw_title):
+        return None
+    if not is_plausible_professor_name(last_name, first_name):
         return None
     return ParsedTitle(
         campus=campus,
@@ -372,8 +375,9 @@ def _parse_no_dash(title: str) -> tuple[str, str, str, str] | None:
         if not course_raw:
             return None
 
-    campus_raw = match.group("campus").strip()
-    campus = CAMPUS_LOOKUP.get(campus_raw.upper(), campus_raw.upper())
+    campus = canonical_campus(match.group("campus"))
+    if not campus:
+        return None
     return (
         campus,
         _clean_whitespace(course_raw),

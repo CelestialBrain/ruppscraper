@@ -523,7 +523,9 @@ def match_scraped_professors(
 
 
 def purge_junk_professors(rupp_db_path: Path) -> dict[str, int]:
-    """Detach posts from junk professor rows and delete those professors."""
+    """Detach posts from junk/unknown-campus professor rows and drop orphans."""
+    from scraper.config import CAMPUS_LOOKUP
+
     conn = sqlite3.connect(str(rupp_db_path))
     conn.row_factory = sqlite3.Row
     professors = conn.execute("SELECT * FROM professors").fetchall()
@@ -531,7 +533,8 @@ def purge_junk_professors(rupp_db_path: Path) -> dict[str, int]:
     detached = 0
     with conn:
         for prof in professors:
-            if is_plausible_professor_name(prof["last_name"], prof["first_name"]):
+            campus_ok = (prof["campus"] or "").upper() in CAMPUS_LOOKUP
+            if is_plausible_professor_name(prof["last_name"], prof["first_name"]) and campus_ok:
                 continue
             cur = conn.execute(
                 "UPDATE posts SET professor_id = NULL WHERE professor_id = ?",
@@ -540,5 +543,19 @@ def purge_junk_professors(rupp_db_path: Path) -> dict[str, int]:
             detached += cur.rowcount
             conn.execute("DELETE FROM professors WHERE id = ?", (prof["id"],))
             removed += 1
+        orphan = conn.execute(
+            """
+            DELETE FROM professors
+            WHERE id NOT IN (
+                SELECT DISTINCT professor_id FROM posts
+                WHERE professor_id IS NOT NULL
+            )
+            """
+        )
+        orphans = orphan.rowcount
     conn.close()
-    return {"junk_professors_removed": removed, "posts_unlinked": detached}
+    return {
+        "junk_professors_removed": removed,
+        "posts_unlinked": detached,
+        "orphan_professors_removed": orphans,
+    }

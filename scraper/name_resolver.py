@@ -54,7 +54,8 @@ _LEADING_SECTION_RE = re.compile(
 _JUNK_LAST_RE = re.compile(
     r"^(?:\d+(?:\.\d+)?|tba|tbd|n/?a|none|unknown|prerogative|units|"
     r"classmates!?|gymnastics|support|philippine|demo|kas|philo|fil|"
-    r"eng|math|chem|bio|econ|speech|review|upx)$",
+    r"eng|math|chem|bio|econ|speech|review|upx|psych|electives|"
+    r"preenlistment|hinay|diliman|pls|done)$",
     re.IGNORECASE,
 )
 
@@ -148,9 +149,11 @@ def is_plausible_professor_name(last_name: str, first_name: str) -> bool:
     # Multi-prof dump in first name ("Junio, Roque, Arceo, And Aricheta")
     if first.count(",") >= 2:
         return False
+    if re.search(r"[\[\]/&]", last) or re.search(r"[\[\]/&]", first):
+        return False
     if re.search(
         r"\b(?:and|&|/|reco|prerog|classmates|finding|buddy)\b",
-        first,
+        f"{last} {first}",
         re.IGNORECASE,
     ):
         return False

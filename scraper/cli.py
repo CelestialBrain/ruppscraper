@@ -602,7 +602,8 @@ def cmd_clean_junk(args: argparse.Namespace) -> None:
     result = purge_junk_professors(DB_PATH)
     console.print(
         f"  Removed professors: [bold]{result['junk_professors_removed']}[/bold]\n"
-        f"  Posts unlinked: [bold]{result['posts_unlinked']}[/bold]"
+        f"  Posts unlinked: [bold]{result['posts_unlinked']}[/bold]\n"
+        f"  Orphans removed: [bold]{result.get('orphan_professors_removed', 0)}[/bold]"
     )
 
 
