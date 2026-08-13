@@ -307,29 +307,108 @@ def _fetch_arctic_posts(
     return collected[:target]
 
 
-def _fetch_arctic_comments(post_id: str, limit: int = 50) -> list[dict[str, Any]]:
-    """Fetch comments for a post from Arctic Shift."""
+def _fetch_arctic_comments(
+    post_id: str, limit: int | None = None
+) -> list[dict[str, Any]]:
+    """Fetch comments for a post from Arctic Shift.
+
+    ``limit=None`` pages until the thread is exhausted (capped at 5000).
+    """
     if not post_id:
         return []
 
+    target = limit if limit is not None else 5000
+    collected: list[dict[str, Any]] = []
+    cursor: float | None = None
+    seen_id: set[str] = set()
     url = f"{ARCTIC_SHIFT_BASE}/api/comments/search"
-    params = {"link_id": post_id, "limit": str(limit)}
-    try:
-        resp = requests.get(
-            url,
-            headers=_session_headers(),
-            params=params,
-            timeout=REQUEST_TIMEOUT,
-        )
-        if resp.status_code != 200:
-            return []
-        payload = resp.json()
-    except Exception:
-        return []
 
-    raw = payload.get("data") or []
+    while len(collected) < target:
+        page_size = min(100, target - len(collected))
+        params: dict[str, str] = {
+            "link_id": post_id,
+            "limit": str(page_size),
+            "sort": "desc",
+        }
+        if cursor is not None:
+            params["before"] = str(int(cursor))
+
+        try:
+            resp = requests.get(
+                url,
+                headers=_session_headers(),
+                params=params,
+                timeout=REQUEST_TIMEOUT,
+            )
+            # Retry variants Arctic sometimes accepts when the first combo 422s.
+            if resp.status_code == 422:
+                logger.warning("Arctic Shift comments 422 — slowing down and retrying")
+                time.sleep(max(2.0, ARCTIC_PAGE_DELAY * 8))
+                retries: list[dict[str, str]] = [
+                    dict(params),
+                    {"link_id": post_id, "limit": str(page_size)},
+                ]
+                for retry in retries:
+                    if cursor is not None:
+                        retry["before"] = str(int(cursor))
+                    resp = requests.get(
+                        url,
+                        headers=_session_headers(),
+                        params=retry,
+                        timeout=REQUEST_TIMEOUT,
+                    )
+                    if resp.status_code == 200:
+                        break
+                    time.sleep(2.0)
+            if resp.status_code == 429:
+                logger.warning("Arctic Shift comments rate-limited (429) — backing off")
+                time.sleep(2.0)
+                resp = requests.get(
+                    url,
+                    headers=_session_headers(),
+                    params=params,
+                    timeout=REQUEST_TIMEOUT,
+                )
+            if resp.status_code != 200:
+                logger.warning("Arctic Shift comments HTTP %s", resp.status_code)
+                break
+            payload = resp.json()
+        except Exception as exc:
+            logger.warning("Arctic Shift comments failed: %s", exc)
+            break
+
+        batch = payload.get("data") or []
+        if not batch:
+            break
+
+        new_row: list[dict[str, Any]] = []
+        for row in batch:
+            comment_id = str(row.get("id") or "")
+            if comment_id and comment_id in seen_id:
+                continue
+            if comment_id:
+                seen_id.add(comment_id)
+            new_row.append(row)
+        if not new_row:
+            break
+        collected.extend(new_row)
+
+        timestamps = [
+            float(c.get("created_utc") or 0)
+            for c in new_row
+            if c.get("created_utc") is not None
+        ]
+        oldest = min(timestamps) if timestamps else new_row[-1].get("created_utc")
+        if oldest is None:
+            break
+        # Page using exclusive upper bound on created_utc
+        cursor = float(oldest)
+        if len(batch) < page_size:
+            break
+        time.sleep(ARCTIC_PAGE_DELAY)
+
     comments: list[dict[str, Any]] = []
-    for cdata in raw:
+    for cdata in collected[:target]:
         body = cdata.get("body", "")
         if body in ("[deleted]", "[removed]", ""):
             continue

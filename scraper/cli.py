@@ -484,6 +484,10 @@ def cmd_stats(args: argparse.Namespace) -> None:
     table.add_row("Parsed posts", str(stats["parsed_posts"]))
     table.add_row("Unparsed posts", str(stats["unparsed_posts"]))
     table.add_row("Parse rate", stats["parse_rate"])
+    table.add_row("Review comments", str(stats.get("review_comment_count", "—")))
+    table.add_row("Dropped comments", str(stats.get("dropped_comment_count", "—")))
+    table.add_row("Review post bodies", str(stats.get("review_post_count", "—")))
+    table.add_row("Dropped post bodies", str(stats.get("dropped_post_count", "—")))
 
     console.print(table)
 
@@ -594,6 +598,26 @@ def cmd_match(args: argparse.Namespace) -> None:
         )
 
 
+def cmd_triage_reviews(args: argparse.Namespace) -> None:
+    """Flag every post body and comment as a review or not."""
+    from scraper.config import DB_PATH
+    from scraper.review_triage import apply_review_triage
+
+    console.print("[bold cyan]Triaging post bodies and comments...[/bold cyan]")
+    result = apply_review_triage(DB_PATH)
+    console.print(
+        f"  Comments kept: [bold]{result['comment_kept']}[/bold] / "
+        f"{result['comment_total']}\n"
+        f"  Comments dropped: [bold]{result['comment_dropped']}[/bold]  "
+        f"{result['comment_drop_reason']}\n"
+        f"  Post bodies kept: [bold]{result['post_kept']}[/bold] / "
+        f"{result['post_total']}\n"
+        f"  Post bodies dropped: [bold]{result['post_dropped']}[/bold]  "
+        f"{result['post_drop_reason']}"
+    )
+    cmd_stats(argparse.Namespace())
+
+
 def cmd_clean_junk(args: argparse.Namespace) -> None:
     """Detach posts from junk professor rows and delete those professors."""
     from scraper.config import DB_PATH
@@ -603,7 +627,10 @@ def cmd_clean_junk(args: argparse.Namespace) -> None:
     console.print(
         f"  Removed professors: [bold]{result['junk_professors_removed']}[/bold]\n"
         f"  Posts unlinked: [bold]{result['posts_unlinked']}[/bold]\n"
-        f"  Orphans removed: [bold]{result.get('orphan_professors_removed', 0)}[/bold]"
+        f"  Orphans removed: [bold]{result.get('orphan_professors_removed', 0)}[/bold]\n"
+        f"  Duplicate groups merged: [bold]{result.get('duplicate_groups_merged', 0)}[/bold]\n"
+        f"  Duplicate professors removed: [bold]{result.get('duplicate_professors_removed', 0)}[/bold]\n"
+        f"  Posts relinked: [bold]{result.get('posts_relinked', 0)}[/bold]"
     )
 
 
@@ -780,7 +807,7 @@ def build_parser() -> argparse.ArgumentParser:
         choices=["full", "professors", "comments"],
         default="full",
         help="Export format (default: full). "
-        "'comments' is ReviewRow-shaped for a future ProfstoPick adapter.",
+        "'comments' is ReviewRow-shaped for ProfstoPick `npm run import -- --source reddit=`.",
     )
     sp_export.add_argument(
         "--output",
@@ -821,6 +848,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Unlink posts from junk professor rows and delete those professors.",
     )
     sp_clean.set_defaults(func=cmd_clean_junk)
+
+    # ---- triage-reviews ----
+    sp_triage = subparsers.add_parser(
+        "triage-reviews",
+        help="Flag every post body and comment as a professor review or not.",
+    )
+    sp_triage.set_defaults(func=cmd_triage_reviews)
 
     # ---- resolve-report ----
     sp_resolve = subparsers.add_parser(

@@ -286,6 +286,12 @@ class TestParseTitle:
         assert parse_title("[UPD] Socio 101 WFX - looking for classmates") is None
         assert parse_title("[UPD] Math 22 X7 - Looking for classmates!") is None
 
+    def test_rejects_inverted_meta_titles(self):
+        assert parse_title("[UPD] Film 100 - Looking for venue") is None
+        assert parse_title("[UPD] French 10 THW - Looking for the classroom") is None
+        assert parse_title("[UPD] Fil 40 - Thoughts on these profs") is None
+        assert parse_title("[UPD] MATH 10 - BOYDON, KAI BRYNNE or SADDI, DARYL ALLEN") is None
+
     def test_strips_section_code_from_name(self):
         result = parse_title("[UPD] Span 10 WFX: Cruel, Jevic")
         assert result is not None
@@ -312,3 +318,20 @@ class TestParseTitle:
         assert result is not None
         assert result.last_name == "Bernales"
         assert result.first_name == "Gabrielle Mikaela"
+
+    def test_keeps_de_surname_particle(self):
+        result = parse_title("[UPD] Fil 40 - De La Rosa, Ma. Cecilia")
+        assert result is not None
+        assert result.last_name == "De La Rosa"
+        assert result.first_name == "Ma. Cecilia"
+
+    def test_strips_trailing_first_name_noise(self):
+        result = parse_title("[UPD] Math 17 - Santos, Rolando Email")
+        assert result is not None
+        assert result.last_name == "Santos"
+        assert result.first_name == "Rolando"
+
+        result = parse_title("[UPD] Math 17 - Garcia, Kenneth Arwin Prerog")
+        assert result is not None
+        assert result.last_name == "Garcia"
+        assert result.first_name == "Kenneth Arwin"

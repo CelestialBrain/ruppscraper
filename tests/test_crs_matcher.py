@@ -7,7 +7,12 @@ from pathlib import Path
 
 import pytest
 
-from scraper.crs_matcher import CRSLookup, match_scraped_professors, purge_junk_professors
+from scraper.crs_matcher import (
+    CRSLookup,
+    match_scraped_professors,
+    merge_duplicate_professors,
+    purge_junk_professors,
+)
 from scraper.name_resolver import fold_key
 
 
@@ -201,6 +206,211 @@ class TestMatchScraped:
         assert (
             conn.execute(
                 "SELECT professor_id FROM posts WHERE id = 2"
+            ).fetchone()[0]
+            is None
+        )
+        conn.close()
+
+
+def _rupp_db(tmp_path: Path, professors: list[tuple], posts: list[tuple]) -> Path:
+    path = tmp_path / "rupp.db"
+    conn = sqlite3.connect(path)
+    conn.executescript(
+        """
+        CREATE TABLE professors (
+            id TEXT PRIMARY KEY,
+            last_name TEXT,
+            first_name TEXT,
+            campus TEXT
+        );
+        CREATE TABLE posts (
+            id INTEGER PRIMARY KEY,
+            professor_id TEXT,
+            course TEXT
+        );
+        """
+    )
+    conn.executemany(
+        "INSERT INTO professors VALUES (?, ?, ?, ?)", professors
+    )
+    conn.executemany("INSERT INTO posts VALUES (?, ?, ?)", posts)
+    conn.commit()
+    conn.close()
+    return path
+
+
+class TestMergeDuplicateProfessors:
+    def test_keeps_row_with_most_posts(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("upd__garcia__mark", "Garcia", "Mark", "UPD"),
+                ("upd__garcia__mark_lester", "Garcia", "Mark Lester", "UPD"),
+            ],
+            [
+                (1, "upd__garcia__mark", "MATH 21"),
+                (2, "upd__garcia__mark_lester", "MATH 21"),
+                (3, "upd__garcia__mark_lester", "MATH 22"),
+                (4, "upd__garcia__mark_lester", "MATH 23"),
+            ],
+        )
+        result = merge_duplicate_professors(rupp)
+        assert result["duplicate_groups_merged"] == 1
+        assert result["duplicate_professors_removed"] == 1
+        assert result["posts_relinked"] == 1
+        conn = sqlite3.connect(rupp)
+        ids = {r[0] for r in conn.execute("SELECT id FROM professors")}
+        assert ids == {"upd__garcia__mark_lester"}
+        linked = {
+            r[0]
+            for r in conn.execute("SELECT professor_id FROM posts")
+        }
+        assert linked == {"upd__garcia__mark_lester"}
+        conn.close()
+
+    def test_tie_prefers_stored_upd_campus(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("g", "Garcia", "Mark", "Diliman"),
+                ("upd__garcia__mark_long", "Garcia", "Mark", "UPD"),
+            ],
+            [
+                (1, "g", "MATH 21"),
+                (2, "upd__garcia__mark_long", "MATH 22"),
+            ],
+        )
+        result = merge_duplicate_professors(rupp)
+        assert result["duplicate_groups_merged"] == 1
+        assert result["duplicate_professors_removed"] == 1
+        conn = sqlite3.connect(rupp)
+        remaining = conn.execute("SELECT id FROM professors").fetchone()[0]
+        assert remaining == "upd__garcia__mark_long"
+        assert (
+            conn.execute("SELECT COUNT(*) FROM posts WHERE professor_id = ?",
+                         ("upd__garcia__mark_long",)).fetchone()[0]
+            == 2
+        )
+        conn.close()
+
+    def test_tie_prefers_shortest_id(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("upd__garcia__mark_lester", "Garcia", "Mark Lester", "UPD"),
+                ("upd__garcia__mark", "Garcia", "Mark", "UPD"),
+            ],
+            [
+                (1, "upd__garcia__mark_lester", "MATH 21"),
+                (2, "upd__garcia__mark", "MATH 22"),
+            ],
+        )
+        result = merge_duplicate_professors(rupp)
+        assert result["duplicate_groups_merged"] == 1
+        conn = sqlite3.connect(rupp)
+        remaining = conn.execute("SELECT id FROM professors").fetchone()[0]
+        assert remaining == "upd__garcia__mark"
+        conn.close()
+
+    def test_does_not_merge_across_campuses(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("upd__garcia__mark", "Garcia", "Mark", "UPD"),
+                ("uplb__garcia__mark", "Garcia", "Mark", "UPLB"),
+            ],
+            [
+                (1, "upd__garcia__mark", "MATH 21"),
+                (2, "uplb__garcia__mark", "MATH 21"),
+            ],
+        )
+        result = merge_duplicate_professors(rupp)
+        assert result["duplicate_groups_merged"] == 0
+        assert result["duplicate_professors_removed"] == 0
+        conn = sqlite3.connect(rupp)
+        assert conn.execute("SELECT COUNT(*) FROM professors").fetchone()[0] == 2
+        conn.close()
+
+    def test_does_not_merge_different_first_tokens(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("upd__santos__ana", "Santos", "Ana", "UPD"),
+                ("upd__santos__juan", "Santos", "Juan", "UPD"),
+            ],
+            [
+                (1, "upd__santos__ana", "ENG 10"),
+                (2, "upd__santos__juan", "ENG 10"),
+            ],
+        )
+        result = merge_duplicate_professors(rupp)
+        assert result["duplicate_groups_merged"] == 0
+        conn = sqlite3.connect(rupp)
+        assert conn.execute("SELECT COUNT(*) FROM professors").fetchone()[0] == 2
+        conn.close()
+
+    def test_accent_fold_and_section_prefix_group(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("upd__castaneda__roann", "Castañeda", "Roann", "UPD"),
+                ("upd__castaneda__roann_k", "1 Castaneda", "Roann Kristian", "UPD"),
+            ],
+            [
+                (1, "upd__castaneda__roann", "CHEM 31"),
+                (2, "upd__castaneda__roann_k", "CHEM 31"),
+            ],
+        )
+        result = merge_duplicate_professors(rupp)
+        assert result["duplicate_groups_merged"] == 1
+        assert result["duplicate_professors_removed"] == 1
+        conn = sqlite3.connect(rupp)
+        assert conn.execute("SELECT COUNT(*) FROM professors").fetchone()[0] == 1
+        conn.close()
+
+    def test_skips_implausible_names(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("upd__math__john", "Math", "John", "UPD"),
+                ("upd__math__john_paul", "Math", "John Paul", "UPD"),
+            ],
+            [
+                (1, "upd__math__john", "MATH 21"),
+                (2, "upd__math__john_paul", "MATH 21"),
+            ],
+        )
+        result = merge_duplicate_professors(rupp)
+        assert result["duplicate_groups_merged"] == 0
+        conn = sqlite3.connect(rupp)
+        assert conn.execute("SELECT COUNT(*) FROM professors").fetchone()[0] == 2
+        conn.close()
+
+    def test_purge_junk_merges_after_junk_delete(self, tmp_path: Path):
+        rupp = _rupp_db(
+            tmp_path,
+            [
+                ("upd__garcia__mark", "Garcia", "Mark", "UPD"),
+                ("upd__garcia__mark_lester", "Garcia", "Mark Lester", "UPD"),
+                ("upd__prerogative__11", "Prerogative", "11", "UPD"),
+            ],
+            [
+                (1, "upd__garcia__mark", "MATH 21"),
+                (2, "upd__garcia__mark_lester", "MATH 22"),
+                (3, "upd__garcia__mark_lester", "MATH 23"),
+                (4, "upd__prerogative__11", "ENG 10"),
+            ],
+        )
+        result = purge_junk_professors(rupp)
+        assert result["junk_professors_removed"] == 1
+        assert result["duplicate_groups_merged"] == 1
+        assert result["duplicate_professors_removed"] == 1
+        conn = sqlite3.connect(rupp)
+        ids = {r[0] for r in conn.execute("SELECT id FROM professors")}
+        assert ids == {"upd__garcia__mark_lester"}
+        assert (
+            conn.execute(
+                "SELECT professor_id FROM posts WHERE id = 4"
             ).fetchone()[0]
             is None
         )

@@ -42,8 +42,10 @@ jobs:
           RUPP_ARCTIC_PAGE_DELAY: "0.1"
         run: |
           python -m scraper scrape-all --scale 1.0
-          python -m scraper reparse
-          python -m scraper enrich --limit 200
+          python -m scraper reparse --all
+          python -m scraper clean-junk
+          python -m scraper enrich --limit 1500
+          python -m scraper triage-reviews
           python -m scraper stats
           python - <<'PY'
           from scraper.database import get_connection, get_stats, init_db
@@ -57,12 +59,14 @@ jobs:
         run: |
           python -m scraper export --format professors --crs -o output/professors_crs.json
           python -m scraper export --format professors -o output/professors.json
+          python -m scraper export --format comments --crs -o output/comments_rupp_shaped.json
 
       - name: Commit updated output
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f output/professors_crs.json output/professors.json ruppscraper.db
+          git add -f output/professors_crs.json output/professors.json \
+            output/comments_rupp_shaped.json ruppscraper.db
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
