@@ -11,7 +11,7 @@ import re
 from dataclasses import dataclass
 
 from scraper.config import canonical_campus
-from scraper.name_resolver import is_plausible_professor_name
+from scraper.name_resolver import clean_scraped_name, is_plausible_professor_name
 
 # ---------------------------------------------------------------------------
 # Dataclass for parsed results
@@ -264,6 +264,13 @@ _CLASSMATE_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Conversational titles that invert into fake names via the no-comma path.
+_META_HUNT_RE = re.compile(
+    r"\b(?:looking for|thoughts on|help an iska|prerogable|"
+    r"allow prerogs?|profs? that allow)\b",
+    re.IGNORECASE,
+)
+
 
 def _is_section_token(token: str) -> bool:
     return bool(_SECTION_TOKEN_RE.match(token.strip()))
@@ -319,6 +326,7 @@ def _clean_name_fields(
     # Leading punctuation artifacts from en-dash normalization.
     last_name = last_name.lstrip("-–— ").strip()
     first_name = first_name.lstrip("-–— ").strip()
+    last_name, first_name = clean_scraped_name(last_name, first_name)
     return (
         course,
         _title_case_name(last_name) if last_name else "",
@@ -402,7 +410,7 @@ def _looks_like_professor_parse(
         return False
     if "?" in raw_title:
         return False
-    if _CLASSMATE_RE.search(raw_title):
+    if _CLASSMATE_RE.search(raw_title) or _META_HUNT_RE.search(raw_title):
         return False
     # Digits in a "name" almost always mean a botched parse (course code leak).
     if re.search(r"\d", last_name) or re.search(r"\d", first_name):
@@ -422,6 +430,19 @@ def _looks_like_professor_parse(
         "done",
         "pls",
         "pahingi",
+        "venue",
+        "classroom",
+        "email",
+        "e-mail",
+        "profs",
+        "prof",
+        "prerogs",
+        "thoughts",
+        "help",
+        "her",
+        "suggestions",
+        "thesis",
+        "validation",
     }
     if last_name.lower().rstrip("!,.") in junk_names:
         return False

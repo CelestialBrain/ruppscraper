@@ -17,6 +17,20 @@ from typing import Any
 
 from scraper.config import DB_PATH
 from scraper.crs_matcher import CRSLookup, DEFAULT_CRS_DB_PATH
+from scraper.name_resolver import is_plausible_professor_name
+
+# Post campus codes → CRS university_id (same mapping as match_scraped_professors).
+CAMPUS_TO_UNIVERSITY: dict[str, str] = {
+    "UPD": "upd",
+    "UPLB": "uplb",
+    "UPM": "upm",
+    "UPOU": "upou",
+    "UPV": "upv",
+    "UPMIN": "upmin",
+    "UPB": "upb",
+    "UPC": "upc",
+    "UPT": "upt",
+}
 
 
 @dataclass(frozen=True, slots=True)
@@ -66,14 +80,25 @@ def load_mentions(
             created_utc=r["created_utc"],
         )
         for r in rows
+        if is_plausible_professor_name(r["last_name"], r["first_name"])
     ]
 
 
 def classify_mention(
-    lookup: CRSLookup, last_name: str, first_name: str
+    lookup: CRSLookup,
+    last_name: str,
+    first_name: str,
+    *,
+    course: str | None = None,
+    university_id: str | None = None,
 ) -> tuple[str, dict[str, Any] | None]:
     """Return (status, detail) where status is resolved|ambiguous|unresolved."""
-    best = lookup.match(last_name, first_name)
+    if not is_plausible_professor_name(last_name, first_name):
+        return "skipped", None
+    courses = [course] if course else None
+    best = lookup.match(
+        last_name, first_name, courses=courses, university_id=university_id
+    )
     all_matches = lookup.match_all(last_name, first_name)
     if best and best.confidence >= 0.8:
         return "resolved", {
@@ -132,7 +157,16 @@ def build_resolve_report(
     unresolved: list[dict[str, Any]] = []
 
     for m in sample:
-        status, detail = classify_mention(lookup, m.last_name, m.first_name)
+        uni = CAMPUS_TO_UNIVERSITY.get((m.campus or "").upper())
+        status, detail = classify_mention(
+            lookup,
+            m.last_name,
+            m.first_name,
+            course=m.course,
+            university_id=uni,
+        )
+        if status == "skipped":
+            continue
         base = {
             "reddit_id": m.reddit_id,
             "title": m.title,
@@ -149,7 +183,7 @@ def build_resolve_report(
         else:
             unresolved.append(base)
 
-    total = len(sample)
+    total = len(resolved) + len(ambiguous) + len(unresolved)
     rate = len(resolved) / total if total else 0.0
     return {
         "generated_at": datetime.now(tz=timezone.utc).isoformat(),

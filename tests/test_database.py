@@ -81,7 +81,7 @@ def test_unparsed_and_missing_comments(tmp_path: Path):
     conn.commit()
     assert get_unparsed_posts(conn) == []
 
-    # After adding a comment, p1 drops out of missing list
+    # One stored comment vs claimed 2 → still underfilled
     upsert_post_with_comments(
         conn,
         Post(
@@ -117,5 +117,53 @@ def test_unparsed_and_missing_comments(tmp_path: Path):
         ),
     )
     missing2 = get_posts_missing_comments(conn)
-    assert [r["reddit_id"] for r in missing2] == ["p2"]
+    assert {r["reddit_id"] for r in missing2} == {"p1", "p2"}
+
+    # Fill the claimed gap on p1 — it drops out, p2 (zero comments) remains
+    upsert_post_with_comments(
+        conn,
+        Post(
+            reddit_id="p1",
+            title="[UPD] Math 22 - Neri, Marrick",
+            campus="UPD",
+            course="Math 22",
+            professor_id="upd__neri__marrick",
+            url="https://reddit.com/r/RateUPProfs/comments/p1/",
+            score=1,
+            num_comments=2,
+            created_utc=1700000000,
+            author="a",
+            selftext="",
+        ),
+        [
+            Comment(
+                reddit_id="c1",
+                post_reddit_id="p1",
+                parent_id="t3_p1",
+                author="x",
+                body="unoable",
+                score=1,
+                created_utc=1700000002,
+                depth=0,
+            ),
+            Comment(
+                reddit_id="c2",
+                post_reddit_id="p1",
+                parent_id="t3_p1",
+                author="y",
+                body="take him",
+                score=1,
+                created_utc=1700000003,
+                depth=0,
+            ),
+        ],
+        Professor(
+            id="upd__neri__marrick",
+            last_name="Neri",
+            first_name="Marrick",
+            campus="UPD",
+        ),
+    )
+    missing3 = get_posts_missing_comments(conn)
+    assert [r["reddit_id"] for r in missing3] == ["p2"]
     conn.close()

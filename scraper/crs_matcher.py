@@ -522,6 +522,91 @@ def match_scraped_professors(
     }
 
 
+def _professor_merge_key(
+    last_name: str, first_name: str, campus: str | None
+) -> tuple[str, str, str] | None:
+    """Group key: (canonical campus, folded last, folded first-name first token)."""
+    from scraper.config import canonical_campus
+
+    if not is_plausible_professor_name(last_name, first_name):
+        return None
+    canon = canonical_campus(campus)
+    if not canon:
+        return None
+    last, first = clean_scraped_name(last_name, first_name)
+    tokens = first.split()
+    if not last or not tokens:
+        return None
+    return (canon, fold_key(last), fold_key(tokens[0]))
+
+
+def _keeper_sort_key(prof_id: Any, campus: str | None, post_count: int) -> tuple:
+    """Most linked posts, then stored campus UPD, then shortest id."""
+    stored = (campus or "").strip().upper()
+    id_str = str(prof_id)
+    return (-post_count, 0 if stored == "UPD" else 1, len(id_str), id_str)
+
+
+def merge_duplicate_professors(rupp_db_path: Path) -> dict[str, int]:
+    """Collapse near-duplicate professor rows onto one keeper per identity.
+
+    Groups by (canonical campus, cleaned last name, cleaned first-name first
+    token). Keeper is the row with the most linked posts; ties prefer stored
+    campus UPD, then the shortest id. Posts pointing at losers are relinked
+    onto the keeper, then the duplicate professor rows are deleted.
+    """
+    conn = sqlite3.connect(str(rupp_db_path))
+    conn.row_factory = sqlite3.Row
+    rows = conn.execute(
+        """
+        SELECT p.id, p.last_name, p.first_name, p.campus,
+               COUNT(posts.professor_id) AS post_count
+        FROM professors p
+        LEFT JOIN posts ON posts.professor_id = p.id
+        GROUP BY p.id
+        """
+    ).fetchall()
+
+    groups: dict[tuple[str, str, str], list[sqlite3.Row]] = {}
+    for row in rows:
+        key = _professor_merge_key(row["last_name"], row["first_name"], row["campus"])
+        if key is None:
+            continue
+        groups.setdefault(key, []).append(row)
+
+    groups_merged = 0
+    professors_removed = 0
+    posts_relinked = 0
+    with conn:
+        for members in groups.values():
+            if len(members) < 2:
+                continue
+            members_sorted = sorted(
+                members,
+                key=lambda r: _keeper_sort_key(r["id"], r["campus"], r["post_count"]),
+            )
+            keeper = members_sorted[0]
+            others = [m["id"] for m in members_sorted[1:]]
+            placeholders = ",".join("?" * len(others))
+            cur = conn.execute(
+                f"UPDATE posts SET professor_id = ? WHERE professor_id IN ({placeholders})",
+                (keeper["id"], *others),
+            )
+            posts_relinked += cur.rowcount
+            conn.execute(
+                f"DELETE FROM professors WHERE id IN ({placeholders})",
+                others,
+            )
+            groups_merged += 1
+            professors_removed += len(others)
+    conn.close()
+    return {
+        "duplicate_groups_merged": groups_merged,
+        "duplicate_professors_removed": professors_removed,
+        "posts_relinked": posts_relinked,
+    }
+
+
 def purge_junk_professors(rupp_db_path: Path) -> dict[str, int]:
     """Detach posts from junk/unknown-campus professor rows and drop orphans."""
     from scraper.config import CAMPUS_LOOKUP
@@ -554,8 +639,10 @@ def purge_junk_professors(rupp_db_path: Path) -> dict[str, int]:
         )
         orphans = orphan.rowcount
     conn.close()
+    merge_stats = merge_duplicate_professors(rupp_db_path)
     return {
         "junk_professors_removed": removed,
         "posts_unlinked": detached,
         "orphan_professors_removed": orphans,
+        **merge_stats,
     }

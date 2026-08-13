@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-08-13 — roster cleanup, Arctic comment paging, full-corpus resolve
+
+### Measured (this machine, ~14k archive)
+
+| Check | Result |
+| --- | --- |
+| DB after `reparse --all` + `clean-junk` | **14,098 posts · 55,884 comments · 5,392 parsed (38.2%) · 1,872 professor rows** |
+| Junk purge | **50 + 7** implausible rows removed; **237** duplicate groups collapsed (**268** extra rows) |
+| Mention resolve sample 100 **random** seed=42 | **95%** resolved (2 ambiguous · 3 unresolved) — **PASS ≥80%** |
+| Mention resolve sample 100 **recent** UPD | **87%** resolved (6 ambiguous · 7 unresolved) — **PASS ≥80%** |
+| Second `clean-junk` (dry round) | **0** removed / **0** merged |
+
+Unresolved names in the sample are roster gaps (Parena, Lizarraga, Diñgal, …), not leftover “Looking for venue” junk. Comment count is still below Arctic’s ~61k until `enrich` pages truncated threads (old cap was 50/post).
+
+### Code
+
+- Arctic comments page at 100/`before` (cap 5000/thread); `enrich` refills posts whose stored count is below Reddit’s `num_comments`.
+- Name cleanup: `De`/`Di`/`Del` surnames kept; trailing Email/Prerog stripped; inverted meta titles, `or`/`vs` multi-prof dumps, particle-only lasts, and comma-in-last listings rejected.
+- `clean-junk` also merges duplicate roster rows. Matrix ingest no longer upserts a professor when `parse_title` fails.
+- `resolve-report` skips implausible names and passes course + campus into `CRSLookup.match()`.
+- ProfstoPick path is `npm run import -- --source reddit=…` (`script/import/reddit.ts`). Do not use `--source rupp=`. Matrix exports `comments_rupp_shaped.json`.
+
+### Still open
+
+1. **Comment backfill** — paging is in the client; a full `enrich --limit 1500` (or higher) has not been run on this machine. CI merge job now does 1500.
+2. **Parse rate ~38%** — conversational / multi-prof / prerog posts stay unparsed (correctly excluded from the mention sample).
+3. **Roster gaps** — well-parsed names missing from the CRS snapshot still show as unresolved.
+4. **OAuth still optional** — listings/comments stay on Arctic Shift without Reddit credentials.
+
 ## 2026-08-12 — mention resolve gate toward ProfstoPick 80%
 
 ### Measured (this machine)

@@ -88,3 +88,63 @@ def test_parse_time_bound():
     ts = _parse_time_bound("2026-01-01")
     assert ts is not None
     assert ts == 1767225600.0
+
+
+def test_fetch_arctic_comments_pages(monkeypatch):
+    """Arctic comments page with before= until an empty batch."""
+    import scraper.reddit_client as rc
+
+    monkeypatch.setattr(rc, "ARCTIC_PAGE_DELAY", 0)
+
+    page1_row = []
+    for i in range(100):
+        page1_row.append(
+            {
+                "id": f"p1_{i}",
+                "body": "keep" if i != 1 else "[deleted]",
+                "created_utc": 1000 - i,
+                "parent_id": "t3_abc",
+                "author": "a",
+                "score": 1,
+            }
+        )
+    page1_row[0]["id"] = "c1"
+    page1_row[0]["body"] = "take him"
+    pages = [
+        {"data": page1_row},
+        {
+            "data": [
+                {
+                    "id": "c3",
+                    "body": "unoable",
+                    "created_utc": 800,
+                    "parent_id": "t1_c1",
+                    "author": "c",
+                    "score": 1,
+                }
+            ]
+        },
+        {"data": []},
+    ]
+    calls: list[dict] = []
+
+    class _Resp:
+        def __init__(self, payload):
+            self.status_code = 200
+            self._payload = payload
+
+        def json(self):
+            return self._payload
+
+    def _fake_get(url, headers=None, params=None, timeout=None):
+        calls.append(dict(params or {}))
+        payload = pages[min(len(calls) - 1, len(pages) - 1)]
+        return _Resp(payload)
+
+    monkeypatch.setattr(rc.requests, "get", _fake_get)
+    comments = rc._fetch_arctic_comments("abc", limit=500)
+    bodies = {c["body"] for c in comments}
+    assert "take him" in bodies
+    assert "unoable" in bodies
+    assert "[deleted]" not in bodies
+    assert any("before" in p for p in calls[1:])

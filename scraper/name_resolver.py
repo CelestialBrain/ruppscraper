@@ -45,9 +45,18 @@ _HONORIFIC_RE = re.compile(
 )
 
 # Leading section / schedule junk Reddit titles often glue onto the surname.
+# Letter runs must include digits (`A1`, `X7`) so particles like De/Di/Del stay.
 _LEADING_SECTION_RE = re.compile(
-    r"^(?:\d+(?:\.\d+)?|[A-Z]{1,3}\d*|WFX?|WF[A-Z]|TH[XY]|MWF|TTH|"
+    r"^(?:\d+(?:\.\d+)?|[A-Z]{1,3}\d+|WFX?|WF[A-Z]|TH[XY]|MWF|TTH|"
     r"UNDER|FOR)\s*[-–—:]?\s+",
+    re.IGNORECASE,
+)
+
+# Trailing first-name tokens that leak in from Reddit titles.
+_TRAILING_FIRST_NOISE_RE = re.compile(
+    r"(?:\s+(?:e-?mail|pls+|please|prerog(?:ative)?|notes?|help|review|"
+    r"units?|section|online|hybrid|sync|async|f2f|lec|lab|classmate?s?|"
+    r"gmail|looking(?:\s+for)?))+\s*$",
     re.IGNORECASE,
 )
 
@@ -55,9 +64,29 @@ _JUNK_LAST_RE = re.compile(
     r"^(?:\d+(?:\.\d+)?|tba|tbd|n/?a|none|unknown|prerogative|units|"
     r"classmates!?|gymnastics|support|philippine|demo|kas|philo|fil|"
     r"eng|math|chem|bio|econ|speech|review|upx|psych|electives|"
-    r"preenlistment|hinay|diliman|pls|done)$",
+    r"preenlistment|hinay|diliman|pls|done|e-?mail|venue|classroom|"
+    r"help|her|profs?|prerogs?|thoughts|allow|looking|finding|gmail|"
+    r"classmate?s?|suggestions?|thesis|validation|respondents?|"
+    r"canceled|cancelled)$",
     re.IGNORECASE,
 )
+
+# Particles that are never a standalone last name ("De, Juan" leftover).
+_PARTICLE_ONLY_LAST = {
+    "de",
+    "di",
+    "del",
+    "dela",
+    "delos",
+    "delas",
+    "dels",
+    "da",
+    "do",
+    "los",
+    "las",
+    "der",
+    "den",
+}
 
 
 def normalize_name(text: str) -> str:
@@ -121,6 +150,7 @@ def clean_scraped_name(last_name: str, first_name: str) -> tuple[str, str]:
     last = strip_honorifics(last_name or "")
     first = strip_honorifics(first_name or "")
     last = _LEADING_SECTION_RE.sub("", last).strip(" -–—:")
+    first = _TRAILING_FIRST_NOISE_RE.sub("", first).strip()
     # If last still looks like "Francisco" after strip, good; if empty, bail.
     if not last and first:
         # Entire "name" may have been dumped into first_name.
@@ -146,13 +176,22 @@ def is_plausible_professor_name(last_name: str, first_name: str) -> bool:
         return False
     if len(first.split()) > 8:
         return False
-    # Multi-prof dump in first name ("Junio, Roque, Arceo, And Aricheta")
-    if first.count(",") >= 2:
+    # Multi-prof dump ("Junio, Roque" / "Plata, Alcasid" in either field)
+    if first.count(",") >= 1 or last.count(",") >= 1:
+        return False
+    if not re.search(r"[A-Za-z]{2,}", last):
+        return False
+    if normalize_name(last) in _PARTICLE_ONLY_LAST and len(last.split()) == 1:
+        return False
+    if "@" in last or "@" in first:
+        return False
+    if re.search(r"\.(?:com|edu)\b", f"{last} {first}", re.IGNORECASE):
         return False
     if re.search(r"[\[\]/&]", last) or re.search(r"[\[\]/&]", first):
         return False
     if re.search(
-        r"\b(?:and|&|/|reco|prerog|classmates|finding|buddy)\b",
+        r"\b(?:and|&|/|or|vs\.?|reco|prerog|classmates|finding|buddy|"
+        r"looking|thoughts|venue|classroom)\b",
         f"{last} {first}",
         re.IGNORECASE,
     ):

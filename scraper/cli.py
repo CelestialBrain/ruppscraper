@@ -603,7 +603,10 @@ def cmd_clean_junk(args: argparse.Namespace) -> None:
     console.print(
         f"  Removed professors: [bold]{result['junk_professors_removed']}[/bold]\n"
         f"  Posts unlinked: [bold]{result['posts_unlinked']}[/bold]\n"
-        f"  Orphans removed: [bold]{result.get('orphan_professors_removed', 0)}[/bold]"
+        f"  Orphans removed: [bold]{result.get('orphan_professors_removed', 0)}[/bold]\n"
+        f"  Duplicate groups merged: [bold]{result.get('duplicate_groups_merged', 0)}[/bold]\n"
+        f"  Duplicate professors removed: [bold]{result.get('duplicate_professors_removed', 0)}[/bold]\n"
+        f"  Posts relinked: [bold]{result.get('posts_relinked', 0)}[/bold]"
     )
 
 
@@ -780,7 +783,7 @@ def build_parser() -> argparse.ArgumentParser:
         choices=["full", "professors", "comments"],
         default="full",
         help="Export format (default: full). "
-        "'comments' is ReviewRow-shaped for a future ProfstoPick adapter.",
+        "'comments' is ReviewRow-shaped for ProfstoPick `npm run import -- --source reddit=`.",
     )
     sp_export.add_argument(
         "--output",

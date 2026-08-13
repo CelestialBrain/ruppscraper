@@ -17,11 +17,12 @@ pip install -r requirements.txt
 # 2. Progressive scrape (sorts + subject queries, resume-safe)
 python -m scraper scrape-all --scale 0.25
 
-# 3. Apply parser upgrades to titles already in the DB
+# 3. Apply parser upgrades to titles already in the DB, then drop junk names
 python -m scraper reparse --all
+python -m scraper clean-junk
 
-# 4. Backfill comments for posts that still have none
-python -m scraper enrich --limit 50
+# 4. Backfill comments (includes threads truncated by the old 50-comment page)
+python -m scraper enrich --limit 1500
 
 # 5. Stats + CRS resolve report (ProfstoPick acceptance sample)
 python -m scraper stats
@@ -58,7 +59,8 @@ python -m scraper scrape-all --scale 0.5 --export output/professors_crs.json --c
 ```bash
 python -m scraper reparse          # unparsed rows only
 python -m scraper reparse --all    # every title
-python -m scraper enrich --limit 100
+python -m scraper clean-junk       # unlink junk names + merge duplicate roster rows
+python -m scraper enrich --limit 1500
 ```
 
 ### CRS matching & resolve report
@@ -85,7 +87,7 @@ python -m scraper stats
 
 ### Matrix Pipeline (GitHub Actions)
 
-`.github/workflows/matrix-scrape.yml` runs every 10 minutes: 7 parallel Arctic Shift year-windows covering the full r/RateUPProfs archive (2019–2026), then merge → reparse → enrich comments → CRS export. Shards **fail if they produce 0 posts**. Sequential `scrape-all` is `workflow_dispatch` only (`.github/workflows/scrape.yml`).
+`.github/workflows/matrix-scrape.yml` runs every 10 minutes: 7 parallel Arctic Shift year-windows covering the full r/RateUPProfs archive (2019–2026), then merge → reparse → clean-junk → enrich comments (Arctic pages past 50) → CRS + comments export + resolve-report. Unparsed shard leftovers do **not** create professor rows. Shards **fail if they produce 0 posts**. Sequential `scrape-all` is `workflow_dispatch` only (`.github/workflows/scrape.yml`).
 
 ## ProfstoPick ingest
 
@@ -100,33 +102,31 @@ Run `resolve-report` for that gate. Latest local numbers are in [CHANGELOG.md](.
 | Path | What it reads | Compatible with this scraper? |
 | --- | --- | --- |
 | `script/import/rupp.ts` | Alec **numeric review** dump (`teacherId`, 0–5 criteria, `reviewId`, …) with **`MINIMUM_REVIEW = 7000`** | **No** — Reddit corpus is smaller and has no star ratings |
-| Reddit / RateUPProfs importer | *(not built yet)* | — |
+| `script/import/reddit.ts` | `comments_rupp_shaped.json` via `SourceKey` `"reddit"` | **Yes** — this is the RateUPProfs path |
 
-There is **no** `reddit`/`rateup` source key in ProfstoPick yet. Do not point `npm run import -- --source rupp=` at scraper output.
+Do **not** point `npm run import -- --source rupp=` at scraper output (7000-row floor + numeric ratings). Use `--source reddit=` after a CRS catalog import.
+
+```bash
+# in ruppscraper
+python -m scraper export --format comments --crs -o output/comments_rupp_shaped.json
+
+# in profstopick (CRS catalog must already be imported)
+npm run import -- --source reddit=/path/to/comments_rupp_shaped.json --university up
+```
 
 ### Exports this repo emits
 
 1. **`professors` / `professors_crs.json`** — discovery index: name, campus, courses, discussion permalinks, optional `crs_verified`. Good for debugging and CRS join QA; **not** a comment import.
-2. **`comments` / `comments_rupp_shaped.json`** — one row per post body / comment, shaped like `ReviewRow` fields (`professor`, `teacherId`, `reviewId`, `subject`, `comment`, `date`, null ratings) plus `resolve_status` and `source_url`. Sidecar `*.unresolved.json` lists names that did not resolve.
+2. **`comments` / `comments_rupp_shaped.json`** — one row per post body / comment, shaped like `ReviewRow` fields (`professor`, `teacherId`, `reviewId`, `subject`, `comment`, `date`, null ratings) plus `resolve_status` and `source_url`. Sidecar `*.unresolved.json` lists names that did not resolve. Matrix CI force-adds this file on each merge.
 
-### Adapter still required in ProfstoPick
-
-A thin new importer (suggested name: `script/import/rateup.ts` or extend reviews behind a new `SourceKey`) should:
-
-1. Read `comments_rupp_shaped.json` (array).
-2. **Skip or quarantine** rows with `resolve_status != "resolved"` (unresolved must stay reported, never auto-attached to a random roster hit).
-3. Map `teacherId` → CRS/`professor.external_id` or join via the same `professorSlug` path `rupp.ts` already uses.
-4. Insert `comment` rows with `source` = new enum value (not `rupp`), `rating`/`criterion` null, sentiment from text heuristics or `neutral`.
-5. **Do not** reuse the 7000-row alec floor; use a Reddit-appropriate minimum (or none, with an explicit allow-empty flag).
-
-Until that lands, this repo’s deliverable for the ROADMAP row is the **resolve-report PASS** + honest unresolved lists, not a live import.
+Unresolved rows stay in the sidecar; the reddit importer should skip `resolve_status != "resolved"` rather than attaching them to a random roster hit.
 
 ## How It Works
 
 ### Two-Phase Scrape
 
 1. **Phase 1 — Listing fetch**: Prefer Reddit JSON / PRAW; on 403/429 fall through to Arctic Shift, then RSS.
-2. **Phase 2 — Comment enrichment**: Prefer `/comments/{id}.json` / PRAW; fall through to Arctic Shift comments (~1.2s/request).
+2. **Phase 2 — Comment enrichment**: Prefer `/comments/{id}.json` / PRAW; fall through to Arctic Shift comments (100/page, `before` cursor, cap 5000/thread). `enrich` also refills threads whose stored count is below Reddit’s `num_comments`.
 
 ### Title Parsing
 
@@ -151,7 +151,7 @@ scraper/
 ├── database.py        # SQLite schema, upsert logic, queries
 ├── reddit_client.py   # PRAW → JSON → Arctic Shift → RSS
 ├── exporter.py        # SQLite → JSON with CRS & signal enrichment
-├── cli.py             # scrape / scrape-all / reparse / enrich / export / stats / match / resolve-report
+├── cli.py             # scrape / scrape-all / reparse / enrich / export / stats / match / clean-junk / resolve-report
 └── __main__.py        # python -m scraper entrypoint
 ```
 

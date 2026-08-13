@@ -33,6 +33,25 @@ class TestCleanScrapedName:
     def test_section_prefix(self):
         assert clean_scraped_name("1 Francisco", "Ana") == ("Francisco", "Ana")
         assert clean_scraped_name("2 - Castaneda", "Roann") == ("Castaneda", "Roann")
+        assert clean_scraped_name("WFX Castaneda", "Roann") == ("Castaneda", "Roann")
+        assert clean_scraped_name("THY Santos", "Ana") == ("Santos", "Ana")
+
+    def test_keeps_de_di_del_surnames(self):
+        assert clean_scraped_name("De La Rosa", "Ma. Cecilia") == (
+            "De La Rosa",
+            "Ma. Cecilia",
+        )
+        assert clean_scraped_name("Del Rosario", "Juan") == ("Del Rosario", "Juan")
+        assert clean_scraped_name("Di Angelo", "Maria") == ("Di Angelo", "Maria")
+
+    def test_strips_trailing_first_name_noise(self):
+        assert clean_scraped_name("Santos", "Rolando Email") == ("Santos", "Rolando")
+        assert clean_scraped_name("Garcia", "Kenneth Arwin Prerog") == (
+            "Garcia",
+            "Kenneth Arwin",
+        )
+        assert clean_scraped_name("Cruz", "Maria Notes") == ("Cruz", "Maria")
+        assert clean_scraped_name("Reyes", "Jose pls") == ("Reyes", "Jose")
 
     def test_honorific(self):
         assert clean_scraped_name("Sir Garcia", "Mark") == ("Garcia", "Mark")
@@ -46,10 +65,21 @@ class TestPlausible:
         assert not is_plausible_professor_name("Garcia", "")
         assert not is_plausible_professor_name("Espanola", "Carmela And Orozco, Zenith")
         assert not is_plausible_professor_name("Villegas", "Patrick / Fil 40")
+        assert not is_plausible_professor_name("Venue", "Looking For")
+        assert not is_plausible_professor_name("Email", "Leander P. Marquez's")
+        assert not is_plausible_professor_name("Boydon", "Kai Brynne Or Saddi, Daryl Allen")
+        assert not is_plausible_professor_name("Serra", "Patrick James Vs. Abejo, Raymund")
+        assert not is_plausible_professor_name("De", "Juan")
+        assert not is_plausible_professor_name("Garcia@gmail.com", "Kenneth")
+        assert not is_plausible_professor_name("Suggestions", "'yung Chill Sana")
+        assert not is_plausible_professor_name("Thesis", "I Need Respondents For My Master's")
+        assert not is_plausible_professor_name("(plata, Alcasid", "Cabrera)")
+        assert not is_plausible_professor_name(":'>", "Help Save Class")
 
     def test_accepts_real(self):
         assert is_plausible_professor_name("Garcia", "Mark Lester")
         assert is_plausible_professor_name("Dela Cruz", "Juan")
+        assert is_plausible_professor_name("De La Rosa", "Ma. Cecilia")
 
 
 class TestVariantsAndResolver:
